@@ -16,7 +16,7 @@ a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 [id]{scroll-margin-top:20px}
 
-.wrap{max-width:1240px;margin:0 auto;padding:14px}
+.wrap{max-width:1680px;margin:0 auto;padding:14px}
 .section{background:var(--surface);border-radius:var(--radius);padding:64px 46px;margin-top:14px}
 .section-2{background:var(--surface-2)}
 .eyebrow{font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--primary)}
