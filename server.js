@@ -35,7 +35,14 @@ const server = http.createServer((req, res) => {
 
   function serve(file) {
     const ext = path.extname(file).toLowerCase();
-    res.writeHead(200, { "Content-Type": MIME[ext] || "application/octet-stream" });
+    const headers = { "Content-Type": MIME[ext] || "application/octet-stream" };
+    // HTML/CSS/JS mudam com frequência: forçar revalidação para não servir versões em cache.
+    if (ext === ".html" || ext === ".css" || ext === ".js") {
+      headers["Cache-Control"] = "no-cache";
+    } else {
+      headers["Cache-Control"] = "public, max-age=86400";
+    }
+    res.writeHead(200, headers);
     fs.createReadStream(file).pipe(res);
   }
 
