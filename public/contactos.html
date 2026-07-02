@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fale Connosco: Diagnóstico Gratuito | MJM Solutions</title>
+<meta name="description" content="Tem um processo que custa horas à sua equipa todas as semanas? Conte-nos. Em 30 minutos dizemos-lhe se e como a tecnologia resolve. Sem compromisso.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav">
+    <a href="/" class="brand"><span class="o">MJM</span><span class="s"> Solutions</span></a>
+    <div class="nav-links">
+      <a href="/servicos">Serviços</a>
+      <a href="/casos">Casos</a>
+      <a href="/como-trabalhamos">Como trabalhamos</a>
+      <a href="/sobre">Sobre</a>
+      <a href="/contactos" class="active">Contactos</a>
+    </div>
+    <a href="/contactos" class="btn btn-primary">Marcar diagnóstico <span>↗</span></a>
+  </nav>
+
+  <section class="page-hero">
+    <div class="crumb"><a href="/">Início</a> · Contactos</div>
+    <span class="eyebrow">Contactos</span>
+    <h1>Fale connosco</h1>
+    <p class="lead">Tem um processo que custa horas à sua equipa todas as semanas? Conte-nos. Em 30 minutos dizemos-lhe se e como a tecnologia resolve. Sem compromisso e sem apresentações de catálogo.</p>
+  </section>
+
+  <section class="section">
+    <div class="channels">
+      <!-- FORMULÁRIO -->
+      <form class="form" id="contact-form" onsubmit="return enviarContacto(event)">
+        <span class="eyebrow">Formulário</span>
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="empresa">Empresa <span style="font-weight:500;text-transform:none;color:var(--muted-2)">(opcional)</span></label>
+          <input id="empresa" name="empresa" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="problema">Descreva o problema em 2 ou 3 frases</label>
+          <textarea id="problema" name="problema" required></textarea>
+        </div>
+        <label class="consent">
+          <input type="checkbox" required>
+          <span>Aceito que os dados sejam usados apenas para responder ao meu pedido. Ver política de privacidade (em breve).</span>
+        </label>
+        <button type="submit" class="btn btn-primary" style="justify-content:center">Enviar</button>
+        <p class="note" id="form-msg" style="margin-top:6px">Respondemos em 1 dia útil.</p>
+      </form>
+
+      <!-- CANAIS DIRETOS -->
+      <div>
+        <span class="eyebrow">Diretos</span>
+        <h2 class="h2" style="margin-top:12px;font-size:26px">Ou fale já<br>connosco</h2>
+        <div class="direct" style="margin-top:22px">
+          <a href="mailto:ola@mjmsolutions.pt">
+            <span class="ic">✉️</span>
+            <span class="t"><b>Email</b><span>ola@mjmsolutions.pt</span></span>
+          </a>
+          <a href="#" id="wa-link">
+            <span class="ic">💬</span>
+            <span class="t"><b>WhatsApp</b><span>Resposta rápida em horário útil</span></span>
+          </a>
+          <a href="#" id="li-link">
+            <span class="ic">in</span>
+            <span class="t"><b>LinkedIn</b><span>MJM Solutions</span></span>
+          </a>
+        </div>
+        <div class="sd-tech" style="margin-top:26px"><b>Agendamento</b><br>Em breve vai poder marcar o diagnóstico de 30 min diretamente aqui. Por agora, escreva-nos e combinamos o horário.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="brand"><span class="o">MJM</span><span class="s"> Solutions</span></div>
+        <p class="about-txt">Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
+        <a href="/contactos" class="btn btn-primary">Marcar diagnóstico ↗</a>
+      </div>
+      <div class="col">
+        <h4>Navegação</h4>
+        <a href="/servicos">Serviços</a>
+        <a href="/casos">Casos</a>
+        <a href="/como-trabalhamos">Como trabalhamos</a>
+        <a href="/sobre">Sobre</a>
+      </div>
+      <div class="col">
+        <h4>Suporte</h4>
+        <a href="/como-trabalhamos#faq">Perguntas frequentes</a>
+        <a href="/contactos">Contactos</a>
+        <a href="/como-trabalhamos#garantias">Garantias &amp; RGPD</a>
+      </div>
+      <div class="col">
+        <h4>Contacto</h4>
+        <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
+        <a href="#">WhatsApp</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 MJM Solutions. Todos os direitos reservados.</span>
+      <span>Software à medida · Portugal</span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Enquanto não há backend (Resend), o formulário abre o email pré-preenchido.
+  function enviarContacto(e){
+    e.preventDefault();
+    var nome = document.getElementById('nome').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var empresa = document.getElementById('empresa').value.trim();
+    var problema = document.getElementById('problema').value.trim();
+    var corpo =
+      'Nome: ' + nome + '\n' +
+      'Email: ' + email + '\n' +
+      (empresa ? 'Empresa: ' + empresa + '\n' : '') +
+      '\nProblema:\n' + problema + '\n';
+    var assunto = 'Pedido de diagnóstico — ' + (empresa || nome);
+    window.location.href = 'mailto:ola@mjmsolutions.pt?subject=' +
+      encodeURIComponent(assunto) + '&body=' + encodeURIComponent(corpo);
+    document.getElementById('form-msg').textContent =
+      'A abrir o seu email… se não abrir, escreva para ola@mjmsolutions.pt. Respondemos em 1 dia útil.';
+    return false;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casos Reais: Software em Produção | MJM Solutions</title>
+<meta name="description" content="Casos de software em produção, com resultados medidos. Caso âncora: plataforma de back-office hoteleiro com leitura de faturas por IA e P&L automático em formato USALI.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav">
+    <a href="/" class="brand"><span class="o">MJM</span><span class="s"> Solutions</span></a>
+    <div class="nav-links">
+      <a href="/servicos">Serviços</a>
+      <a href="/casos" class="active">Casos</a>
+      <a href="/como-trabalhamos">Como trabalhamos</a>
+      <a href="/sobre">Sobre</a>
+      <a href="/contactos">Contactos</a>
+    </div>
+    <a href="/contactos" class="btn btn-primary">Marcar diagnóstico <span>↗</span></a>
+  </nav>
+
+  <section class="page-hero">
+    <div class="crumb"><a href="/">Início</a> · Casos</div>
+    <span class="eyebrow">Casos</span>
+    <h1>Software em produção,<br>com resultados medidos</h1>
+    <p class="lead">Sem demos de laboratório. Um caso âncora bem contado vale mais do que cinco vagos — e cada projeto novo entra aqui no mês seguinte a ir para produção.</p>
+  </section>
+
+  <!-- CASO ÂNCORA -->
+  <section class="section" id="back-office">
+    <span class="eyebrow">Caso 01 · Hotelaria</span>
+    <h2 class="h2" style="margin-top:12px">Back-office hoteleiro</h2>
+
+    <div class="ficha">
+      <div class="cell"><div class="k">Setor</div><div class="v">Hotelaria</div></div>
+      <div class="cell"><div class="k">Cliente</div><div class="v">Hotel independente · Aveiro</div></div>
+      <div class="cell"><div class="k">Problema</div><div class="v">Faturas e fecho mensal manuais</div></div>
+      <div class="cell"><div class="k">Estado</div><div class="v">Em produção desde 2025</div></div>
+    </div>
+
+    <h3 class="subhead">O contexto</h3>
+    <div class="prose">
+      <p>Um hotel independente processava dezenas de faturas de fornecedores por mês à mão. A conferência era manual, havia risco de duplicados, e o P&amp;L mensal era montado à mão em Excel a partir dos dados do PMS. Um fecho de contas lento, com informação espalhada e sempre a chegar atrasada.</p>
+    </div>
+
+    <h3 class="subhead">O problema em detalhe</h3>
+    <div class="prose">
+      <p>Cada fatura em papel era lançada manualmente. Alguém tinha de verificar se já tinha entrado, classificar o fornecedor, e só depois passar os valores para a folha de custos. No fim do mês, montar o P&amp;L significava cruzar tudo isto com a receita do PMS — dias de trabalho para um número que já vinha tarde.</p>
+    </div>
+
+    <h3 class="subhead">A solução</h3>
+    <div class="prose">
+      <p>Construímos uma plataforma de back-office onde a equipa fotografa a fatura e o sistema faz o resto: lê os dados (IA), deteta duplicados — o sistema reconhece se a mesma fatura já entrou, mesmo que venha por outra via —, classifica automaticamente o fornecedor por NIF e alimenta diretamente o P&amp;L mensal, em formato USALI (o padrão internacional de contas de exploração hoteleira), integrado com a receita do PMS.</p>
+    </div>
+
+    <div class="feat" style="margin-top:24px">
+      <div class="feat-visual">
+        <svg class="mock" viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Leitura de fatura por IA" style="box-shadow:none;border:none">
+          <rect width="480" height="380" rx="14" fill="#33352F"/>
+          <rect x="30" y="40" width="170" height="300" rx="8" fill="#f4f2ef"/>
+          <rect x="46" y="60" width="90" height="10" rx="5" fill="#B26530"/>
+          <rect x="46" y="86" width="138" height="6" rx="3" fill="#cfcbc4"/>
+          <rect x="46" y="100" width="120" height="6" rx="3" fill="#cfcbc4"/>
+          <rect x="46" y="128" width="138" height="6" rx="3" fill="#e0ddd7"/>
+          <rect x="46" y="142" width="110" height="6" rx="3" fill="#e0ddd7"/>
+          <rect x="46" y="156" width="130" height="6" rx="3" fill="#e0ddd7"/>
+          <rect x="46" y="300" width="70" height="12" rx="4" fill="#33352F"/>
+          <text x="216" y="196" font-family="Archivo" font-weight="900" font-size="26" fill="#D98A4E">→</text>
+          <rect x="250" y="52" width="200" height="60" rx="10" fill="#3f4238"/>
+          <text x="266" y="76" font-family="Public Sans" font-size="10" fill="#9a9c95">NIF fornecedor</text>
+          <text x="266" y="98" font-family="Archivo" font-weight="700" font-size="15" fill="#fff">PT 503 245 118</text>
+          <rect x="250" y="122" width="200" height="60" rx="10" fill="#3f4238"/>
+          <text x="266" y="146" font-family="Public Sans" font-size="10" fill="#9a9c95">Total c/ IVA</text>
+          <text x="266" y="168" font-family="Archivo" font-weight="700" font-size="15" fill="#fff">€ 1.284,50</text>
+          <rect x="250" y="192" width="200" height="60" rx="10" fill="#B26530"/>
+          <text x="266" y="216" font-family="Public Sans" font-size="10" fill="#fbe6d6">Estado</text>
+          <text x="266" y="238" font-family="Archivo" font-weight="700" font-size="15" fill="#fff">✓ Sem duplicados</text>
+          <rect x="250" y="262" width="200" height="60" rx="10" fill="#3f4238"/>
+          <text x="266" y="286" font-family="Public Sans" font-size="10" fill="#9a9c95">Classificação</text>
+          <text x="266" y="308" font-family="Archivo" font-weight="700" font-size="15" fill="#fff">F&amp;B · Bebidas</text>
+        </svg>
+      </div>
+      <div class="feat-list">
+        <div class="row"><div><h3>Captura por fotografia</h3><p>A equipa tira uma foto. A IA lê NIF, valores e datas — sem lançamento manual.</p></div><div class="dot hl">↗</div></div>
+        <div class="row"><div><h3>Deteção de duplicados</h3><p>O sistema reconhece faturas repetidas antes do pagamento, mesmo por vias diferentes.</p></div><div class="dot">↗</div></div>
+        <div class="row"><div><h3>P&amp;L em formato USALI</h3><p>Gerado em minutos, integrado com a receita do PMS. O número certo, a tempo.</p></div><div class="dot">↗</div></div>
+      </div>
+    </div>
+
+    <h3 class="subhead">Como foi o processo</h3>
+    <div class="prose">
+      <p>Construção lado a lado, em fases curtas. A equipa do hotel usou versões de teste desde cedo e ajustámos com base no uso real, não em suposições. O sistema entrou em produção e está em uso diário desde 2025.</p>
+    </div>
+
+    <h3 class="subhead">Resultados</h3>
+    <div class="stats" style="max-width:none;margin-top:24px">
+      <div class="stat hl"><div class="big">Diário</div><div class="lbl">Em uso pela equipa</div><p>A correr todos os dias desde o lançamento em 2025.</p></div>
+      <div class="stat"><div class="big">Minutos</div><div class="lbl">Fecho mensal</div><p>O P&amp;L passou a ser gerado em minutos, quando antes eram dias.</p></div>
+      <div class="stat"><div class="big">Auto</div><div class="lbl">Faturas processadas</div><p>Captura, leitura e classificação sem lançamento manual.</p></div>
+    </div>
+    <p class="note">Números finais (tempo de fecho antes/depois, faturas por mês, duplicados detetados) em medição para publicação.</p>
+
+    <div class="sd-tech" style="margin-top:32px;max-width:640px"><b>Stack técnica</b><br>Aplicação web (TypeScript), IA para leitura de documentos, integração com PMS, infraestrutura cloud europeia (RGPD).</div>
+  </section>
+
+  <!-- PRÓXIMOS CASOS -->
+  <section class="section section-2">
+    <div class="center-head">
+      <span class="eyebrow">A crescer</span>
+      <h2 class="h2" style="margin-top:12px">Mais casos a caminho</h2>
+      <p class="lead">Cada projeto novo entra aqui no prazo de um mês após ir para produção. É o nosso ativo comercial nº 1 — tratamo-lo como tal.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-inner">
+      <h2>Tem um problema parecido?</h2>
+      <p>Conte-nos o seu processo em 30 minutos. Se conseguirmos ajudar, dizemos como. Se não, dizemos também.</p>
+      <a href="/contactos" class="btn btn-primary">Marcar diagnóstico gratuito <span>↗</span></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="brand"><span class="o">MJM</span><span class="s"> Solutions</span></div>
+        <p class="about-txt">Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
+        <a href="/contactos" class="btn btn-primary">Marcar diagnóstico ↗</a>
+      </div>
+      <div class="col">
+        <h4>Navegação</h4>
+        <a href="/servicos">Serviços</a>
+        <a href="/casos">Casos</a>
+        <a href="/como-trabalhamos">Como trabalhamos</a>
+        <a href="/sobre">Sobre</a>
+      </div>
+      <div class="col">
+        <h4>Suporte</h4>
+        <a href="/como-trabalhamos#faq">Perguntas frequentes</a>
+        <a href="/contactos">Contactos</a>
+        <a href="/como-trabalhamos#garantias">Garantias &amp; RGPD</a>
+      </div>
+      <div class="col">
+        <h4>Contacto</h4>
+        <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
+        <a href="#">WhatsApp</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 MJM Solutions. Todos os direitos reservados.</span>
+      <span>Software à medida · Portugal</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
