@@ -7,6 +7,30 @@ const path = require("path");
 const ROOT = path.join(__dirname, "public");
 const PORT = process.env.PORT || 3000;
 
+// Content-Security-Policy: permite Google Fonts (folha + ficheiros de fonte),
+// estilos inline (usados em atributos style e SVGs) e o pequeno script do
+// formulário de contactos. 'unsafe-inline' é necessário por causa desses inlines.
+const CSP = [
+  "default-src 'self'",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' https://fonts.gstatic.com",
+  "script-src 'self' 'unsafe-inline'",
+  "img-src 'self' data:",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "frame-ancestors 'self'",
+  "form-action 'self' mailto:",
+].join("; ");
+
+const SECURITY_HEADERS = {
+  "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "SAMEORIGIN",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy": "geolocation=(), camera=(), microphone=(), interest-cohort=()",
+  "Content-Security-Policy": CSP,
+};
+
 const MIME = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -24,6 +48,9 @@ const MIME = {
 };
 
 const server = http.createServer((req, res) => {
+  // Headers de segurança em todas as respostas.
+  for (const [k, v] of Object.entries(SECURITY_HEADERS)) res.setHeader(k, v);
+
   // Normaliza o caminho e impede path traversal.
   const urlPath = decodeURIComponent(req.url.split("?")[0]);
   let filePath = path.join(ROOT, urlPath);
