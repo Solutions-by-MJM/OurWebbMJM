@@ -36,7 +36,7 @@
   <section class="section">
     <div class="channels">
       <!-- FORMULÁRIO -->
-      <form class="form" id="contact-form" onsubmit="return enviarContacto(event)">
+      <form class="form" id="contact-form">
         <span class="eyebrow">Formulário</span>
         <div class="field">
           <label for="nome">Nome</label>
@@ -120,26 +120,6 @@
 
 </div>
 
-<script>
-  // Enquanto não há backend (Resend), o formulário abre o email pré-preenchido.
-  function enviarContacto(e){
-    e.preventDefault();
-    var nome = document.getElementById('nome').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var empresa = document.getElementById('empresa').value.trim();
-    var problema = document.getElementById('problema').value.trim();
-    var corpo =
-      'Nome: ' + nome + '\n' +
-      'Email: ' + email + '\n' +
-      (empresa ? 'Empresa: ' + empresa + '\n' : '') +
-      '\nProblema:\n' + problema + '\n';
-    var assunto = 'Pedido de diagnóstico — ' + (empresa || nome);
-    window.location.href = 'mailto:ola@mjmsolutions.pt?subject=' +
-      encodeURIComponent(assunto) + '&body=' + encodeURIComponent(corpo);
-    document.getElementById('form-msg').textContent =
-      'A abrir o seu email… se não abrir, escreva para ola@mjmsolutions.pt. Respondemos em 1 dia útil.';
-    return false;
-  }
-</script>
+<script src="/contact.js" defer></script>
 </body>
 </html>

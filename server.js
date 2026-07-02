@@ -14,7 +14,7 @@ const CSP = [
   "default-src 'self'",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
-  "script-src 'self' 'unsafe-inline'",
+  "script-src 'self'",
   "img-src 'self' data:",
   "object-src 'none'",
   "base-uri 'self'",
