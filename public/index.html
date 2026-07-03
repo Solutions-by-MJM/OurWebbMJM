@@ -4,388 +4,292 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Software à Medida para PMEs | MJM Solutions</title>
-<meta name="description" content="Boutique portuguesa de software à medida, automação e IA aplicada. Plataformas em produção, propostas com preço fechado por fase. Diagnóstico gratuito de 30 min.">
+<meta name="description" content="Boutique portuguesa de software à medida, automação e IA aplicada. Plataformas em produção, propostas caso a caso. Diagnóstico gratuito de 30 min.">
 <meta property="og:title" content="Software à Medida para PMEs | MJM Solutions">
-<meta property="og:description" content="Plataformas à medida, integrações e IA aplicada a tarefas reais. Prova em produção. Diagnóstico gratuito de 30 min.">
+<meta property="og:description" content="Não vendemos pacotes pré-feitos. Software à medida, automação e IA aplicada a tarefas reais. Diagnóstico gratuito de 30 min.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_PT">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=2">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=5">
 </head>
 <body>
-<div class="wrap">
 
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="/" class="brand"><span class="o">MJM</span><span class="s"> Solutions</span></a>
-    <div class="nav-links">
+<nav class="nav">
+  <a href="/" class="logo" aria-label="MJM Solutions — início"><img src="/assets/logo-mark.png" alt="MJM Solutions"></a>
+  <div class="nav-links">
+    <a href="/servicos" class="nav-link">Serviços</a>
+    <a href="/casos" class="nav-link">Casos</a>
+    <a href="/como-trabalhamos" class="nav-link">Como trabalhamos</a>
+    <a href="/sobre" class="nav-link">Sobre</a>
+    <a href="/contactos" class="nav-cta">Marcar diagnóstico&nbsp;↗</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="top" class="theme-dark pad-hero">
+  <div class="hero-meta">
+    <span>Boutique de software — Portugal</span>
+    <span class="hl">Software à medida · Automação · IA aplicada</span>
+  </div>
+  <h1 class="display">
+    O software<br>
+    <span class="rust">molda-se</span> ao<br>
+    <span style="margin-left:clamp(40px,12vw,220px)">seu problema.</span><br>
+    <span style="font-size:0.4em;font-weight:700;color:var(--light-2);letter-spacing:-0.01em">Não o contrário.</span>
+  </h1>
+  <div class="intro-row">
+    <div class="num">(01) — Introdução</div>
+    <div class="intro-copy">
+      <p>Não vendemos pacotes pré-feitos. Ouvimos os seus problemas e desenhamos soluções reais: plataformas à medida, automação de tarefas chatas, cruzar dados ou ler faturas com IA. Somos três pragmáticos a construir o que a sua empresa realmente precisa.</p>
+      <a href="/contactos" class="link-arrow on-dark">Marcar conversa gratuita <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Soluções caso a caso&nbsp;&nbsp;·&nbsp;&nbsp;Código 100% do cliente&nbsp;&nbsp;·&nbsp;&nbsp;Acompanhamento próximo&nbsp;&nbsp;·&nbsp;&nbsp;Período de garantia após entrega&nbsp;&nbsp;·&nbsp;&nbsp;Soluções caso a caso&nbsp;&nbsp;·&nbsp;&nbsp;Código 100% do cliente&nbsp;&nbsp;·&nbsp;&nbsp;Acompanhamento próximo&nbsp;&nbsp;·&nbsp;&nbsp;Período de garantia após entrega&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<!-- ============ STATS LEDGER ============ -->
+<section class="theme-dark pad">
+  <div class="split-7-5" style="margin-bottom:clamp(48px,6vw,90px)">
+    <h2 class="big" style="font-size:clamp(28px,3.4vw,52px)">Para quem quer poupar horas, reduzir erros manuais e decidir com dados.</h2>
+    <div class="mono-label" style="color:var(--light-2);text-align:right;align-self:start">(02) — Como atuamos</div>
+  </div>
+  <div class="ledger">
+    <div class="ledger-row">
+      <div class="ledger-num">1º</div>
+      <div class="ledger-tag">Ouvir primeiro</div>
+      <p class="ledger-text">Não há duas empresas iguais. O nosso trabalho começa sempre por perceber onde perde mais tempo e dinheiro.</p>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-num plain">100%</div>
+      <div class="ledger-tag">Código seu</div>
+      <p class="ledger-text">Todo o código e documentação que fazemos passam a ser propriedade sua. Sem dependências.</p>
+    </div>
+    <div class="ledger-row close">
+      <div class="ledger-num plain">30<small>&nbsp;min</small></div>
+      <div class="ledger-tag">Diagnóstico grátis</div>
+      <p class="ledger-text">Uma conversa franca. Saímos com os 2 ou 3 maiores gargalos da sua operação identificados.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIGHT FIELD: SERVIÇOS ============ -->
+<section id="servicos" class="theme-light pad pad-b0">
+  <div class="section-head">
+    <span class="mono-label eyebrow">(03) — Serviços</span>
+    <span class="mono-label right">Índice de quatro</span>
+  </div>
+  <h2 class="big">Quatro formas de<br>resolver o problema</h2>
+  <p class="lede push-right" style="margin-bottom:clamp(48px,6vw,90px)">O ponto de partida é o seu processo real. Se não fizer sentido construir software, somos os primeiros a dizer-lhe para não o fazer.</p>
+
+  <div style="margin:0 calc(var(--pad) * -1)">
+    <a href="/servicos#software" class="idx-row linked" style="padding-left:var(--pad);padding-right:var(--pad)">
+      <span class="idx-num">/01</span>
+      <span class="idx-title">Plataformas de raiz</span>
+      <span class="idx-desc">Sistemas desenhados à medida dos seus processos. Criamos a ferramenta exata de que precisa para gerir o seu negócio. — <em>Software à medida</em></span>
+      <span class="idx-arrow">↗</span>
+    </a>
+    <a href="/servicos#automacao" class="idx-row linked" style="padding-left:var(--pad);padding-right:var(--pad)">
+      <span class="idx-num">/02</span>
+      <span class="idx-title">Menos trabalho manual</span>
+      <span class="idx-desc">As tarefas repetitivas e aborrecidas passam a ser feitas por software: mais depressa, sem erros e a qualquer hora. — <em>Automação</em></span>
+      <span class="idx-arrow">↗</span>
+    </a>
+    <a href="/servicos#integracoes" class="idx-row linked" style="padding-left:var(--pad);padding-right:var(--pad)">
+      <span class="idx-num">/03</span>
+      <span class="idx-title">Ligar o que já usa</span>
+      <span class="idx-desc">Construímos as pontes que faltam entre os sistemas que a sua empresa já utiliza. Sem migrações dolorosas, apenas pôr tudo a falar a mesma língua. — <em>Integrações</em></span>
+      <span class="idx-arrow">↗</span>
+    </a>
+    <a href="/servicos#ia" class="idx-row linked close" style="padding-left:var(--pad);padding-right:var(--pad)">
+      <span class="idx-num">/04</span>
+      <span class="idx-title">IA em tarefas reais</span>
+      <span class="idx-desc">Ler faturas por fotografia, extrair dados de PDFs, classificar informação automaticamente. IA aplicada ao trabalho real do dia a dia. — <em>IA aplicada</em></span>
+      <span class="idx-arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ LIGHT FIELD: PROVA ============ -->
+<section class="theme-light pad">
+  <div class="split-5-6">
+    <div class="split-side">
+      <span class="mono-label eyebrow">(04) — Prova, não promessas</span>
+      <h2 class="big" style="font-size:clamp(32px,5.2vw,72px);margin:0">Feito para quem quer ir além do Excel</h2>
+      <div class="shot r-4-3"><span class="cap">screenshot real — leitura de faturas por IA</span></div>
+    </div>
+    <div class="ledger">
+      <div class="lrow">
+        <span class="letter">a.</span>
+        <div><h3>Percebemos de negócio, não só de código</h3><p>Temos formação em gestão, economia e engenharia. Falamos a sua língua: de custos, P&amp;L e processos, e não apenas de linguagem informática.</p></div>
+      </div>
+      <div class="lrow">
+        <span class="letter">b.</span>
+        <div><h3>Sempre contactáveis</h3><p>Trabalhamos de forma próxima e transparente. Nada de desaparecer durante meses. Estamos à distância de uma mensagem ou chamada para o que for preciso.</p></div>
+      </div>
+      <div class="lrow">
+        <span class="letter">c.</span>
+        <div><h3>Entregas, não só reuniões</h3><p>Trabalhamos de forma ágil. Vai vendo o software ganhar vida aos poucos, para podermos corrigir a rota juntos.</p></div>
+      </div>
+      <div class="lrow close">
+        <span class="letter">d.</span>
+        <div><h3>Garantia de correção</h3><p>Sabemos que na prática surgem sempre ajustes. Após a entrega, garantimos um período gratuito para afinações e correções. Tudo acordado de forma transparente.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASOS (dark panel) ============ -->
+<section id="casos" class="theme-panel pad">
+  <div class="split-8-4" style="align-items:end;margin-bottom:clamp(48px,6vw,90px)">
+    <div>
+      <span class="mono-label" style="color:var(--accent)">(05) — Um exemplo do que já fizemos</span>
+      <h2 class="big" style="font-size:clamp(36px,5.6vw,84px);margin-top:16px">Soluções reais em produção</h2>
+    </div>
+    <a href="/casos" class="link-arrow on-dark" style="justify-self:end;white-space:nowrap">Ver todos os casos <span class="arrow">↗</span></a>
+  </div>
+
+  <div class="casos-grid">
+    <a href="/casos#back-office" class="c1" style="text-decoration:none;color:var(--light);display:block">
+      <div class="shot r-16-10"><span class="cap">screenshot real — back-office</span></div>
+      <div class="case-cap"><span class="t">Back-office hoteleiro</span><span class="d">Hotel independente · Aveiro</span></div>
+    </a>
+    <a href="/casos#back-office" class="c2" style="text-decoration:none;color:var(--light);display:block">
+      <div class="shot r-4-5"><span class="cap">screenshot real — faturas IA</span></div>
+      <div class="case-cap"><span class="t">Leitura de faturas (IA)</span><span class="d">Foto → NIF, valores</span></div>
+    </a>
+    <a href="/casos#back-office" class="c3" style="text-decoration:none;color:var(--light);display:block">
+      <div class="shot r-16-9"><span class="cap">screenshot real — P&amp;L USALI</span></div>
+      <div class="case-cap"><span class="t">P&amp;L automático</span><span class="d">Formato USALI · integrado com PMS</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ LIGHT FIELD: MÉTODO ============ -->
+<section id="metodo" class="theme-light pad">
+  <div class="section-head">
+    <span class="mono-label eyebrow">(06) — Como trabalhamos</span>
+    <span class="mono-label right">Do diagnóstico à entrega</span>
+  </div>
+  <h2 class="big" style="font-size:clamp(36px,5.6vw,84px)">Sem complicações.<br>O foco é o seu problema.</h2>
+  <p class="lede" style="margin-bottom:clamp(48px,6vw,90px)">Três passos simples, do primeiro diagnóstico até à entrega com garantia.</p>
+
+  <div class="method-grid">
+    <article class="method-card">
+      <span class="mono-label" style="color:var(--ink-2)">i. Diagnóstico</span>
+      <div class="amt">Grátis<small> / 30 min</small></div>
+      <p>Para percebermos onde dói. Falamos sobre a sua operação, identificamos gargalos e damos uma recomendação honesta. Sem compromisso.</p>
+      <a href="/contactos" class="btn-outline-dark">Marcar ↗</a>
+    </article>
+    <article class="method-card hl">
+      <span class="mono-label" style="color:var(--primary)">ii. Desenho &amp; Proposta</span>
+      <div class="amt">Caso a caso</div>
+      <p>Não temos tabelas rígidas. Desenhamos a solução para o seu problema específico e apresentamos um orçamento e prazo adequados à sua realidade.</p>
+      <a href="/contactos" class="btn-solid">Falar connosco ↗</a>
+    </article>
+    <article class="method-card">
+      <span class="mono-label" style="color:var(--ink-2)">iii. Desenvolvimento &amp; Entrega</span>
+      <div class="amt">Garantia<small> incluída</small></div>
+      <p>Construímos a solução mantendo-o a par de tudo. Quando entregamos, oferecemos um período de garantia e correções definido contratualmente, para garantir que tudo funciona como deve.</p>
+    </article>
+  </div>
+  <div style="margin-top:28px;text-align:right">
+    <a href="/como-trabalhamos" class="mono-link">Ver o método completo →</a>
+  </div>
+</section>
+
+<!-- ============ LIGHT FIELD: SOBRE ============ -->
+<section id="sobre" class="theme-light pad-t0" style="padding:0 var(--pad) clamp(64px,9vw,140px)">
+  <div class="split-7-5" style="border-top:1px solid var(--line);padding-top:clamp(48px,6vw,90px)">
+    <div>
+      <span class="mono-label eyebrow">(07) — Sobre</span>
+      <blockquote class="big-quote">"Percebemos do negócio do cliente, <span class="rust">não só de código.</span>"</blockquote>
+      <div class="chips mt">
+        <span class="chip">Economia &amp; Finanças</span>
+        <span class="chip">Engenharia</span>
+        <span class="chip">Produto &amp; Operação</span>
+        <span class="chip hl">Nova SBE · Nova FCT</span>
+      </div>
+      <div class="team-grid">
+        <figure>
+          <img src="/assets/team-1.jpg" alt="Martim Gonçalves">
+          <figcaption>Martim Gonçalves<br>Gestão &amp; Finanças</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/team-2.jpg" alt="Júlio Lopes">
+          <figcaption>Júlio Lopes<br>Engenharia &amp; Produto</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/team-3.jpg" alt="Marcos Romão">
+          <figcaption>Marcos Romão<br>Engenharia</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="rule-left" style="display:flex;flex-direction:column;gap:20px">
+      <h2 style="font-weight:700;font-size:22px;letter-spacing:-0.01em">Quem está do outro lado</h2>
+      <p style="color:var(--ink-2)">Somos três cofundadores com backgrounds que se complementam: Economia, Finanças e Engenharia (Nova SBE · Nova FCT). Vivemos a operação por dentro e começámos a construir software porque víamos demasiadas horas a perderem-se em tarefas manuais.</p>
+      <p style="color:var(--ink-2)">Somos pragmáticos: o nosso foco é encontrar o problema e desenhar a solução. E honestidade acima de tudo — se não conseguirmos ajudar ou se não fizer sentido avançar, dizemos-lhe logo na primeira reunião.</p>
+      <dl class="dl-rows">
+        <div class="dl-row"><dt>Honestidade de âmbito</dt><dd>Se não fizer sentido, dizemos.</dd></div>
+        <div class="dl-row close"><dt>Prova antes de promessa</dt><dd>Software a correr, não slides.</dd></div>
+      </dl>
+      <a href="/sobre" class="link-arrow on-light" style="align-self:flex-start">Conhecer a equipa ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA (rust) ============ -->
+<section class="theme-rust" style="padding:clamp(80px,11vw,170px) var(--pad)">
+  <div style="display:flex;flex-direction:column;gap:32px">
+    <span class="mono-label">(08) — Comece aqui</span>
+    <h2 class="big" style="font-size:clamp(38px,7.6vw,116px);max-width:18ch">Se o processo cabe numa folha de papel ou de Excel, nós otimizamo-lo.</h2>
+    <div class="intro-row" style="margin-top:0;align-items:end">
+      <a href="/contactos" class="btn-solid-invert" style="justify-self:start">Marcar diagnóstico gratuito ↗</a>
+      <p class="cta-note">Conte-nos o seu problema em 30 minutos. Se conseguirmos ajudar, dizemos como. Se não for para nós, dizemos também.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/assets/logo-full.png" alt="MJM Solutions">
+      <p>Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
+      <a href="/contactos" class="link-arrow on-dark">Marcar diagnóstico ↗</a>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
       <a href="/servicos">Serviços</a>
       <a href="/casos">Casos</a>
       <a href="/como-trabalhamos">Como trabalhamos</a>
       <a href="/sobre">Sobre</a>
+    </div>
+    <div class="footer-col">
+      <h4>Suporte</h4>
+      <a href="/como-trabalhamos#faq">Perguntas frequentes</a>
       <a href="/contactos">Contactos</a>
+      <a href="/como-trabalhamos#garantias">Garantias &amp; RGPD</a>
     </div>
-    <a href="/contactos" class="btn btn-primary">Marcar diagnóstico <span>↗</span></a>
-  </nav>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
+      <a href="#">WhatsApp</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-fine">
+    <span>© 2026 MJM Solutions. Todos os direitos reservados.</span>
+    <span>Software à medida · Portugal</span>
+  </div>
+</footer>
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-grid">
-      <div>
-        <div class="badge">
-          <div class="avatars">
-            <img src="/assets/team-1.jpg" alt="Co-fundador MJM">
-            <img src="/assets/team-2.jpg" alt="Co-fundador MJM">
-            <img src="/assets/team-3.jpg" alt="Co-fundador MJM">
-          </div>
-          <span>PMEs de serviços<br><small>confiam na MJM</small></span>
-        </div>
-        <h1>O software molda-se<br>à sua operação.</h1>
-        <p class="sub">Plataformas à medida, integrações e IA aplicada a tarefas reais: ler faturas, cruzar dados, gerar relatórios. Sem catálogos, sem caixas pré-fabricadas.</p>
-        <a href="/contactos" class="btn btn-primary">Marcar diagnóstico gratuito <span>↗</span></a>
-      </div>
-      <div class="hero-visual">
-        <!-- MOCK: dashboard de back-office (substituir por screenshot real) -->
-        <svg class="mock" viewBox="0 0 640 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Exemplo de plataforma de gestão">
-          <rect width="640" height="430" rx="16" fill="#ffffff"/>
-          <rect width="640" height="46" rx="16" fill="#f4f2ef"/>
-          <rect y="30" width="640" height="16" fill="#f4f2ef"/>
-          <circle cx="26" cy="23" r="5" fill="#d98a4e"/><circle cx="44" cy="23" r="5" fill="#e4e2de"/><circle cx="62" cy="23" r="5" fill="#e4e2de"/>
-          <text x="90" y="28" font-family="Archivo" font-weight="700" font-size="13" fill="#33352F">MJM · Back-office · Julho 2026</text>
-          <rect x="0" y="46" width="150" height="384" fill="#26281f"/>
-          <rect x="20" y="76" width="110" height="12" rx="6" fill="#B26530"/>
-          <rect x="20" y="104" width="90" height="9" rx="4.5" fill="#4E524B"/>
-          <rect x="20" y="126" width="100" height="9" rx="4.5" fill="#4E524B"/>
-          <rect x="20" y="148" width="80" height="9" rx="4.5" fill="#4E524B"/>
-          <rect x="20" y="170" width="95" height="9" rx="4.5" fill="#4E524B"/>
-          <rect x="170" y="70" width="140" height="70" rx="10" fill="#f4f2ef"/>
-          <text x="184" y="98" font-family="Public Sans" font-size="11" fill="#6b6e68">Receita</text>
-          <text x="184" y="122" font-family="Archivo" font-weight="900" font-size="20" fill="#33352F">€ 148.2k</text>
-          <rect x="322" y="70" width="140" height="70" rx="10" fill="#f4f2ef"/>
-          <text x="336" y="98" font-family="Public Sans" font-size="11" fill="#6b6e68">GOP</text>
-          <text x="336" y="122" font-family="Archivo" font-weight="900" font-size="20" fill="#33352F">41.3%</text>
-          <rect x="474" y="70" width="146" height="70" rx="10" fill="#B26530"/>
-          <text x="488" y="98" font-family="Public Sans" font-size="11" fill="#fbe6d6">Faturas lidas</text>
-          <text x="488" y="122" font-family="Archivo" font-weight="900" font-size="20" fill="#fff">312</text>
-          <rect x="170" y="160" width="450" height="240" rx="10" fill="#f4f2ef"/>
-          <text x="186" y="188" font-family="Archivo" font-weight="700" font-size="13" fill="#33352F">P&amp;L mensal · USALI</text>
-          <g>
-            <rect x="196" y="330" width="34" height="46" rx="4" fill="#cfcbc4"/>
-            <rect x="246" y="300" width="34" height="76" rx="4" fill="#cfcbc4"/>
-            <rect x="296" y="270" width="34" height="106" rx="4" fill="#B26530"/>
-            <rect x="346" y="292" width="34" height="84" rx="4" fill="#cfcbc4"/>
-            <rect x="396" y="248" width="34" height="128" rx="4" fill="#B26530"/>
-            <rect x="446" y="286" width="34" height="90" rx="4" fill="#cfcbc4"/>
-            <rect x="496" y="224" width="34" height="152" rx="4" fill="#D98A4E"/>
-            <rect x="546" y="262" width="34" height="114" rx="4" fill="#cfcbc4"/>
-          </g>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATEMENT + STATS -->
-  <section class="section section-2">
-    <h2 class="stat-head">Para quem quer poupar horas, reduzir erros<br>e decidir com dados a tempo.</h2>
-    <div class="stats">
-      <div class="stat hl">
-        <div class="big">2025</div>
-        <div class="lbl">Em produção</div>
-        <p>Plataforma de back-office a correr diariamente num hotel independente.</p>
-      </div>
-      <div class="stat">
-        <div class="big">100%</div>
-        <div class="lbl">Código seu</div>
-        <p>Todo o código e documentação são propriedade do cliente. Sem dependência escondida.</p>
-      </div>
-      <div class="stat">
-        <div class="big">30 min</div>
-        <div class="lbl">Diagnóstico grátis</div>
-        <p>Uma conversa franca. Saímos com os 2 ou 3 gargalos mais caros identificados.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVIÇOS -->
-  <section class="section" id="servicos">
-    <span class="eyebrow">Serviços</span>
-    <h2 class="h2" style="margin-top:12px">Quatro formas de<br>resolver o problema</h2>
-    <p class="lead" style="max-width:560px">O ponto de partida é sempre o seu processo real, nunca um produto pré-feito. Se não fizer sentido construir, dizemos-lho na primeira conversa.</p>
-    <div class="svc-grid">
-      <div class="svc g1">
-        <a class="svc-link" href="/servicos#software" aria-label="Software à medida"></a>
-        <span class="tag">Software à medida</span>
-        <div>
-          <h3>Plataformas de raiz</h3>
-          <p>Sistemas desenhados para os seus processos. O software adapta-se à operação, não o contrário.</p>
-          <span class="more">Saber mais →</span>
-        </div>
-      </div>
-      <div class="svc g2">
-        <a class="svc-link" href="/servicos#automacao" aria-label="Automação"></a>
-        <span class="tag">Automação</span>
-        <div>
-          <h3>Menos trabalho manual</h3>
-          <p>As tarefas repetitivas mais caras feitas por software: mais depressa, sem erros, a qualquer hora.</p>
-          <span class="more">Saber mais →</span>
-        </div>
-      </div>
-      <div class="svc g3">
-        <a class="svc-link" href="/servicos#integracoes" aria-label="Integrações"></a>
-        <span class="tag">Integrações</span>
-        <div>
-          <h3>Ligar o que já usa</h3>
-          <p>Peças que ligam os seus sistemas e preenchem as falhas. Sem substituir nada, sem migração dolorosa.</p>
-          <span class="more">Saber mais →</span>
-        </div>
-      </div>
-      <div class="svc g4">
-        <a class="svc-link" href="/servicos#ia" aria-label="IA aplicada"></a>
-        <span class="tag">IA aplicada</span>
-        <div>
-          <h3>IA em tarefas reais</h3>
-          <p>Ler faturas por fotografia, extrair dados de PDFs, classificar informação. Trabalho real, não chatbots de fachada.</p>
-          <span class="more">Saber mais →</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURE LIST -->
-  <section class="section">
-    <span class="eyebrow" style="color:var(--accent);background:var(--ink-2);padding:8px 16px;border-radius:100px;display:inline-block">Prova, não promessas</span>
-    <h2 class="h2" style="margin-top:14px">Feito para quem quer<br>ir além do Excel</h2>
-    <div class="feat">
-      <div class="feat-visual">
-        <!-- MOCK: leitura de fatura por IA (substituir por screenshot real) -->
-        <svg class="mock" viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Leitura de fatura por IA" style="box-shadow:none;border:none">
-          <rect width="480" height="380" rx="14" fill="#33352F"/>
-          <rect x="30" y="40" width="170" height="300" rx="8" fill="#f4f2ef"/>
-          <rect x="46" y="60" width="90" height="10" rx="5" fill="#B26530"/>
-          <rect x="46" y="86" width="138" height="6" rx="3" fill="#cfcbc4"/>
-          <rect x="46" y="100" width="120" height="6" rx="3" fill="#cfcbc4"/>
-          <rect x="46" y="128" width="138" height="6" rx="3" fill="#e0ddd7"/>
-          <rect x="46" y="142" width="110" height="6" rx="3" fill="#e0ddd7"/>
-          <rect x="46" y="156" width="130" height="6" rx="3" fill="#e0ddd7"/>
-          <rect x="46" y="184" width="138" height="6" rx="3" fill="#e0ddd7"/>
-          <rect x="46" y="198" width="96" height="6" rx="3" fill="#e0ddd7"/>
-          <rect x="46" y="300" width="70" height="12" rx="4" fill="#33352F"/>
-          <text x="216" y="196" font-family="Archivo" font-weight="900" font-size="26" fill="#D98A4E">→</text>
-          <rect x="250" y="52" width="200" height="60" rx="10" fill="#3f4238"/>
-          <text x="266" y="76" font-family="Public Sans" font-size="10" fill="#9a9c95">NIF fornecedor</text>
-          <text x="266" y="98" font-family="Archivo" font-weight="700" font-size="15" fill="#fff">PT 503 245 118</text>
-          <rect x="250" y="122" width="200" height="60" rx="10" fill="#3f4238"/>
-          <text x="266" y="146" font-family="Public Sans" font-size="10" fill="#9a9c95">Total c/ IVA</text>
-          <text x="266" y="168" font-family="Archivo" font-weight="700" font-size="15" fill="#fff">€ 1.284,50</text>
-          <rect x="250" y="192" width="200" height="60" rx="10" fill="#B26530"/>
-          <text x="266" y="216" font-family="Public Sans" font-size="10" fill="#fbe6d6">Estado</text>
-          <text x="266" y="238" font-family="Archivo" font-weight="700" font-size="15" fill="#fff">✓ Sem duplicados</text>
-          <rect x="250" y="262" width="200" height="60" rx="10" fill="#3f4238"/>
-          <text x="266" y="286" font-family="Public Sans" font-size="10" fill="#9a9c95">Classificação</text>
-          <text x="266" y="308" font-family="Archivo" font-weight="700" font-size="15" fill="#fff">F&amp;B · Bebidas</text>
-        </svg>
-      </div>
-      <div class="feat-list">
-        <div class="row">
-          <div>
-            <h3>Percebemos do seu negócio</h3>
-            <p>Formação em gestão e experiência dentro da operação — de P&amp;L, custos e processos, não só de código.</p>
-          </div>
-          <div class="dot hl">↗</div>
-        </div>
-        <div class="row">
-          <div>
-            <h3>Prova em produção</h3>
-            <p>Software a correr todos os dias, com resultados medidos. Sem demos de laboratório.</p>
-          </div>
-          <div class="dot">↗</div>
-        </div>
-        <div class="row">
-          <div>
-            <h3>Entregas, não só reuniões</h3>
-            <p>Ciclos curtos e frequentes. Vê e usa o software antes de estar terminado.</p>
-          </div>
-          <div class="dot">↗</div>
-        </div>
-        <div class="row">
-          <div>
-            <h3>Código que fica seu</h3>
-            <p>Documentado e pronto para outro programador continuar. Sem dependência escondida.</p>
-          </div>
-          <div class="dot">↗</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CASOS -->
-  <section class="band" id="casos">
-    <div class="band-head">
-      <div>
-        <span class="eyebrow">Casos</span>
-        <h2 class="h2" style="margin-top:12px">Software em produção,<br>com resultados medidos</h2>
-      </div>
-      <a href="/casos" class="btn btn-primary">Ver todos os casos <span>↗</span></a>
-    </div>
-    <div class="cases">
-      <a class="case" href="/casos#back-office">
-        <svg class="shot" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-label="Back-office hoteleiro">
-          <rect width="300" height="300" fill="#20211a"/>
-          <rect x="24" y="26" width="120" height="10" rx="5" fill="#B26530"/>
-          <rect x="24" y="54" width="252" height="60" rx="8" fill="#2c2e25"/>
-          <rect x="24" y="126" width="120" height="120" rx="8" fill="#2c2e25"/>
-          <rect x="156" y="126" width="120" height="56" rx="8" fill="#2c2e25"/>
-          <rect x="156" y="190" width="120" height="56" rx="8" fill="#B26530"/>
-          <rect x="40" y="150" width="60" height="6" rx="3" fill="#4E524B"/>
-          <rect x="40" y="166" width="88" height="6" rx="3" fill="#4E524B"/>
-        </svg>
-        <div class="veil"></div>
-        <div class="cap"><div class="t">Back-office hoteleiro</div><div class="d">Hotel independente · Aveiro</div></div>
-      </a>
-      <a class="case" href="/casos#back-office">
-        <svg class="shot" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-label="Leitura de faturas por IA">
-          <rect width="300" height="300" fill="#20211a"/>
-          <rect x="30" y="40" width="90" height="150" rx="8" fill="#f4f2ef"/>
-          <rect x="42" y="56" width="50" height="8" rx="4" fill="#B26530"/>
-          <rect x="42" y="78" width="66" height="5" rx="2.5" fill="#cfcbc4"/>
-          <rect x="42" y="92" width="54" height="5" rx="2.5" fill="#cfcbc4"/>
-          <text x="140" y="120" font-family="Archivo" font-weight="900" font-size="22" fill="#D98A4E">→</text>
-          <rect x="176" y="60" width="96" height="40" rx="8" fill="#2c2e25"/>
-          <rect x="176" y="110" width="96" height="40" rx="8" fill="#B26530"/>
-          <rect x="176" y="160" width="96" height="40" rx="8" fill="#2c2e25"/>
-        </svg>
-        <div class="veil"></div>
-        <div class="cap"><div class="t">Leitura de faturas (IA)</div><div class="d">Foto → NIF, valores, fornecedor</div></div>
-      </a>
-      <a class="case" href="/casos#back-office">
-        <svg class="shot" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-label="P&L automático">
-          <rect width="300" height="300" fill="#20211a"/>
-          <rect x="24" y="30" width="140" height="10" rx="5" fill="#D98A4E"/>
-          <g fill="#2c2e25">
-            <rect x="24" y="58" width="252" height="26" rx="5"/>
-            <rect x="24" y="90" width="252" height="26" rx="5"/>
-            <rect x="24" y="122" width="252" height="26" rx="5"/>
-          </g>
-          <rect x="24" y="122" width="180" height="26" rx="5" fill="#B26530"/>
-          <rect x="24" y="170" width="110" height="90" rx="8" fill="#2c2e25"/>
-          <rect x="146" y="170" width="130" height="90" rx="8" fill="#2c2e25"/>
-          <circle cx="201" cy="215" r="30" fill="none" stroke="#B26530" stroke-width="12" stroke-dasharray="120 60"/>
-        </svg>
-        <div class="veil"></div>
-        <div class="cap"><div class="t">P&amp;L automático</div><div class="d">Formato USALI · integrado com PMS</div></div>
-      </a>
-    </div>
-  </section>
-
-  <!-- COMO SE COMPRA -->
-  <section class="section" id="metodo">
-    <div class="center-head">
-      <span class="eyebrow">Como trabalhamos</span>
-      <h2 class="h2" style="margin-top:12px">Modelos simples e honestos</h2>
-      <p class="lead">Preço fechado por fase, direito de parar no fim de cada fase e código sempre seu. Sem contadores de horas invisíveis.</p>
-    </div>
-    <div class="prices">
-      <div class="price">
-        <h3>Diagnóstico</h3>
-        <div class="desc">Para perceber onde dói antes de investir.</div>
-        <div class="amt">Grátis <small>/ 30 min</small></div>
-        <a href="/contactos" class="btn btn-dark">Marcar</a>
-        <div class="recv">O que recebe</div>
-        <ul><li>Resumo escrito dos gargalos</li><li>Recomendação honesta</li><li>Sem compromisso</li></ul>
-      </div>
-      <div class="price hl">
-        <span class="flag">Mais comum</span>
-        <h3>Projeto por fases</h3>
-        <div class="desc">Software construído em ciclos curtos.</div>
-        <div class="amt">Preço fechado <small>/ por fase</small></div>
-        <a href="/contactos" class="btn btn-primary">Pedir proposta</a>
-        <div class="recv">O que recebe</div>
-        <ul><li>Âmbito e prazo fechados</li><li>Direito de parar por fase</li><li>Código e documentação seus</li><li>Formação da equipa</li></ul>
-      </div>
-      <div class="price">
-        <h3>Avença</h3>
-        <div class="desc">Manutenção e evolução contínua.</div>
-        <div class="amt">Mensal <small>/ opcional</small></div>
-        <a href="/contactos" class="btn btn-dark">Falar connosco</a>
-        <div class="recv">O que recebe</div>
-        <ul><li>Correções e melhorias</li><li>Acompanhamento próximo</li><li>Sem fidelização escondida</li></ul>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:30px"><a href="/como-trabalhamos" class="btn btn-dark">Ver o método completo <span>↗</span></a></div>
-  </section>
-
-  <!-- SOBRE + EQUIPA -->
-  <section class="section" id="sobre">
-    <div class="about">
-      <div class="about-panel">
-        <div class="quote">Percebemos do negócio do cliente, <em>não só de código.</em></div>
-        <div class="chips">
-          <span>Economia &amp; Finanças</span>
-          <span>Engenharia</span>
-          <span>Produto &amp; Operação</span>
-        </div>
-        <div class="edu">Nova SBE · Nova FCT · com software em produção</div>
-      </div>
-      <div>
-        <span class="eyebrow">Sobre</span>
-        <h2 class="h2">Quem está do outro lado</h2>
-        <p>Somos três co-fundadores com formações complementares — economia e finanças, e engenharia. Vivemos a operação por dentro (hotelaria, gestão de ativos, P&amp;L, USALI) e construímos software porque víamos as horas a perderem-se. O primeiro sistema nasceu para resolver um problema nosso, não para vender.</p>
-        <p>Trabalhamos com poucos clientes de cada vez, de propósito. Cada projeto tem a nossa atenção direta, do diagnóstico ao lançamento.</p>
-        <div class="values">
-          <div class="v"><b>Honestidade de âmbito</b><span>Se não fizer sentido, dizemos.</span></div>
-          <div class="v"><b>Prova antes de promessa</b><span>Software a correr, não slides.</span></div>
-        </div>
-        <a href="/sobre" class="btn btn-dark" style="margin-top:26px">Conhecer a equipa <span>↗</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="cta">
-    <div class="cta-inner">
-      <h2>Se o processo cabe numa folha<br>de papel, nós construímo-lo.</h2>
-      <p>Conte-nos em 30 minutos. Se conseguirmos ajudar, dizemos como. Se não, dizemos também.</p>
-      <a href="/contactos" class="btn btn-primary">Marcar diagnóstico gratuito <span>↗</span></a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <div class="brand"><span class="o">MJM</span><span class="s"> Solutions</span></div>
-        <p class="about-txt">Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
-        <a href="/contactos" class="btn btn-primary">Marcar diagnóstico ↗</a>
-      </div>
-      <div class="col">
-        <h4>Navegação</h4>
-        <a href="/servicos">Serviços</a>
-        <a href="/casos">Casos</a>
-        <a href="/como-trabalhamos">Como trabalhamos</a>
-        <a href="/sobre">Sobre</a>
-      </div>
-      <div class="col">
-        <h4>Suporte</h4>
-        <a href="/como-trabalhamos#faq">Perguntas frequentes</a>
-        <a href="/contactos">Contactos</a>
-        <a href="/como-trabalhamos#garantias">Garantias &amp; RGPD</a>
-      </div>
-      <div class="col">
-        <h4>Contacto</h4>
-        <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
-        <a href="#">WhatsApp</a>
-        <a href="#">LinkedIn</a>
-      </div>
-    </div>
-    <div class="fine">
-      <span>© 2026 MJM Solutions. Todos os direitos reservados.</span>
-      <span>Software à medida · Portugal</span>
-    </div>
-  </footer>
-
-</div>
 </body>
 </html>

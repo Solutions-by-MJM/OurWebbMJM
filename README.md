@@ -60,6 +60,10 @@ Feito: as 6 páginas (Homepage, Serviços, Casos, Como trabalhamos, Sobre, Conta
 
 ## Design system (para manter consistência)
 
-- Tipografia: **Archivo** (títulos, maiúsculas) + **Public Sans** (corpo)
-- Cores: primária `#B26530`, acento `#D98A4E`, escuro `#26281f`/`#33352F`, fundo `#eceae7`
-- Cartões arredondados 26px, botões pill, espaçamento de 14px entre secções
+Estética editorial/agência (substituiu a versão anterior em cartões arredondados):
+
+- Tipografia: **Archivo** (títulos grandes, maiúsculas) + **Public Sans** (corpo) + **IBM Plex Mono** (rótulos "(01) — Secção", números de índice)
+- Cores: fundo escuro `#20211A`, painel `#26281F`, claro `#F4F2EF`, primária terracota `#B26530`, acento `#D98A4E`
+- Layout full-bleed (sem `.wrap`/cartões), secções alternam `theme-dark`/`theme-light`/`theme-panel`/`theme-rust`, linhas finas (`border-top`) separam blocos tipo "ledger"
+- Componentes reutilizáveis em `styles.css`: `.idx-row` (índice de serviços/casos com hover invertido), `.ledger-row` (stats/fases gigantes), `.lrow` (blocos lettered a./b./c.), `.shot` (placeholder com padrão diagonal para screenshots reais)
+- **Importante:** nunca sobrepor `grid-template-columns` via `style=""` inline num elemento `.split-*` — isso vence a media query mobile (que faz `grid-template-columns:1fr` em ecrãs estreitos) por especificidade CSS. Usar antes uma classe dedicada (`.split-7-5`, `.split-5-6`, `.split-8-4`) ou criar uma nova.

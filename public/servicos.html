@@ -8,243 +8,261 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=2">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=5">
 </head>
 <body>
-<div class="wrap">
 
-  <nav class="nav">
-    <a href="/" class="brand"><span class="o">MJM</span><span class="s"> Solutions</span></a>
-    <div class="nav-links">
-      <a href="/servicos" class="active">Serviços</a>
+<nav class="nav">
+  <a href="/" class="logo" aria-label="MJM Solutions — início"><img src="/assets/logo-mark.png" alt="MJM Solutions"></a>
+  <div class="nav-links">
+    <a href="/servicos" class="nav-link active">Serviços</a>
+    <a href="/casos" class="nav-link">Casos</a>
+    <a href="/como-trabalhamos" class="nav-link">Como trabalhamos</a>
+    <a href="/sobre" class="nav-link">Sobre</a>
+    <a href="/contactos" class="nav-cta">Marcar diagnóstico&nbsp;↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="theme-dark pad-hero">
+  <div class="hero-meta">
+    <span><a href="/" style="color:inherit">Início</a> / Serviços</span>
+    <span class="hl">O que construímos</span>
+  </div>
+  <h1 class="display" style="font-size:clamp(40px,8vw,104px)">O que<br>construímos.</h1>
+  <div class="intro-row">
+    <div class="num">(01) — Serviços</div>
+    <div class="intro-copy">
+      <p>Não temos catálogo nem pacotes fechados. Temos quatro formas de resolver problemas de operação com tecnologia. Em todas, o ponto de partida é o seu processo real, não um produto pré-feito.</p>
+      <a href="/contactos" class="link-arrow on-dark">Marcar diagnóstico gratuito <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- SERVIÇO 01 -->
+<section class="theme-light pad" id="software">
+  <div class="split-5-6">
+    <div class="split-side">
+      <span class="idx-num" style="font-size:15px">/01</span>
+      <h2 class="big" style="font-size:clamp(30px,4vw,56px)">Plataformas de raiz</h2>
+      <span class="mono-label" style="color:var(--ink-2)">Software à medida</span>
+      <div class="shot r-4-3"><span class="cap">screenshot real — plataforma</span></div>
+      <p style="font-size:13px;color:var(--ink-2)"><b>Tecnologia:</b> aplicações web modernas (TypeScript), alojadas em infraestrutura cloud europeia.</p>
+    </div>
+    <div class="ledger">
+      <div class="lrow">
+        <span class="letter">a.</span>
+        <div><h3>O que é</h3><p>Plataformas e sistemas de gestão desenhados de raiz para os processos da sua empresa. O software adapta-se à operação, nunca o contrário.</p></div>
+      </div>
+      <div class="lrow">
+        <span class="letter">b.</span>
+        <div><h3>Sinais de que precisa disto</h3><ul>
+          <li>Gere a operação em Excels que só uma pessoa percebe.</li>
+          <li>O software genérico que comprou obriga a equipa a truques e gambiarras.</li>
+          <li>Tem um processo único que nenhum produto de prateleira cobre.</li>
+        </ul></div>
+      </div>
+      <div class="lrow">
+        <span class="letter">c.</span>
+        <div><h3>Exemplos concretos</h3><ul>
+          <li>Plataforma de back-office hoteleiro: captura de faturas por fotografia, controlo de custos e P&amp;L mensal automático.</li>
+          <li>Portal interno de gestão de pedidos entre departamentos.</li>
+          <li>Sistema de gestão de contratos e prazos com alertas.</li>
+        </ul></div>
+      </div>
+      <div class="lrow close">
+        <span class="letter">d.</span>
+        <div><h3>O que entregamos</h3><ul>
+          <li>Aplicação web acessível de qualquer dispositivo.</li>
+          <li>Manual de utilização e formação da equipa.</li>
+          <li>Código e documentação, propriedade do cliente.</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇO 02 -->
+<section class="theme-light pad pad-t0" id="automacao">
+  <div class="split-5-6" style="border-top:1px solid var(--line);padding-top:clamp(64px,9vw,140px)">
+    <div class="split-side">
+      <span class="idx-num" style="font-size:15px">/02</span>
+      <h2 class="big" style="font-size:clamp(30px,4vw,56px)">Menos trabalho manual</h2>
+      <span class="mono-label" style="color:var(--ink-2)">Automação de processos</span>
+      <div class="shot r-4-3"><span class="cap">screenshot real — automação</span></div>
+      <p style="font-size:13px;color:var(--ink-2)"><b>Tecnologia:</b> automações e workers em cloud europeia, com monitorização e alertas de falha.</p>
+    </div>
+    <div class="ledger">
+      <div class="lrow">
+        <span class="letter">a.</span>
+        <div><h3>O que é</h3><p>Identificamos as tarefas manuais repetitivas mais caras da sua operação e pomos software a fazê-las: mais depressa, sem erros e a qualquer hora.</p></div>
+      </div>
+      <div class="lrow">
+        <span class="letter">b.</span>
+        <div><h3>Sinais de que precisa disto</h3><ul>
+          <li>Relatórios que demoram um dia inteiro a montar.</li>
+          <li>Emails de rotina escritos um a um.</li>
+          <li>Verificações e conferências feitas linha a linha.</li>
+        </ul></div>
+      </div>
+      <div class="lrow">
+        <span class="letter">c.</span>
+        <div><h3>Exemplos concretos</h3><ul>
+          <li>Geração automática de relatórios de gestão mensais.</li>
+          <li>Deteção automática de faturas duplicadas antes do pagamento.</li>
+          <li>Recolha e organização automática de dados de fontes externas.</li>
+        </ul></div>
+      </div>
+      <div class="lrow close">
+        <span class="letter">d.</span>
+        <div><h3>O que entregamos</h3><ul>
+          <li>Processo automatizado em produção.</li>
+          <li>Alertas quando algo falha.</li>
+          <li>Medição do tempo poupado.</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇO 03 -->
+<section class="theme-light pad pad-t0" id="integracoes">
+  <div class="split-5-6" style="border-top:1px solid var(--line);padding-top:clamp(64px,9vw,140px)">
+    <div class="split-side">
+      <span class="idx-num" style="font-size:15px">/03</span>
+      <h2 class="big" style="font-size:clamp(30px,4vw,56px)">Ligar o que já usa</h2>
+      <span class="mono-label" style="color:var(--ink-2)">Integrações e módulos</span>
+      <div class="shot r-4-3"><span class="cap">screenshot real — integração</span></div>
+      <p style="font-size:13px;color:var(--ink-2)"><b>Tecnologia:</b> APIs, webhooks e conectores à medida; infraestrutura europeia.</p>
+    </div>
+    <div class="ledger">
+      <div class="lrow">
+        <span class="letter">a.</span>
+        <div><h3>O que é</h3><p>Peças de software que ligam os sistemas que já usa e preenchem as falhas entre eles. Sem substituir nada, sem migração dolorosa.</p></div>
+      </div>
+      <div class="lrow">
+        <span class="letter">b.</span>
+        <div><h3>Sinais de que precisa disto</h3><ul>
+          <li>Alguém na equipa copia dados de um programa para outro todas as semanas.</li>
+          <li>O seu ERP ou PMS faz 80% do que precisa e os outros 20% são feitos à mão.</li>
+          <li>Quer relatórios que cruzem dados de dois sistemas que não falam entre si.</li>
+        </ul></div>
+      </div>
+      <div class="lrow">
+        <span class="letter">c.</span>
+        <div><h3>Exemplos concretos</h3><ul>
+          <li>Integração com PMS hoteleiro para importar receita diária diretamente para o P&amp;L.</li>
+          <li>Ligação entre software de faturação e folha de controlo de tesouraria.</li>
+          <li>Exportações automáticas para o contabilista no formato certo.</li>
+        </ul></div>
+      </div>
+      <div class="lrow close">
+        <span class="letter">d.</span>
+        <div><h3>O que entregamos</h3><ul>
+          <li>Módulo em funcionamento.</li>
+          <li>Documentação da integração.</li>
+          <li>Monitorização de erros.</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇO 04 -->
+<section class="theme-light pad pad-t0" id="ia">
+  <div class="split-5-6" style="border-top:1px solid var(--line);padding-top:clamp(64px,9vw,140px)">
+    <div class="split-side">
+      <span class="idx-num" style="font-size:15px">/04</span>
+      <h2 class="big" style="font-size:clamp(30px,4vw,56px)">IA em tarefas reais</h2>
+      <span class="mono-label" style="color:var(--ink-2)">IA aplicada</span>
+      <div class="shot r-4-3"><span class="cap">screenshot real — leitura de faturas por IA</span></div>
+      <p style="font-size:13px;color:var(--ink-2)"><b>Tecnologia:</b> modelos de IA de última geração; dados tratados em conformidade com o RGPD.</p>
+    </div>
+    <div class="ledger">
+      <div class="lrow">
+        <span class="letter">a.</span>
+        <div><h3>O que é</h3><p>Aplicamos os modelos de IA mais avançados a tarefas concretas da sua operação. Nada de chatbots de fachada: IA a fazer trabalho que hoje é feito por pessoas, hora a hora.</p></div>
+      </div>
+      <div class="lrow">
+        <span class="letter">b.</span>
+        <div><h3>Sinais de que precisa disto</h3><ul>
+          <li>A equipa passa horas a ler documentos e a passar dados para sistemas.</li>
+          <li>Recebe informação em formatos desarrumados (PDFs, emails, fotografias) que alguém tem de tratar.</li>
+          <li>Quer respostas rápidas sobre os dados da empresa sem esperar por relatórios.</li>
+        </ul></div>
+      </div>
+      <div class="lrow">
+        <span class="letter">c.</span>
+        <div><h3>Exemplos concretos</h3><ul>
+          <li>Leitura automática de faturas de fornecedores a partir de fotografia, com extração de NIF, valores e classificação do fornecedor.</li>
+          <li>Extração de dados de contratos e documentos PDF.</li>
+          <li>Classificação e encaminhamento automático de pedidos recebidos por email.</li>
+        </ul></div>
+      </div>
+      <div class="lrow close">
+        <span class="letter">d.</span>
+        <div><h3>O que entregamos</h3><ul>
+          <li>Fluxo de IA em produção, com validação humana onde faz sentido.</li>
+          <li>Medição de precisão.</li>
+          <li>Custos de utilização transparentes.</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM TRABALHAMOS -->
+<section class="theme-panel pad">
+  <span class="mono-label" style="color:var(--accent)">(02) — Para quem trabalhamos</span>
+  <h2 class="big" style="font-size:clamp(32px,5vw,72px);margin-top:16px;max-width:16ch">Foco em PMEs de serviços</h2>
+  <p class="ledger-text" style="font-size:17px;max-width:720px">O nosso foco são as PMEs portuguesas de serviços: hotelaria e alojamento, restauração, gestão de propriedades e serviços profissionais. É onde temos software em produção e onde percebemos o negócio por dentro. Mas o método aplica-se a qualquer operação: se tem um processo lento, uma tarefa por automatizar ou uma ideia por transformar em software, vale uma conversa de 30 minutos.</p>
+</section>
+
+<!-- CTA -->
+<section class="theme-rust" style="padding:clamp(80px,11vw,170px) var(--pad)">
+  <div style="display:flex;flex-direction:column;gap:32px">
+    <span class="mono-label">(03) — Comece aqui</span>
+    <h2 class="big" style="font-size:clamp(38px,7vw,100px);max-width:18ch">Não sabe em qual encaixa o seu problema?</h2>
+    <div class="intro-row" style="margin-top:0;align-items:end">
+      <a href="/contactos" class="btn-solid-invert" style="justify-self:start">Marcar diagnóstico gratuito ↗</a>
+      <p class="cta-note">É exatamente para isso que serve o diagnóstico. Conte-nos o processo e dizemos-lhe o que faz sentido — construir, integrar, automatizar, ou nada.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/assets/logo-full.png" alt="MJM Solutions">
+      <p>Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
+      <a href="/contactos" class="link-arrow on-dark">Marcar diagnóstico ↗</a>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <a href="/servicos">Serviços</a>
       <a href="/casos">Casos</a>
       <a href="/como-trabalhamos">Como trabalhamos</a>
       <a href="/sobre">Sobre</a>
+    </div>
+    <div class="footer-col">
+      <h4>Suporte</h4>
+      <a href="/como-trabalhamos#faq">Perguntas frequentes</a>
       <a href="/contactos">Contactos</a>
+      <a href="/como-trabalhamos#garantias">Garantias &amp; RGPD</a>
     </div>
-    <a href="/contactos" class="btn btn-primary">Marcar diagnóstico <span>↗</span></a>
-  </nav>
-
-  <section class="page-hero">
-    <div class="crumb"><a href="/">Início</a> · Serviços</div>
-    <span class="eyebrow">Serviços</span>
-    <h1>O que construímos</h1>
-    <p class="lead">Não temos catálogo nem pacotes fechados. Temos quatro formas de resolver problemas de operação com tecnologia. Em todas, o ponto de partida é o seu processo real, não um produto pré-feito.</p>
-    <a href="/contactos" class="btn btn-primary">Marcar diagnóstico gratuito <span>↗</span></a>
-  </section>
-
-  <section class="section">
-
-    <!-- SOFTWARE À MEDIDA -->
-    <div class="svc-detail" id="software">
-      <div class="side">
-        <span class="sd-tag">Serviço 01</span>
-        <div class="sd-title">Software à medida</div>
-        <div class="sd-tech"><b>Tecnologia</b><br>Aplicações web modernas (TypeScript), alojadas em infraestrutura cloud europeia.</div>
-      </div>
-      <div class="main">
-        <div class="sd-block">
-          <div class="lbl">O que é</div>
-          <p>Plataformas e sistemas de gestão desenhados de raiz para os processos da sua empresa. O software adapta-se à operação, nunca o contrário.</p>
-        </div>
-        <div class="sd-block">
-          <div class="lbl">Sinais de que precisa disto</div>
-          <ul class="check">
-            <li>Gere a operação em Excels que só uma pessoa percebe.</li>
-            <li>O software genérico que comprou obriga a equipa a truques e gambiarras.</li>
-            <li>Tem um processo único que nenhum produto de prateleira cobre.</li>
-          </ul>
-        </div>
-        <div class="sd-block">
-          <div class="lbl">Exemplos concretos</div>
-          <div class="examples">
-            <div class="ex">Plataforma de back-office hoteleiro: captura de faturas por fotografia, controlo de custos e P&amp;L mensal automático.</div>
-            <div class="ex">Portal interno de gestão de pedidos entre departamentos.</div>
-            <div class="ex">Sistema de gestão de contratos e prazos com alertas.</div>
-          </div>
-        </div>
-        <div class="sd-block">
-          <div class="lbl">O que entregamos</div>
-          <ul class="check">
-            <li>Aplicação web acessível de qualquer dispositivo.</li>
-            <li>Manual de utilização e formação da equipa.</li>
-            <li>Código e documentação, propriedade do cliente.</li>
-          </ul>
-        </div>
-      </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
+      <a href="#">WhatsApp</a>
+      <a href="#">LinkedIn</a>
     </div>
+  </div>
+  <div class="footer-fine">
+    <span>© 2026 MJM Solutions. Todos os direitos reservados.</span>
+    <span>Software à medida · Portugal</span>
+  </div>
+</footer>
 
-    <!-- AUTOMAÇÃO -->
-    <div class="svc-detail" id="automacao">
-      <div class="side">
-        <span class="sd-tag">Serviço 02</span>
-        <div class="sd-title">Automação de processos</div>
-        <div class="sd-tech"><b>Tecnologia</b><br>Automações e workers em cloud europeia, com monitorização e alertas de falha.</div>
-      </div>
-      <div class="main">
-        <div class="sd-block">
-          <div class="lbl">O que é</div>
-          <p>Identificamos as tarefas manuais repetitivas mais caras da sua operação e pomos software a fazê-las: mais depressa, sem erros e a qualquer hora.</p>
-        </div>
-        <div class="sd-block">
-          <div class="lbl">Sinais de que precisa disto</div>
-          <ul class="check">
-            <li>Relatórios que demoram um dia inteiro a montar.</li>
-            <li>Emails de rotina escritos um a um.</li>
-            <li>Verificações e conferências feitas linha a linha.</li>
-          </ul>
-        </div>
-        <div class="sd-block">
-          <div class="lbl">Exemplos concretos</div>
-          <div class="examples">
-            <div class="ex">Geração automática de relatórios de gestão mensais.</div>
-            <div class="ex">Deteção automática de faturas duplicadas antes do pagamento.</div>
-            <div class="ex">Recolha e organização automática de dados de fontes externas.</div>
-          </div>
-        </div>
-        <div class="sd-block">
-          <div class="lbl">O que entregamos</div>
-          <ul class="check">
-            <li>Processo automatizado em produção.</li>
-            <li>Alertas quando algo falha.</li>
-            <li>Medição do tempo poupado.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- INTEGRAÇÕES -->
-    <div class="svc-detail" id="integracoes">
-      <div class="side">
-        <span class="sd-tag">Serviço 03</span>
-        <div class="sd-title">Integrações e módulos</div>
-        <div class="sd-tech"><b>Tecnologia</b><br>APIs, webhooks e conectores à medida; infraestrutura europeia.</div>
-      </div>
-      <div class="main">
-        <div class="sd-block">
-          <div class="lbl">O que é</div>
-          <p>Peças de software que ligam os sistemas que já usa e preenchem as falhas entre eles. Sem substituir nada, sem migração dolorosa.</p>
-        </div>
-        <div class="sd-block">
-          <div class="lbl">Sinais de que precisa disto</div>
-          <ul class="check">
-            <li>Alguém na equipa copia dados de um programa para outro todas as semanas.</li>
-            <li>O seu ERP ou PMS faz 80% do que precisa e os outros 20% são feitos à mão.</li>
-            <li>Quer relatórios que cruzem dados de dois sistemas que não falam entre si.</li>
-          </ul>
-        </div>
-        <div class="sd-block">
-          <div class="lbl">Exemplos concretos</div>
-          <div class="examples">
-            <div class="ex">Integração com PMS hoteleiro para importar receita diária diretamente para o P&amp;L.</div>
-            <div class="ex">Ligação entre software de faturação e folha de controlo de tesouraria.</div>
-            <div class="ex">Exportações automáticas para o contabilista no formato certo.</div>
-          </div>
-        </div>
-        <div class="sd-block">
-          <div class="lbl">O que entregamos</div>
-          <ul class="check">
-            <li>Módulo em funcionamento.</li>
-            <li>Documentação da integração.</li>
-            <li>Monitorização de erros.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- IA APLICADA -->
-    <div class="svc-detail" id="ia">
-      <div class="side">
-        <span class="sd-tag">Serviço 04</span>
-        <div class="sd-title">IA aplicada</div>
-        <div class="sd-tech"><b>Tecnologia</b><br>Modelos de IA de última geração; dados tratados em conformidade com o RGPD.</div>
-      </div>
-      <div class="main">
-        <div class="sd-block">
-          <div class="lbl">O que é</div>
-          <p>Aplicamos os modelos de IA mais avançados a tarefas concretas da sua operação. Nada de chatbots de fachada: IA a fazer trabalho que hoje é feito por pessoas, hora a hora.</p>
-        </div>
-        <div class="sd-block">
-          <div class="lbl">Sinais de que precisa disto</div>
-          <ul class="check">
-            <li>A equipa passa horas a ler documentos e a passar dados para sistemas.</li>
-            <li>Recebe informação em formatos desarrumados (PDFs, emails, fotografias) que alguém tem de tratar.</li>
-            <li>Quer respostas rápidas sobre os dados da empresa sem esperar por relatórios.</li>
-          </ul>
-        </div>
-        <div class="sd-block">
-          <div class="lbl">Exemplos concretos</div>
-          <div class="examples">
-            <div class="ex">Leitura automática de faturas de fornecedores a partir de fotografia, com extração de NIF, valores e classificação do fornecedor.</div>
-            <div class="ex">Extração de dados de contratos e documentos PDF.</div>
-            <div class="ex">Classificação e encaminhamento automático de pedidos recebidos por email.</div>
-          </div>
-        </div>
-        <div class="sd-block">
-          <div class="lbl">O que entregamos</div>
-          <ul class="check">
-            <li>Fluxo de IA em produção, com validação humana onde faz sentido.</li>
-            <li>Medição de precisão.</li>
-            <li>Custos de utilização transparentes.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- PARA QUEM TRABALHAMOS -->
-  <section class="section section-2">
-    <div class="center-head">
-      <span class="eyebrow">Para quem trabalhamos</span>
-      <h2 class="h2" style="margin-top:12px">Foco em PMEs de serviços</h2>
-      <p class="lead">O nosso foco são as PMEs portuguesas de serviços: hotelaria e alojamento, restauração, gestão de propriedades e serviços profissionais. É onde temos software em produção e onde percebemos o negócio por dentro. Mas o método aplica-se a qualquer operação: se tem um processo lento, uma tarefa por automatizar ou uma ideia por transformar em software, vale uma conversa de 30 minutos.</p>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta">
-    <div class="cta-inner">
-      <h2>Não sabe em qual encaixa<br>o seu problema?</h2>
-      <p>É exatamente para isso que serve o diagnóstico. Conte-nos o processo e dizemos-lhe o que faz sentido — construir, integrar, automatizar, ou nada.</p>
-      <a href="/contactos" class="btn btn-primary">Marcar diagnóstico gratuito <span>↗</span></a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <div class="brand"><span class="o">MJM</span><span class="s"> Solutions</span></div>
-        <p class="about-txt">Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
-        <a href="/contactos" class="btn btn-primary">Marcar diagnóstico ↗</a>
-      </div>
-      <div class="col">
-        <h4>Navegação</h4>
-        <a href="/servicos">Serviços</a>
-        <a href="/casos">Casos</a>
-        <a href="/como-trabalhamos">Como trabalhamos</a>
-        <a href="/sobre">Sobre</a>
-      </div>
-      <div class="col">
-        <h4>Suporte</h4>
-        <a href="/como-trabalhamos#faq">Perguntas frequentes</a>
-        <a href="/contactos">Contactos</a>
-        <a href="/como-trabalhamos#garantias">Garantias &amp; RGPD</a>
-      </div>
-      <div class="col">
-        <h4>Contacto</h4>
-        <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
-        <a href="#">WhatsApp</a>
-        <a href="#">LinkedIn</a>
-      </div>
-    </div>
-    <div class="fine">
-      <span>© 2026 MJM Solutions. Todos os direitos reservados.</span>
-      <span>Software à medida · Portugal</span>
-    </div>
-  </footer>
-
-</div>
 </body>
 </html>

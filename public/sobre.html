@@ -8,152 +8,171 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=2">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=5">
 </head>
 <body>
-<div class="wrap">
 
-  <nav class="nav">
-    <a href="/" class="brand"><span class="o">MJM</span><span class="s"> Solutions</span></a>
-    <div class="nav-links">
+<nav class="nav">
+  <a href="/" class="logo" aria-label="MJM Solutions — início"><img src="/assets/logo-mark.png" alt="MJM Solutions"></a>
+  <div class="nav-links">
+    <a href="/servicos" class="nav-link">Serviços</a>
+    <a href="/casos" class="nav-link">Casos</a>
+    <a href="/como-trabalhamos" class="nav-link">Como trabalhamos</a>
+    <a href="/sobre" class="nav-link active">Sobre</a>
+    <a href="/contactos" class="nav-cta">Marcar diagnóstico&nbsp;↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="theme-dark pad-hero">
+  <div class="hero-meta">
+    <span><a href="/" style="color:inherit">Início</a> / Sobre</span>
+    <span class="hl">Quem está do outro lado</span>
+  </div>
+  <h1 class="display" style="font-size:clamp(38px,7.5vw,104px)">Quem está<br>do outro lado.</h1>
+  <div class="intro-row">
+    <div class="num">(01) — Sobre</div>
+    <div class="intro-copy">
+      <p>Numa boutique, o comprador quer saber quem é a pessoa do outro lado antes de ligar. Aqui está.</p>
+    </div>
+  </div>
+</header>
+
+<!-- QUOTE + CHIPS -->
+<section class="theme-light pad">
+  <span class="mono-label eyebrow">(02) — A nossa história</span>
+  <blockquote class="big-quote mt" style="margin-top:24px">"Percebemos do negócio do cliente, <span class="rust">não só de código.</span>"</blockquote>
+  <div class="chips mt">
+    <span class="chip">Economia &amp; Finanças</span>
+    <span class="chip">Engenharia</span>
+    <span class="chip">Produto &amp; Operação</span>
+    <span class="chip hl">Nova SBE · Nova FCT</span>
+  </div>
+  <div class="split-5-6 mt" style="align-items:start">
+    <div class="ledger">
+      <div class="lrow">
+        <span class="letter">a.</span>
+        <div><p>Somos três co-fundadores com formações complementares — economia e finanças, e engenharia. Vivemos operações reais por dentro (hotelaria, gestão de ativos, P&amp;L, USALI) e construímos software porque víamos as horas a perderem-se. O primeiro sistema nasceu para resolver um problema nosso, não para vender.</p></div>
+      </div>
+      <div class="lrow close">
+        <span class="letter">b.</span>
+        <div><p>É esta a nossa maior diferença: percebemos do negócio do cliente, não só de código. Uma software house típica não sabe o que é um GOP nem um fecho USALI. Nós sabemos — e falamos a linguagem de quem gere a operação.</p></div>
+      </div>
+    </div>
+    <div class="rule-left">
+      <h2 style="font-weight:700;font-size:22px;letter-spacing:-0.01em">Porquê boutique</h2>
+      <p style="color:var(--ink-2);margin-top:14px">Trabalhamos com poucos clientes ao mesmo tempo para que cada projeto tenha a nossa atenção direta, do diagnóstico ao lançamento. Não há camadas de intermediários entre quem decide e quem constrói.</p>
+      <dl class="dl-rows mt" style="margin-top:24px">
+        <div class="dl-row"><dt>Honestidade de âmbito</dt><dd>Se não fizer sentido, dizemos.</dd></div>
+        <div class="dl-row"><dt>Prova antes de promessa</dt><dd>Software a correr, não slides.</dd></div>
+        <div class="dl-row close"><dt>Código que sobrevive</dt><dd>Documentado e propriedade sua.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPA -->
+<section class="theme-panel pad" id="equipa">
+  <div class="section-head on-dark">
+    <span class="mono-label" style="color:var(--accent)">(03) — A equipa</span>
+    <span class="mono-label right">Três co-fundadores</span>
+  </div>
+  <h2 class="big" style="color:var(--light)">Áreas complementares,<br>a mesma mesa</h2>
+
+  <div class="ledger mt">
+    <div class="split-5-6" style="border-top:1px solid var(--line);padding-top:clamp(28px,3.5vw,48px)">
+      <figure style="margin:0">
+        <img src="/assets/team-1.jpg" alt="Martim Gonçalves" style="width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05)">
+      </figure>
+      <div>
+        <span class="mono-label" style="color:var(--primary)">i.</span>
+        <h3 style="font-weight:800;font-size:clamp(24px,3vw,34px);margin-top:10px;color:var(--light)">Martim Gonçalves</h3>
+        <div class="mono-label" style="color:var(--accent);margin-top:4px">Co-fundador · Gestão &amp; Finanças</div>
+        <ul class="ledger-text" style="list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:8px">
+          <li>— Licenciatura em Economia, Nova SBE</li>
+          <li>— Mestrado em Finanças, Nova SBE</li>
+          <li>— Gestão financeira, P&amp;L e desenvolvimento</li>
+        </ul>
+      </div>
+    </div>
+    <div class="split-5-6" style="border-top:1px solid var(--line);padding-top:clamp(28px,3.5vw,48px)">
+      <figure style="margin:0">
+        <img src="/assets/team-2.jpg" alt="Júlio Lopes" style="width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05)">
+      </figure>
+      <div>
+        <span class="mono-label" style="color:var(--primary)">ii.</span>
+        <h3 style="font-weight:800;font-size:clamp(24px,3vw,34px);margin-top:10px;color:var(--light)">Júlio Lopes</h3>
+        <div class="mono-label" style="color:var(--accent);margin-top:4px">Co-fundador · Engenharia &amp; Produto</div>
+        <ul class="ledger-text" style="list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:8px">
+          <li>— Engenharia Eletrotécnica, Nova FCT</li>
+          <li>— Desenvolvimento de software e sistemas</li>
+          <li>— Integrações e gestão de produto</li>
+        </ul>
+      </div>
+    </div>
+    <div class="split-5-6 close" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(28px,3.5vw,48px) 0">
+      <figure style="margin:0">
+        <img src="/assets/team-3.jpg" alt="Marcos Romão" style="width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05)">
+      </figure>
+      <div>
+        <span class="mono-label" style="color:var(--primary)">iii.</span>
+        <h3 style="font-weight:800;font-size:clamp(24px,3vw,34px);margin-top:10px;color:var(--light)">Marcos Romão</h3>
+        <div class="mono-label" style="color:var(--accent);margin-top:4px">Co-fundador · Engenharia</div>
+        <ul class="ledger-text" style="list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:8px">
+          <li>— Engenharia Eletrotécnica, Nova FCT</li>
+          <li>— Desenvolvimento e automação</li>
+          <li>— IA aplicada e arquitetura técnica</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="theme-rust" style="padding:clamp(80px,11vw,170px) var(--pad)">
+  <div style="display:flex;flex-direction:column;gap:32px">
+    <span class="mono-label">(04) — Comece aqui</span>
+    <h2 class="big" style="font-size:clamp(38px,7vw,100px);max-width:16ch">Vamos falar do seu processo?</h2>
+    <div class="intro-row" style="margin-top:0;align-items:end">
+      <a href="/contactos" class="btn-solid-invert" style="justify-self:start">Marcar diagnóstico gratuito ↗</a>
+      <p class="cta-note">Trinta minutos, sem compromisso. Conte-nos onde dói e dizemos-lhe se e como a tecnologia resolve.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/assets/logo-full.png" alt="MJM Solutions">
+      <p>Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
+      <a href="/contactos" class="link-arrow on-dark">Marcar diagnóstico ↗</a>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
       <a href="/servicos">Serviços</a>
       <a href="/casos">Casos</a>
       <a href="/como-trabalhamos">Como trabalhamos</a>
-      <a href="/sobre" class="active">Sobre</a>
+      <a href="/sobre">Sobre</a>
+    </div>
+    <div class="footer-col">
+      <h4>Suporte</h4>
+      <a href="/como-trabalhamos#faq">Perguntas frequentes</a>
       <a href="/contactos">Contactos</a>
+      <a href="/como-trabalhamos#garantias">Garantias &amp; RGPD</a>
     </div>
-    <a href="/contactos" class="btn btn-primary">Marcar diagnóstico <span>↗</span></a>
-  </nav>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
+      <a href="#">WhatsApp</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-fine">
+    <span>© 2026 MJM Solutions. Todos os direitos reservados.</span>
+    <span>Software à medida · Portugal</span>
+  </div>
+</footer>
 
-  <section class="page-hero">
-    <div class="crumb"><a href="/">Início</a> · Sobre</div>
-    <span class="eyebrow">Sobre</span>
-    <h1>Quem está<br>do outro lado</h1>
-    <p class="lead">Numa boutique, o comprador quer saber quem é a pessoa do outro lado antes de ligar. Aqui está.</p>
-  </section>
-
-  <!-- HISTÓRIA -->
-  <section class="section">
-    <div class="about">
-      <div class="about-panel">
-        <div class="quote">Percebemos do negócio do cliente, <em>não só de código.</em></div>
-        <div class="chips">
-          <span>Economia &amp; Finanças</span>
-          <span>Engenharia</span>
-          <span>Produto &amp; Operação</span>
-        </div>
-        <div class="edu">Nova SBE · Nova FCT · com software em produção</div>
-      </div>
-      <div>
-        <span class="eyebrow">A nossa história</span>
-        <h2 class="h2" style="margin-top:12px">Nascemos dentro<br>da operação</h2>
-        <p>Somos três co-fundadores com formações complementares — economia e finanças, e engenharia. Vivemos operações reais por dentro (hotelaria, gestão de ativos, P&amp;L, USALI) e construímos software porque víamos as horas a perderem-se. O primeiro sistema nasceu para resolver um problema nosso, não para vender.</p>
-        <p>É esta a nossa maior diferença: percebemos do negócio do cliente, não só de código. Uma software house típica não sabe o que é um GOP nem um fecho USALI. Nós sabemos — e falamos a linguagem de quem gere a operação.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- EQUIPA -->
-  <section class="section section-2">
-    <div class="team-head" style="margin-top:0;border-top:none;padding-top:0">
-      <div>
-        <span class="eyebrow">A equipa</span>
-        <h2 class="h2" style="margin-top:12px">Três co-fundadores,<br>áreas complementares</h2>
-      </div>
-      <p class="lead" style="max-width:420px;margin-top:0">Poucos, próximos e com a mão na operação. Cada projeto tem a nossa atenção direta, do diagnóstico ao lançamento.</p>
-    </div>
-    <div class="team">
-      <div class="member">
-        <img class="ph" src="/assets/team-1.jpg" alt="Martim Gonçalves, co-fundador da MJM Solutions">
-        <div class="nm">Martim Gonçalves</div>
-        <div class="rl">Co-fundador · Gestão &amp; Finanças</div>
-        <hr>
-        <div class="q-lbl">Qualificações</div>
-        <ul><li>Licenciatura em Economia — Nova SBE</li><li>Mestrado em Finanças — Nova SBE</li><li>Gestão financeira, P&amp;L e desenvolvimento</li></ul>
-      </div>
-      <div class="member">
-        <!-- CONFIRMAR: Júlio é team-2 (barba) ou team-3 (fato azul)? -->
-        <img class="ph" src="/assets/team-2.jpg" alt="Júlio Lopes, co-fundador da MJM Solutions">
-        <div class="nm">Júlio Lopes</div>
-        <div class="rl">Co-fundador · Engenharia &amp; Produto</div>
-        <hr>
-        <div class="q-lbl">Qualificações</div>
-        <ul><li>Engenharia Eletrotécnica — Nova FCT</li><li>Desenvolvimento de software e sistemas</li><li>Integrações e gestão de produto</li></ul>
-      </div>
-      <div class="member">
-        <img class="ph" src="/assets/team-3.jpg" alt="Marcos Romão, co-fundador da MJM Solutions">
-        <div class="nm">Marcos Romão</div>
-        <div class="rl">Co-fundador · Engenharia</div>
-        <hr>
-        <div class="q-lbl">Qualificações</div>
-        <ul><li>Engenharia Eletrotécnica — Nova FCT</li><li>Desenvolvimento e automação</li><li>IA aplicada e arquitetura técnica</li></ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORQUÊ BOUTIQUE + VALORES -->
-  <section class="section">
-    <div class="about">
-      <div>
-        <span class="eyebrow">Porquê boutique</span>
-        <h2 class="h2" style="margin-top:12px">Poucos clientes<br>de cada vez, de propósito</h2>
-        <p>Trabalhamos com poucos clientes ao mesmo tempo para que cada projeto tenha a nossa atenção direta, do diagnóstico ao lançamento. Não há camadas de intermediários entre quem decide e quem constrói.</p>
-        <div class="values" style="margin-top:28px">
-          <div class="v"><b>Honestidade de âmbito</b><span>Se não fizer sentido, dizemos.</span></div>
-          <div class="v"><b>Prova antes de promessa</b><span>Software a correr, não slides.</span></div>
-          <div class="v"><b>Código que sobrevive</b><span>Documentado e propriedade sua.</span></div>
-        </div>
-      </div>
-      <div class="about-panel">
-        <div class="quote">Cada projeto tem a nossa <em>atenção direta.</em></div>
-        <div class="edu" style="margin-top:26px">Do diagnóstico ao lançamento, falam sempre com quem constrói.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta">
-    <div class="cta-inner">
-      <h2>Vamos falar do seu<br>processo?</h2>
-      <p>Trinta minutos, sem compromisso. Conte-nos onde dói e dizemos-lhe se e como a tecnologia resolve.</p>
-      <a href="/contactos" class="btn btn-primary">Marcar diagnóstico gratuito <span>↗</span></a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <div class="brand"><span class="o">MJM</span><span class="s"> Solutions</span></div>
-        <p class="about-txt">Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
-        <a href="/contactos" class="btn btn-primary">Marcar diagnóstico ↗</a>
-      </div>
-      <div class="col">
-        <h4>Navegação</h4>
-        <a href="/servicos">Serviços</a>
-        <a href="/casos">Casos</a>
-        <a href="/como-trabalhamos">Como trabalhamos</a>
-        <a href="/sobre">Sobre</a>
-      </div>
-      <div class="col">
-        <h4>Suporte</h4>
-        <a href="/como-trabalhamos#faq">Perguntas frequentes</a>
-        <a href="/contactos">Contactos</a>
-        <a href="/como-trabalhamos#garantias">Garantias &amp; RGPD</a>
-      </div>
-      <div class="col">
-        <h4>Contacto</h4>
-        <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
-        <a href="#">WhatsApp</a>
-        <a href="#">LinkedIn</a>
-      </div>
-    </div>
-    <div class="fine">
-      <span>© 2026 MJM Solutions. Todos os direitos reservados.</span>
-      <span>Software à medida · Portugal</span>
-    </div>
-  </footer>
-
-</div>
 </body>
 </html>
