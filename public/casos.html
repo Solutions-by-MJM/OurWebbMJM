@@ -3,125 +3,126 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Casos Reais: Software em Produção | MJM Solutions</title>
-<meta name="description" content="Casos de software em produção, com resultados medidos. Caso âncora: plataforma de back-office hoteleiro com leitura de faturas por IA e P&L automático em formato USALI.">
+<title data-i18n="meta.title">Casos Reais: Software em Produção | MJM Solutions</title>
+<meta name="description" data-i18n="meta.description" data-i18n-attr="content" content="Casos de software em produção, com resultados medidos. Caso âncora: plataforma de back-office hoteleiro com leitura de faturas por IA e P&L automático em formato USALI.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=7">
+<link rel="stylesheet" href="/styles.css?v=8">
 </head>
 <body>
 
 <nav class="nav">
-  <a href="/" class="logo" aria-label="MJM Solutions — início"><img src="/assets/logo-mark.png" alt="MJM Solutions"></a>
+  <a href="/" class="logo" aria-label="MJM Solutions — início" data-i18n="nav.logo_aria" data-i18n-attr="aria-label"><img src="/assets/logo-mark.png" alt="MJM Solutions"></a>
   <div class="nav-links">
-    <a href="/servicos" class="nav-link">Serviços</a>
-    <a href="/casos" class="nav-link active">Casos</a>
-    <a href="/como-trabalhamos" class="nav-link">Como trabalhamos</a>
-    <a href="/sobre" class="nav-link">Sobre</a>
-    <a href="/contactos" class="nav-cta">Marcar diagnóstico&nbsp;↗</a>
+    <a href="/servicos" class="nav-link" data-i18n="nav.services">Serviços</a>
+    <a href="/casos" class="nav-link active" data-i18n="nav.cases">Casos</a>
+    <a href="/como-trabalhamos" class="nav-link" data-i18n="nav.how">Como trabalhamos</a>
+    <a href="/sobre" class="nav-link" data-i18n="nav.about">Sobre</a>
+    <button id="lang-toggle" class="lang-toggle" type="button" aria-label="View in English">EN</button>
+    <a href="/contactos" class="nav-cta" data-i18n="nav.cta">Marcar diagnóstico&nbsp;↗</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <header class="theme-dark pad-hero">
   <div class="hero-meta">
-    <span><a href="/" style="color:inherit">Início</a> / Casos</span>
-    <span class="hl">Software em produção</span>
+    <span data-i18n="hero.breadcrumb"><a href="/" style="color:inherit">Início</a> / Casos</span>
+    <span class="hl" data-i18n="hero.hl">Software em produção</span>
   </div>
-  <h1 class="display" style="font-size:clamp(38px,7.5vw,100px)">Software em produção,<br>com resultados medidos.</h1>
+  <h1 class="display" style="font-size:clamp(38px,7.5vw,100px)" data-i18n="hero.h1">Software em produção,<br>com resultados medidos.</h1>
   <div class="intro-row">
-    <div class="num">(01) — Casos</div>
+    <div class="num" data-i18n="hero.num">(01) — Casos</div>
     <div class="intro-copy">
-      <p>Sem demos de laboratório. Um caso âncora bem contado vale mais do que cinco vagos — e cada projeto novo entra aqui no mês seguinte a ir para produção.</p>
+      <p data-i18n="hero.p">Sem demos de laboratório. Um caso âncora bem contado vale mais do que cinco vagos — e cada projeto novo entra aqui no mês seguinte a ir para produção.</p>
     </div>
   </div>
 </header>
 
 <!-- CASO ÂNCORA -->
 <section class="theme-light pad" id="back-office">
-  <span class="mono-label eyebrow">(02) — Hotelaria</span>
-  <h2 class="big" style="margin-top:16px">Back-office hoteleiro</h2>
+  <span class="mono-label eyebrow" data-i18n="ancora.eyebrow">(02) — Hotelaria</span>
+  <h2 class="big" style="margin-top:16px" data-i18n="ancora.h2">Back-office hoteleiro</h2>
 
   <div class="ficha">
-    <div class="cell"><div class="k">Setor</div><div class="v">Hotelaria</div></div>
-    <div class="cell"><div class="k">Cliente</div><div class="v">Hotel independente · Aveiro</div></div>
-    <div class="cell"><div class="k">Problema</div><div class="v">Faturas e fecho mensal manuais</div></div>
-    <div class="cell"><div class="k">Estado</div><div class="v">Em produção desde 2025</div></div>
+    <div class="cell"><div class="k" data-i18n="ficha.k1">Setor</div><div class="v" data-i18n="ficha.v1">Hotelaria</div></div>
+    <div class="cell"><div class="k" data-i18n="ficha.k2">Cliente</div><div class="v" data-i18n="ficha.v2">Hotel independente · Aveiro</div></div>
+    <div class="cell"><div class="k" data-i18n="ficha.k3">Problema</div><div class="v" data-i18n="ficha.v3">Faturas e fecho mensal manuais</div></div>
+    <div class="cell"><div class="k" data-i18n="ficha.k4">Estado</div><div class="v" data-i18n="ficha.v4">Em produção desde 2025</div></div>
   </div>
 
   <div class="ledger" style="margin-top:8px">
     <div class="lrow">
       <span class="letter">a.</span>
-      <div><h3>O contexto</h3><p>Um hotel independente processava dezenas de faturas de fornecedores por mês à mão. A conferência era manual, havia risco de duplicados, e o P&amp;L mensal era montado à mão em folhas de cálculo a partir dos dados do PMS. Um fecho de contas lento, com informação espalhada e sempre a chegar atrasada.</p></div>
+      <div><h3 data-i18n="a_h3">O contexto</h3><p data-i18n="a_p">Um hotel independente processava dezenas de faturas de fornecedores por mês à mão. A conferência era manual, havia risco de duplicados, e o P&amp;L mensal era montado à mão em folhas de cálculo a partir dos dados do PMS. Um fecho de contas lento, com informação espalhada e sempre a chegar atrasada.</p></div>
     </div>
     <div class="lrow">
       <span class="letter">b.</span>
-      <div><h3>O problema em detalhe</h3><p>Cada fatura em papel era lançada manualmente. Alguém tinha de verificar se já tinha entrado, classificar o fornecedor, e só depois passar os valores para a folha de custos. No fim do mês, montar o P&amp;L significava cruzar tudo isto com a receita do PMS — dias de trabalho para um número que já vinha tarde.</p></div>
+      <div><h3 data-i18n="b_h3">O problema em detalhe</h3><p data-i18n="b_p">Cada fatura em papel era lançada manualmente. Alguém tinha de verificar se já tinha entrado, classificar o fornecedor, e só depois passar os valores para a folha de custos. No fim do mês, montar o P&amp;L significava cruzar tudo isto com a receita do PMS — dias de trabalho para um número que já vinha tarde.</p></div>
     </div>
     <div class="lrow close">
       <span class="letter">c.</span>
       <div>
-        <h3>A solução</h3>
-        <p>Construímos uma plataforma de back-office onde a equipa fotografa a fatura e o sistema faz o resto: lê os dados (IA), deteta duplicados — o sistema reconhece se a mesma fatura já entrou, mesmo que venha por outra via —, classifica automaticamente o fornecedor por NIF e alimenta diretamente o P&amp;L mensal, em formato USALI (o padrão internacional de contas de exploração hoteleira), integrado com a receita do PMS.</p>
+        <h3 data-i18n="c_h3">A solução</h3>
+        <p data-i18n="c_p">Construímos uma plataforma de back-office onde a equipa fotografa a fatura e o sistema faz o resto: lê os dados (IA), deteta duplicados — o sistema reconhece se a mesma fatura já entrou, mesmo que venha por outra via —, classifica automaticamente o fornecedor por NIF e alimenta diretamente o P&amp;L mensal, em formato USALI (o padrão internacional de contas de exploração hoteleira), integrado com a receita do PMS.</p>
       </div>
     </div>
   </div>
 
   <div class="split-5-6 mt">
-    <div class="shot r-4-3"><span class="cap">screenshot real — leitura de faturas por IA</span></div>
+    <div class="shot r-4-3"><span class="cap" data-i18n="sub.cap">screenshot real — leitura de faturas por IA</span></div>
     <div class="ledger">
-      <div class="lrow"><span class="letter">i.</span><div><h3>Captura por fotografia</h3><p>A equipa tira uma foto. A IA lê NIF, valores e datas — sem lançamento manual.</p></div></div>
-      <div class="lrow"><span class="letter">ii.</span><div><h3>Deteção de duplicados</h3><p>O sistema reconhece faturas repetidas antes do pagamento, mesmo por vias diferentes.</p></div></div>
-      <div class="lrow close"><span class="letter">iii.</span><div><h3>P&amp;L em formato USALI</h3><p>Gerado em minutos, integrado com a receita do PMS. O número certo, a tempo.</p></div></div>
+      <div class="lrow"><span class="letter">i.</span><div><h3 data-i18n="sub.i_h3">Captura por fotografia</h3><p data-i18n="sub.i_p">A equipa tira uma foto. A IA lê NIF, valores e datas — sem lançamento manual.</p></div></div>
+      <div class="lrow"><span class="letter">ii.</span><div><h3 data-i18n="sub.ii_h3">Deteção de duplicados</h3><p data-i18n="sub.ii_p">O sistema reconhece faturas repetidas antes do pagamento, mesmo por vias diferentes.</p></div></div>
+      <div class="lrow close"><span class="letter">iii.</span><div><h3 data-i18n="sub.iii_h3">P&amp;L em formato USALI</h3><p data-i18n="sub.iii_p">Gerado em minutos, integrado com a receita do PMS. O número certo, a tempo.</p></div></div>
     </div>
   </div>
 
   <div class="ledger mt">
     <div class="lrow">
       <span class="letter">d.</span>
-      <div><h3>Como foi o processo</h3><p>Construção lado a lado, em fases curtas. A equipa do hotel usou versões de teste desde cedo e ajustámos com base no uso real, não em suposições. O sistema entrou em produção e está em uso diário desde 2025.</p></div>
+      <div><h3 data-i18n="d_h3">Como foi o processo</h3><p data-i18n="d_p">Construção lado a lado, em fases curtas. A equipa do hotel usou versões de teste desde cedo e ajustámos com base no uso real, não em suposições. O sistema entrou em produção e está em uso diário desde 2025.</p></div>
     </div>
   </div>
 
-  <h3 class="mono-label eyebrow mt" style="display:block">Resultados</h3>
+  <h3 class="mono-label eyebrow mt" style="display:block" data-i18n="resultados_h3">Resultados</h3>
   <div class="ledger">
     <div class="ledger-row" style="border-color:var(--line)">
-      <div class="ledger-num" style="color:var(--primary);font-size:clamp(48px,6vw,90px)">Diário</div>
-      <div class="ledger-tag" style="color:var(--primary)">Em uso pela equipa</div>
-      <p class="ledger-text" style="color:var(--ink-2)">A correr todos os dias desde o lançamento em 2025.</p>
+      <div class="ledger-num" style="color:var(--primary);font-size:clamp(48px,6vw,90px)" data-i18n="res.r1_num">Diário</div>
+      <div class="ledger-tag" style="color:var(--primary)" data-i18n="res.r1_tag">Em uso pela equipa</div>
+      <p class="ledger-text" style="color:var(--ink-2)" data-i18n="res.r1_p">A correr todos os dias desde o lançamento em 2025.</p>
     </div>
     <div class="ledger-row" style="border-color:var(--line)">
-      <div class="ledger-num plain" style="color:var(--ink);font-size:clamp(48px,6vw,90px)">Minutos</div>
-      <div class="ledger-tag" style="color:var(--primary)">Fecho mensal</div>
-      <p class="ledger-text" style="color:var(--ink-2)">O P&amp;L passou a ser gerado em minutos, quando antes eram dias.</p>
+      <div class="ledger-num plain" style="color:var(--ink);font-size:clamp(48px,6vw,90px)" data-i18n="res.r2_num">Minutos</div>
+      <div class="ledger-tag" style="color:var(--primary)" data-i18n="res.r2_tag">Fecho mensal</div>
+      <p class="ledger-text" style="color:var(--ink-2)" data-i18n="res.r2_p">O P&amp;L passou a ser gerado em minutos, quando antes eram dias.</p>
     </div>
     <div class="ledger-row close" style="border-color:var(--line)">
-      <div class="ledger-num plain" style="color:var(--ink);font-size:clamp(48px,6vw,90px)">Auto</div>
-      <div class="ledger-tag" style="color:var(--primary)">Faturas processadas</div>
-      <p class="ledger-text" style="color:var(--ink-2)">Captura, leitura e classificação sem lançamento manual.</p>
+      <div class="ledger-num plain" style="color:var(--ink);font-size:clamp(48px,6vw,90px)" data-i18n="res.r3_num">Auto</div>
+      <div class="ledger-tag" style="color:var(--primary)" data-i18n="res.r3_tag">Faturas processadas</div>
+      <p class="ledger-text" style="color:var(--ink-2)" data-i18n="res.r3_p">Captura, leitura e classificação sem lançamento manual.</p>
     </div>
   </div>
-  <p style="font-size:13px;color:var(--ink-2);margin-top:16px">Números finais (tempo de fecho antes/depois, faturas por mês, duplicados detetados) em medição para publicação.</p>
-  <p style="font-size:13px;color:var(--ink-2);margin-top:24px;border-top:1px solid var(--line);padding-top:16px"><b>Stack técnica:</b> aplicação web (TypeScript), IA para leitura de documentos, integração com PMS, infraestrutura cloud europeia (RGPD).</p>
+  <p style="font-size:13px;color:var(--ink-2);margin-top:16px" data-i18n="note1">Números finais (tempo de fecho antes/depois, faturas por mês, duplicados detetados) em medição para publicação.</p>
+  <p style="font-size:13px;color:var(--ink-2);margin-top:24px;border-top:1px solid var(--line);padding-top:16px" data-i18n="note2"><b>Stack técnica:</b> aplicação web (TypeScript), IA para leitura de documentos, integração com PMS, infraestrutura cloud europeia (RGPD).</p>
 </section>
 
 <!-- PRÓXIMOS CASOS -->
 <section class="theme-panel pad">
-  <span class="mono-label" style="color:var(--accent)">(03) — A crescer</span>
-  <h2 class="big" style="font-size:clamp(32px,5vw,72px);margin-top:16px;max-width:16ch">Mais casos a caminho</h2>
-  <p class="ledger-text" style="font-size:17px;max-width:720px">Cada projeto novo entra aqui no prazo de um mês após ir para produção. É o nosso ativo comercial nº 1 — tratamo-lo como tal.</p>
+  <span class="mono-label" style="color:var(--accent)" data-i18n="proximos.eyebrow">(03) — A crescer</span>
+  <h2 class="big" style="font-size:clamp(32px,5vw,72px);margin-top:16px;max-width:16ch" data-i18n="proximos.h2">Mais casos a caminho</h2>
+  <p class="ledger-text" style="font-size:17px;max-width:720px" data-i18n="proximos.p">Cada projeto novo entra aqui no prazo de um mês após ir para produção. É o nosso ativo comercial nº 1 — tratamo-lo como tal.</p>
 </section>
 
 <!-- CTA -->
 <section class="theme-rust" style="padding:clamp(80px,11vw,170px) var(--pad)">
   <div style="display:flex;flex-direction:column;gap:32px">
-    <span class="mono-label">(04) — Comece aqui</span>
-    <h2 class="big" style="font-size:clamp(38px,7vw,100px);max-width:16ch">Tem um problema parecido?</h2>
+    <span class="mono-label" data-i18n="cta.label">(04) — Comece aqui</span>
+    <h2 class="big" style="font-size:clamp(38px,7vw,100px);max-width:16ch" data-i18n="cta.h2">Tem um problema parecido?</h2>
     <div class="intro-row" style="margin-top:0;align-items:end">
-      <a href="/contactos" class="btn-solid-invert" style="justify-self:start">Marcar diagnóstico gratuito ↗</a>
-      <p class="cta-note">Conte-nos o seu processo em 30 minutos. Se conseguirmos ajudar, dizemos como. Se não, dizemos também.</p>
+      <a href="/contactos" class="btn-solid-invert" style="justify-self:start" data-i18n="cta.button">Marcar diagnóstico gratuito ↗</a>
+      <p class="cta-note" data-i18n="cta.note">Conte-nos o seu processo em 30 minutos. Se conseguirmos ajudar, dizemos como. Se não, dizemos também.</p>
     </div>
   </div>
 </section>
@@ -130,34 +131,35 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <img src="/assets/logo-full.png" alt="MJM Solutions">
-      <p>Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
-      <a href="/contactos" class="link-arrow on-dark">Marcar diagnóstico ↗</a>
+      <p data-i18n="footer.brand_p">Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
+      <a href="/contactos" class="link-arrow on-dark" data-i18n="footer.brand_cta">Marcar diagnóstico ↗</a>
     </div>
     <div class="footer-col">
-      <h4>Navegação</h4>
-      <a href="/servicos">Serviços</a>
-      <a href="/casos">Casos</a>
-      <a href="/como-trabalhamos">Como trabalhamos</a>
-      <a href="/sobre">Sobre</a>
+      <h4 data-i18n="footer.nav_h4">Navegação</h4>
+      <a href="/servicos" data-i18n="footer.nav_servicos">Serviços</a>
+      <a href="/casos" data-i18n="footer.nav_casos">Casos</a>
+      <a href="/como-trabalhamos" data-i18n="footer.nav_como">Como trabalhamos</a>
+      <a href="/sobre" data-i18n="footer.nav_sobre">Sobre</a>
     </div>
     <div class="footer-col">
-      <h4>Suporte</h4>
-      <a href="/como-trabalhamos#faq">Perguntas frequentes</a>
-      <a href="/contactos">Contactos</a>
-      <a href="/como-trabalhamos#garantias">Garantias &amp; RGPD</a>
+      <h4 data-i18n="footer.support_h4">Suporte</h4>
+      <a href="/como-trabalhamos#faq" data-i18n="footer.support_faq">Perguntas frequentes</a>
+      <a href="/contactos" data-i18n="footer.support_contactos">Contactos</a>
+      <a href="/como-trabalhamos#garantias" data-i18n="footer.support_garantias">Garantias &amp; RGPD</a>
     </div>
     <div class="footer-col">
-      <h4>Contacto</h4>
+      <h4 data-i18n="footer.contact_h4">Contacto</h4>
       <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
-      <a href="#">WhatsApp</a>
-      <a href="#">LinkedIn</a>
+      <a href="#" data-i18n="footer.contact_whatsapp">WhatsApp</a>
+      <a href="#" data-i18n="footer.contact_linkedin">LinkedIn</a>
     </div>
   </div>
   <div class="footer-fine">
-    <span>© 2026 MJM Solutions. Todos os direitos reservados.</span>
-    <span>Software à medida · Portugal</span>
+    <span data-i18n="footer.fine_rights">© 2026 MJM Solutions. Todos os direitos reservados.</span>
+    <span data-i18n="footer.fine_tagline">Software à medida · Portugal</span>
   </div>
 </footer>
 
+<script src="/i18n.js" defer></script>
 </body>
 </html>

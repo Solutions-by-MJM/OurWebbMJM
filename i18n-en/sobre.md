@@ -50,7 +50,7 @@ Three co-founders
 - Master's in Finance, Nova SBE
 - Financial management, P&L and development
 
-**ii. Marcos Romão** — Co-founder · Engineering & Product
+**ii. Júlio Lopes** — Co-founder · Engineering & Product
 - Electrical Engineering, Nova FCT
 - Software and systems development
 - Integrations and product management

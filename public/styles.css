@@ -40,6 +40,8 @@ img{display:block;max-width:100%}
 .nav-link:hover,.nav-link.active{color:var(--accent)}
 .nav-cta{display:flex;align-items:center;align-self:stretch;padding:0 24px;margin-right:calc(var(--pad) * -1);background:var(--primary);color:var(--light);font-weight:600;transition:background .15s ease,color .15s ease}
 .nav-cta:hover{background:var(--accent);color:var(--ink)}
+.lang-toggle{display:flex;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:0.08em;background:transparent;border:1px solid var(--line-dark);color:var(--light-2);padding:6px 14px;cursor:pointer;transition:color .15s ease,border-color .15s ease;flex-shrink:0}
+.lang-toggle:hover{color:var(--accent);border-color:var(--accent)}
 
 /* ===== Big hero ===== */
 .hero-meta{display:flex;justify-content:space-between;align-items:baseline;gap:24px;font-family:var(--mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--light-2);margin-bottom:clamp(32px,5vw,72px)}

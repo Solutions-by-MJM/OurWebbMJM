@@ -83,10 +83,8 @@ Case-by-case solutions · 100% client-owned code · Close follow-up · Warranty 
 
 Team:
 - Martim Gonçalves — Management & Finance
-- Marcos Romão — Engineering & Product
+- Júlio Lopes — Engineering & Product
 - Marcos Romão — Engineering
-
-*(Note: two team entries both read "Marcos Romão" — see flag in report.)*
 
 - H2: Who's on the other side
 - Body 1: We're three co-founders with complementary backgrounds: Economics, Finance, and Engineering (Nova SBE · Nova FCT). We've lived the operation from the inside, and started building software because we saw too many hours being lost to manual tasks.

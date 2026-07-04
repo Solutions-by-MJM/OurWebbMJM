@@ -3,38 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fale Connosco: Diagnóstico Gratuito | MJM Solutions</title>
-<meta name="description" content="Tem um processo que custa horas à sua equipa todas as semanas? Conte-nos. Em 30 minutos dizemos-lhe se e como a tecnologia resolve. Sem compromisso.">
+<title data-i18n="meta.title">Fale Connosco: Diagnóstico Gratuito | MJM Solutions</title>
+<meta name="description" data-i18n="meta.description" data-i18n-attr="content" content="Tem um processo que custa horas à sua equipa todas as semanas? Conte-nos. Em 30 minutos dizemos-lhe se e como a tecnologia resolve. Sem compromisso.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=7">
+<link rel="stylesheet" href="/styles.css?v=8">
 </head>
 <body>
 
 <nav class="nav">
-  <a href="/" class="logo" aria-label="MJM Solutions — início"><img src="/assets/logo-mark.png" alt="MJM Solutions"></a>
+  <a href="/" class="logo" aria-label="MJM Solutions — início" data-i18n="nav.logo_aria" data-i18n-attr="aria-label"><img src="/assets/logo-mark.png" alt="MJM Solutions"></a>
   <div class="nav-links">
-    <a href="/servicos" class="nav-link">Serviços</a>
-    <a href="/casos" class="nav-link">Casos</a>
-    <a href="/como-trabalhamos" class="nav-link">Como trabalhamos</a>
-    <a href="/sobre" class="nav-link">Sobre</a>
-    <a href="/contactos" class="nav-cta">Marcar diagnóstico&nbsp;↗</a>
+    <a href="/servicos" class="nav-link" data-i18n="nav.services">Serviços</a>
+    <a href="/casos" class="nav-link" data-i18n="nav.cases">Casos</a>
+    <a href="/como-trabalhamos" class="nav-link" data-i18n="nav.how">Como trabalhamos</a>
+    <a href="/sobre" class="nav-link" data-i18n="nav.about">Sobre</a>
+    <button id="lang-toggle" class="lang-toggle" type="button" aria-label="View in English">EN</button>
+    <a href="/contactos" class="nav-cta" data-i18n="nav.cta">Marcar diagnóstico&nbsp;↗</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <header class="theme-dark pad-hero">
   <div class="hero-meta">
-    <span><a href="/" style="color:inherit">Início</a> / Contactos</span>
-    <span class="hl">Diagnóstico gratuito de 30 min</span>
+    <span data-i18n="hero.breadcrumb"><a href="/" style="color:inherit">Início</a> / Contactos</span>
+    <span class="hl" data-i18n="hero.hl">Diagnóstico gratuito de 30 min</span>
   </div>
-  <h1 class="display" style="font-size:clamp(38px,7.5vw,104px)">Fale<br>connosco.</h1>
+  <h1 class="display" style="font-size:clamp(38px,7.5vw,104px)" data-i18n="hero.h1">Fale<br>connosco.</h1>
   <div class="intro-row">
-    <div class="num">(01) — Contactos</div>
+    <div class="num" data-i18n="hero.num">(01) — Contactos</div>
     <div class="intro-copy">
-      <p>Tem um processo que custa horas à sua equipa todas as semanas? Conte-nos. Em 30 minutos dizemos-lhe se e como a tecnologia resolve. Sem compromisso e sem apresentações de catálogo.</p>
+      <p data-i18n="hero.p">Tem um processo que custa horas à sua equipa todas as semanas? Conte-nos. Em 30 minutos dizemos-lhe se e como a tecnologia resolve. Sem compromisso e sem apresentações de catálogo.</p>
     </div>
   </div>
 </header>
@@ -43,10 +44,10 @@
 <section class="theme-light pad">
   <div class="split-7-5">
     <form id="contact-form">
-      <span class="mono-label eyebrow">(02) — Formulário</span>
+      <span class="mono-label eyebrow" data-i18n="form.eyebrow">(02) — Formulário</span>
       <div class="form2 mt">
         <div class="field2">
-          <label for="nome">Nome</label>
+          <label for="nome" data-i18n="form.l_nome">Nome</label>
           <input id="nome" name="nome" type="text" required autocomplete="name">
         </div>
         <div class="field2">
@@ -54,31 +55,31 @@
           <input id="email" name="email" type="email" required autocomplete="email">
         </div>
         <div class="field2">
-          <label for="empresa">Empresa <span style="text-transform:none;font-weight:400">(opcional)</span></label>
+          <label for="empresa" data-i18n="form.l_empresa">Empresa <span style="text-transform:none;font-weight:400">(opcional)</span></label>
           <input id="empresa" name="empresa" type="text" autocomplete="organization">
         </div>
         <div class="field2">
-          <label for="problema">Descreva o problema em 2 ou 3 frases</label>
+          <label for="problema" data-i18n="form.l_problema">Descreva o problema em 2 ou 3 frases</label>
           <textarea id="problema" name="problema" required></textarea>
         </div>
         <label class="consent2">
           <input type="checkbox" required>
-          <span>Aceito que os dados sejam usados apenas para responder ao meu pedido. Ver política de privacidade (em breve).</span>
+          <span data-i18n="form.consent">Aceito que os dados sejam usados apenas para responder ao meu pedido. Ver política de privacidade (em breve).</span>
         </label>
       </div>
-      <button type="submit" class="btn-solid mt" style="border:none;cursor:pointer">Enviar ↗</button>
-      <p id="form-msg" style="font-size:13px;color:var(--ink-2);margin-top:16px">Respondemos em 1 dia útil.</p>
+      <button type="submit" class="btn-solid mt" style="border:none;cursor:pointer" data-i18n="form.submit">Enviar ↗</button>
+      <p id="form-msg" style="font-size:13px;color:var(--ink-2);margin-top:16px" data-i18n="form.msg">Respondemos em 1 dia útil.</p>
     </form>
 
     <div class="rule-left">
-      <span class="mono-label eyebrow">(03) — Diretos</span>
-      <h2 style="font-weight:700;font-size:26px;letter-spacing:-0.01em;margin-top:14px">Ou fale já connosco</h2>
+      <span class="mono-label eyebrow" data-i18n="direct.eyebrow">(03) — Diretos</span>
+      <h2 style="font-weight:700;font-size:26px;letter-spacing:-0.01em;margin-top:14px" data-i18n="direct.h2">Ou fale já connosco</h2>
       <div class="direct2 mt">
         <a href="mailto:ola@mjmsolutions.pt"><b>Email</b><span>ola@mjmsolutions.pt</span></a>
-        <a href="#" id="wa-link"><b>WhatsApp</b><span>Resposta rápida em horário útil</span></a>
+        <a href="#" id="wa-link"><b>WhatsApp</b><span data-i18n="direct.wa_span">Resposta rápida em horário útil</span></a>
         <a href="#" id="li-link"><b>LinkedIn</b><span>MJM Solutions</span></a>
       </div>
-      <p style="font-size:13px;color:var(--ink-2);margin-top:24px;border-top:1px solid var(--line);padding-top:16px"><b>Agendamento:</b> em breve vai poder marcar o diagnóstico de 30 min diretamente aqui. Por agora, escreva-nos e combinamos o horário.</p>
+      <p style="font-size:13px;color:var(--ink-2);margin-top:24px;border-top:1px solid var(--line);padding-top:16px" data-i18n="direct.note"><b>Agendamento:</b> em breve vai poder marcar o diagnóstico de 30 min diretamente aqui. Por agora, escreva-nos e combinamos o horário.</p>
     </div>
   </div>
 </section>
@@ -87,35 +88,36 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <img src="/assets/logo-full.png" alt="MJM Solutions">
-      <p>Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
-      <a href="/contactos" class="link-arrow on-dark">Marcar diagnóstico ↗</a>
+      <p data-i18n="footer.brand_p">Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
+      <a href="/contactos" class="link-arrow on-dark" data-i18n="footer.brand_cta">Marcar diagnóstico ↗</a>
     </div>
     <div class="footer-col">
-      <h4>Navegação</h4>
-      <a href="/servicos">Serviços</a>
-      <a href="/casos">Casos</a>
-      <a href="/como-trabalhamos">Como trabalhamos</a>
-      <a href="/sobre">Sobre</a>
+      <h4 data-i18n="footer.nav_h4">Navegação</h4>
+      <a href="/servicos" data-i18n="footer.nav_servicos">Serviços</a>
+      <a href="/casos" data-i18n="footer.nav_casos">Casos</a>
+      <a href="/como-trabalhamos" data-i18n="footer.nav_como">Como trabalhamos</a>
+      <a href="/sobre" data-i18n="footer.nav_sobre">Sobre</a>
     </div>
     <div class="footer-col">
-      <h4>Suporte</h4>
-      <a href="/como-trabalhamos#faq">Perguntas frequentes</a>
-      <a href="/contactos">Contactos</a>
-      <a href="/como-trabalhamos#garantias">Garantias &amp; RGPD</a>
+      <h4 data-i18n="footer.support_h4">Suporte</h4>
+      <a href="/como-trabalhamos#faq" data-i18n="footer.support_faq">Perguntas frequentes</a>
+      <a href="/contactos" data-i18n="footer.support_contactos">Contactos</a>
+      <a href="/como-trabalhamos#garantias" data-i18n="footer.support_garantias">Garantias &amp; RGPD</a>
     </div>
     <div class="footer-col">
-      <h4>Contacto</h4>
+      <h4 data-i18n="footer.contact_h4">Contacto</h4>
       <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
-      <a href="#">WhatsApp</a>
-      <a href="#">LinkedIn</a>
+      <a href="#" data-i18n="footer.contact_whatsapp">WhatsApp</a>
+      <a href="#" data-i18n="footer.contact_linkedin">LinkedIn</a>
     </div>
   </div>
   <div class="footer-fine">
-    <span>© 2026 MJM Solutions. Todos os direitos reservados.</span>
-    <span>Software à medida · Portugal</span>
+    <span data-i18n="footer.fine_rights">© 2026 MJM Solutions. Todos os direitos reservados.</span>
+    <span data-i18n="footer.fine_tagline">Software à medida · Portugal</span>
   </div>
 </footer>
 
 <script src="/contact.js" defer></script>
+<script src="/i18n.js" defer></script>
 </body>
 </html>
