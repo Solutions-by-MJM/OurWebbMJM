@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=8">
+<link rel="stylesheet" href="/styles.css?v=9">
 </head>
 <body>
 
@@ -40,36 +40,39 @@
   </div>
 </header>
 
-<!-- FORM + DIRECT -->
+<!-- BOOKING + DIRECT -->
 <section class="theme-light pad">
   <div class="split-7-5">
-    <form id="contact-form">
-      <span class="mono-label eyebrow" data-i18n="form.eyebrow">(02) — Formulário</span>
-      <div class="form2 mt">
-        <div class="field2">
-          <label for="nome" data-i18n="form.l_nome">Nome</label>
-          <input id="nome" name="nome" type="text" required autocomplete="name">
+    <div id="booking-widget">
+      <span class="mono-label eyebrow" data-i18n="booking.eyebrow">(02) — Marcar reunião</span>
+      <p class="ledger-text mt" id="booking-status" style="margin-top:24px">A carregar horários disponíveis…</p>
+      <div class="chips mt" id="booking-days" style="display:none"></div>
+      <div class="chips mt" id="booking-times" style="display:none"></div>
+      <a href="#" class="mono-link" id="booking-change" style="display:none;margin-top:16px"></a>
+
+      <form id="booking-attendee-form">
+        <div class="form2 mt" id="booking-form" style="display:none">
+          <div class="field2">
+            <label for="bk-nome" data-i18n="booking.l_nome">Nome</label>
+            <input id="bk-nome" type="text" required autocomplete="name">
+          </div>
+          <div class="field2">
+            <label for="bk-email" data-i18n="booking.l_email">Email</label>
+            <input id="bk-email" type="email" required autocomplete="email">
+          </div>
+          <div class="field2">
+            <label for="bk-empresa" data-i18n="booking.l_empresa">Empresa <span style="text-transform:none;font-weight:400">(opcional)</span></label>
+            <input id="bk-empresa" type="text" autocomplete="organization">
+          </div>
+          <div class="field2">
+            <label for="bk-notas" data-i18n="booking.l_notas">Descreva o problema em 2 ou 3 frases</label>
+            <textarea id="bk-notas" required></textarea>
+          </div>
+          <button type="submit" class="btn-solid mt" id="booking-submit" style="border:none;cursor:pointer;align-self:flex-start" data-i18n="booking.submit">Confirmar marcação ↗</button>
         </div>
-        <div class="field2">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required autocomplete="email">
-        </div>
-        <div class="field2">
-          <label for="empresa" data-i18n="form.l_empresa">Empresa <span style="text-transform:none;font-weight:400">(opcional)</span></label>
-          <input id="empresa" name="empresa" type="text" autocomplete="organization">
-        </div>
-        <div class="field2">
-          <label for="problema" data-i18n="form.l_problema">Descreva o problema em 2 ou 3 frases</label>
-          <textarea id="problema" name="problema" required></textarea>
-        </div>
-        <label class="consent2">
-          <input type="checkbox" required>
-          <span data-i18n="form.consent">Aceito que os dados sejam usados apenas para responder ao meu pedido. Ver política de privacidade (em breve).</span>
-        </label>
-      </div>
-      <button type="submit" class="btn-solid mt" style="border:none;cursor:pointer" data-i18n="form.submit">Enviar ↗</button>
-      <p id="form-msg" style="font-size:13px;color:var(--ink-2);margin-top:16px" data-i18n="form.msg">Respondemos em 1 dia útil.</p>
-    </form>
+      </form>
+      <p id="booking-msg" style="font-size:13px;color:var(--ink-2);margin-top:16px"></p>
+    </div>
 
     <div class="rule-left">
       <span class="mono-label eyebrow" data-i18n="direct.eyebrow">(03) — Diretos</span>
@@ -79,7 +82,7 @@
         <a href="#" id="wa-link"><b>WhatsApp</b><span data-i18n="direct.wa_span">Resposta rápida em horário útil</span></a>
         <a href="#" id="li-link"><b>LinkedIn</b><span>MJM Solutions</span></a>
       </div>
-      <p style="font-size:13px;color:var(--ink-2);margin-top:24px;border-top:1px solid var(--line);padding-top:16px" data-i18n="direct.note"><b>Agendamento:</b> em breve vai poder marcar o diagnóstico de 30 min diretamente aqui. Por agora, escreva-nos e combinamos o horário.</p>
+      <p style="font-size:13px;color:var(--ink-2);margin-top:24px;border-top:1px solid var(--line);padding-top:16px" data-i18n="direct.note"><b>Prefere escrever?</b> Mande-nos um email para o endereço ao lado — respondemos em 1 dia útil.</p>
     </div>
   </div>
 </section>
@@ -117,7 +120,7 @@
   </div>
 </footer>
 
-<script src="/contact.js" defer></script>
 <script src="/i18n.js" defer></script>
+<script src="/booking.js" defer></script>
 </body>
 </html>

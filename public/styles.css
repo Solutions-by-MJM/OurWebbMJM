@@ -156,6 +156,8 @@ h2.big{font-weight:800;font-size:clamp(36px,6vw,96px);line-height:0.98;letter-sp
 .chips{display:flex;flex-wrap:wrap;gap:10px}
 .chip{font-family:var(--mono);font-size:12px;letter-spacing:0.08em;border:1px solid var(--line);padding:8px 14px}
 .chip.hl{border-color:var(--primary);color:var(--primary)}
+button.chip{background:transparent;color:var(--ink);cursor:pointer;transition:border-color .15s ease,color .15s ease}
+button.chip:hover{border-color:var(--primary);color:var(--primary)}
 
 /* ===== Team photos (grayscale editorial) ===== */
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
