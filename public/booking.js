@@ -174,6 +174,7 @@
       const company = document.getElementById("bk-empresa").value.trim();
       const notes = document.getElementById("bk-notas").value.trim();
       const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "Europe/Lisbon";
+      const language = document.documentElement.lang === "en" ? "en" : "pt";
 
       submitBtn.disabled = true;
       msgEl.textContent = t("submitting");
@@ -181,7 +182,7 @@
       fetch("/api/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ start: selectedStart, name, email, company, notes, timeZone: tz }),
+        body: JSON.stringify({ start: selectedStart, name, email, company, notes, timeZone: tz, language }),
       })
         .then(async (r) => {
           const body = await r.json().catch(() => ({}));

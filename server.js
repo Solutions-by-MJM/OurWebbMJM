@@ -137,6 +137,9 @@ async function handleCreateBooking(req, res) {
   const company = typeof body.company === "string" ? body.company.trim().slice(0, 200) : "";
   const notes = typeof body.notes === "string" ? body.notes.trim().slice(0, 2000) : "";
   const timeZone = typeof body.timeZone === "string" ? body.timeZone.slice(0, 100) : "Europe/Lisbon";
+  // Língua do site no momento do pedido, para o CRM mandar a confirmação no
+  // idioma certo (vem no payload do webhook, em attendee.language e metadata.language).
+  const language = body.language === "en" ? "en" : "pt";
 
   if (!start || !name || !email || !email.includes("@") || !notes) {
     return sendJson(res, 400, { error: "Preencha todos os campos obrigatórios." });
@@ -148,8 +151,9 @@ async function handleCreateBooking(req, res) {
     body: JSON.stringify({
       start,
       eventTypeId: CAL_EVENT_TYPE_ID,
-      attendee: { name, email, timeZone },
+      attendee: { name, email, timeZone, language },
       bookingFieldsResponses: { title: company, notes },
+      metadata: { language },
     }),
   });
 

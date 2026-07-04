@@ -165,6 +165,11 @@ button.chip:hover{border-color:var(--primary);color:var(--primary)}
 .team-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05)}
 .team-grid figcaption{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;border-top:2px solid var(--primary);margin-top:10px;padding-top:8px}
 
+/* ===== Equipa (página Sobre): grelha de 3 colunas, mais compacta que o antigo empilhado ===== */
+.team-grid-full{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.team-grid-full figure{margin:0}
+.team-grid-full img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+
 /* ===== About / two-col split ===== */
 .split-7-5{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,6vw,100px)}
 .split-5-6{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,100px);align-items:start}
@@ -239,6 +244,7 @@ blockquote.big-quote .rust{color:var(--primary)}
   .method-card{border-right:none;border-top:1px solid var(--line)}
   .method-card.hl{border-top:4px solid var(--primary)}
   .team-grid{grid-template-columns:repeat(3,1fr)}
+  .team-grid-full{grid-template-columns:1fr;gap:40px}
   .casos-grid{grid-template-columns:1fr}
   .casos-grid .c1,.casos-grid .c2,.casos-grid .c3{grid-column:1 / -1;margin-top:0}
   .footer-grid{grid-template-columns:1fr 1fr}
