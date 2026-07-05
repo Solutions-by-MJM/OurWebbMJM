@@ -5,16 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="meta.title">Método e Preços Caso a Caso | MJM Solutions</title>
 <meta name="description" data-i18n="meta.description" data-i18n-attr="content" content="Como trabalhamos: diagnóstico gratuito, desenho e proposta, desenvolvimento e entrega com garantia. Preços caso a caso e código sempre seu.">
+<link rel="canonical" href="https://solutionsbymjm.pt/como-trabalhamos">
+<meta property="og:title" data-i18n="meta.title" data-i18n-attr="content" content="Método e Preços Caso a Caso | MJM Solutions">
+<meta property="og:description" data-i18n="meta.description" data-i18n-attr="content" content="Como trabalhamos: diagnóstico gratuito, desenho e proposta, desenvolvimento e entrega com garantia. Preços caso a caso e código sempre seu.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:url" content="https://solutionsbymjm.pt/como-trabalhamos">
+<meta property="og:image" content="https://solutionsbymjm.pt/assets/logo-full.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" data-i18n="meta.title" data-i18n-attr="content" content="Método e Preços Caso a Caso | MJM Solutions">
+<meta name="twitter:description" data-i18n="meta.description" data-i18n-attr="content" content="Como trabalhamos: diagnóstico gratuito, desenho e proposta, desenvolvimento e entrega com garantia. Preços caso a caso e código sempre seu.">
+<meta name="twitter:image" content="https://solutionsbymjm.pt/assets/logo-full.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=11">
+<link rel="stylesheet" href="/styles.css?v=12">
 </head>
 <body>
 
 <nav class="nav">
-  <a href="/" class="logo" aria-label="MJM Solutions — início" data-i18n="nav.logo_aria" data-i18n-attr="aria-label"><img src="/assets/logo-mark.png" alt="MJM Solutions"></a>
+  <div class="nav-left">
+    <a href="/" class="logo" aria-label="MJM Solutions — início" data-i18n="nav.logo_aria" data-i18n-attr="aria-label"><img src="/assets/logo-mark.png" alt="MJM Solutions"></a>
+    <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
   <div class="nav-links">
     <a href="/servicos" class="nav-link" data-i18n="nav.services">Serviços</a>
     <a href="/casos" class="nav-link" data-i18n="nav.cases">Casos</a>
@@ -24,6 +40,12 @@
     <a href="/contactos" class="nav-cta" data-i18n="nav.cta">Marcar diagnóstico&nbsp;↗</a>
   </div>
 </nav>
+<div id="mobile-menu" class="mobile-menu">
+  <a href="/servicos" class="mobile-menu-link" data-i18n="nav.services">Serviços</a>
+  <a href="/casos" class="mobile-menu-link" data-i18n="nav.cases">Casos</a>
+  <a href="/como-trabalhamos" class="mobile-menu-link" data-i18n="nav.how">Como trabalhamos</a>
+  <a href="/sobre" class="mobile-menu-link" data-i18n="nav.about">Sobre</a>
+</div>
 
 <!-- HERO -->
 <header class="theme-dark pad-hero">
@@ -207,8 +229,9 @@
     </div>
     <div class="footer-col">
       <h4 data-i18n="footer.contact_h4">Contacto</h4>
-      <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
-      <a href="#" data-i18n="footer.contact_whatsapp">WhatsApp</a>
+      <a href="tel:935596965">+351 935 596 965</a>
+      <a href="mailto:geral@solutionsbymjm.pt">geral@solutionsbymjm.pt</a>
+      <a href="https://wa.me/351935596965?text=Ol%C3%A1%21%20Gostaria%20de%20marcar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" rel="noopener" data-i18n="footer.contact_whatsapp">WhatsApp</a>
       <a href="#" data-i18n="footer.contact_linkedin">LinkedIn</a>
     </div>
   </div>
@@ -218,6 +241,7 @@
   </div>
 </footer>
 
+<script src="/nav.js" defer></script>
 <script src="/i18n.js" defer></script>
 </body>
 </html>

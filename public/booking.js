@@ -37,6 +37,8 @@
       const company = document.getElementById("bk-empresa").value.trim();
       const notes = document.getElementById("bk-notas").value.trim();
       const language = document.documentElement.lang === "en" ? "en" : "pt";
+      var websiteField = document.getElementById("bk-website");
+      var website = websiteField ? websiteField.value : "";
 
       submitBtn.disabled = true;
       msgEl.textContent = t("submitting");
@@ -44,7 +46,7 @@
       fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, company, notes, language }),
+        body: JSON.stringify({ name, email, company, notes, language, website }),
       })
         .then(async (r) => {
           const body = await r.json().catch(() => ({}));

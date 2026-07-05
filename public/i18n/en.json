@@ -348,15 +348,26 @@
     "hero.h1": "Talk<br>to us.",
     "hero.num": "(01) — Contact",
     "hero.p": "Does a process cost your team hours every week? Tell us about it. In 30 minutes we'll tell you if and how technology can solve it. No commitment, no catalogue-style presentations.",
-    "booking.eyebrow": "(02) — Book a meeting",
+    "booking.eyebrow": "(02) — Send a message",
+    "booking.title": "Send us a message",
     "booking.l_nome": "Name",
     "booking.l_email": "Email",
     "booking.l_empresa": "Company <span style=\"text-transform:none;font-weight:400\">(optional)</span>",
     "booking.l_notas": "Describe the problem in 2 or 3 sentences",
-    "booking.submit": "Confirm booking ↗",
+    "booking.submit": "Send message ↗",
     "direct.eyebrow": "(03) — Direct",
     "direct.h2": "Or reach us directly",
+    "direct.call_label": "Call",
+    "direct.email_label": "Email",
     "direct.wa_span": "Fast replies during business hours",
     "direct.note": "<b>Prefer to write?</b> Email us at the address on the side — we reply within 1 business day."
+  },
+  "notfound": {
+    "meta.title": "Page Not Found | MJM Solutions",
+    "meta.description": "The page you're looking for doesn't exist or has moved.",
+    "eyebrow": "404",
+    "h1": "Page not found.",
+    "p": "The page you're looking for doesn't exist or has moved. Check the address, or head back to the homepage.",
+    "cta": "Back to homepage ↗"
   }
 }

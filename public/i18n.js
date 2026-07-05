@@ -19,8 +19,13 @@
     "/sobre.html": "sobre",
     "/contactos": "contactos",
     "/contactos.html": "contactos",
+    "/404.html": "notfound",
   };
-  var pageKey = PAGE_BY_PATH[window.location.pathname] || "index";
+  // Uma resposta 404 mantém o URL originalmente pedido na barra de endereço
+  // (não redireciona para /404.html), por isso o mapeamento por path não
+  // chega a aplicar-se nesse caso — data-i18n-page no <html> tem prioridade.
+  var pageOverride = document.documentElement.getAttribute("data-i18n-page");
+  var pageKey = pageOverride || PAGE_BY_PATH[window.location.pathname] || "index";
 
   var translations = null;
   var originals = new WeakMap();

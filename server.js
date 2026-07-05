@@ -24,30 +24,12 @@ const PORT = process.env.PORT || 3000;
   }
 })();
 
-// ===== Cal.com (marcação do diagnóstico) =====
-const CAL_API_KEY = process.env.CAL_API_KEY || "";
-const CAL_EVENT_TYPE_ID = Number(process.env.CAL_EVENT_TYPE_ID || 6209959);
-const CAL_API_BASE = "https://api.cal.com/v2";
-
 // ===== Email (para formulário de contacto) =====
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
 const CONTACT_EMAIL = "geral@solutionsbymjm.pt";
 
-async function calFetch(pathAndQuery, apiVersion, init) {
-  const res = await fetch(CAL_API_BASE + pathAndQuery, {
-    ...init,
-    headers: {
-      Authorization: `Bearer ${CAL_API_KEY}`,
-      "cal-api-version": apiVersion,
-      ...(init && init.headers),
-    },
-  });
-  const data = await res.json().catch(() => null);
-  return { ok: res.ok, status: res.status, data };
-}
-
 // Limitador simples em memória (por IP), para não abrir a porta a spam de
-// marcações. Não sobrevive a reinícios do processo — suficiente aqui.
+// mensagens. Não sobrevive a reinícios do processo — suficiente aqui.
 const rateBuckets = new Map();
 function rateLimited(ip, key, max, windowMs) {
   const bucketKey = `${key}:${ip}`;
@@ -58,6 +40,19 @@ function rateLimited(ip, key, max, windowMs) {
   rateBuckets.set(bucketKey, recent);
   return recent.length > max;
 }
+
+// Limpa periodicamente os buckets sem atividade recente. Sem isto, o Map
+// cresce sem limite ao longo da vida do processo (um IP que passa uma vez
+// fica lá para sempre).
+const RATE_BUCKET_MAX_AGE = 60 * 60 * 1000;
+setInterval(() => {
+  const now = Date.now();
+  for (const [key, timestamps] of rateBuckets) {
+    const recent = timestamps.filter((t) => now - t < RATE_BUCKET_MAX_AGE);
+    if (recent.length === 0) rateBuckets.delete(key);
+    else rateBuckets.set(key, recent);
+  }
+}, 30 * 60 * 1000).unref();
 
 function readJsonBody(req, maxBytes) {
   return new Promise((resolve, reject) => {
@@ -89,36 +84,9 @@ function sendJson(res, status, body) {
   res.end(json);
 }
 
-const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
-
-async function handleGetSlots(req, res, query) {
-  const ip = req.socket.remoteAddress || "unknown";
-  if (rateLimited(ip, "slots", 60, 10 * 60 * 1000)) {
-    return sendJson(res, 429, { error: "Demasiados pedidos. Tente de novo dentro de momentos." });
-  }
-  if (!CAL_API_KEY) return sendJson(res, 503, { error: "Agendamento indisponível de momento." });
-
-  const start = query.get("start");
-  const end = query.get("end");
-  const timeZone = query.get("timeZone") || "Europe/Lisbon";
-  if (!start || !end || !DATE_RE.test(start) || !DATE_RE.test(end)) {
-    return sendJson(res, 400, { error: "Datas inválidas." });
-  }
-  // Limita a janela consultada a 21 dias, para não abrir a proxy a pedidos arbitrários.
-  const spanDays = (new Date(end) - new Date(start)) / 86400000;
-  if (!(spanDays >= 0 && spanDays <= 21)) {
-    return sendJson(res, 400, { error: "Intervalo de datas inválido." });
-  }
-
-  const qs = new URLSearchParams({
-    eventTypeId: String(CAL_EVENT_TYPE_ID),
-    start,
-    end,
-    timeZone,
-  });
-  const result = await calFetch(`/slots?${qs}`, "2024-09-04", { method: "GET" });
-  if (!result.ok) return sendJson(res, 502, { error: "Não foi possível obter horários." });
-  sendJson(res, 200, result.data);
+const HTML_ESCAPES = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (ch) => HTML_ESCAPES[ch]);
 }
 
 async function sendEmail(to, subject, html) {
@@ -156,6 +124,12 @@ async function handleContactForm(req, res) {
     return sendJson(res, 400, { error: "Pedido inválido." });
   }
 
+  // Honeypot: campo escondido via CSS que só bots preenchem. Devolve sucesso
+  // "falso" para não lhes dar sinal de que foram apanhados.
+  if (typeof body.website === "string" && body.website.trim()) {
+    return sendJson(res, 200, { ok: true });
+  }
+
   const name = typeof body.name === "string" ? body.name.trim().slice(0, 200) : "";
   const email = typeof body.email === "string" ? body.email.trim().slice(0, 200) : "";
   const company = typeof body.company === "string" ? body.company.trim().slice(0, 200) : "";
@@ -165,66 +139,18 @@ async function handleContactForm(req, res) {
     return sendJson(res, 400, { error: "Preencha todos os campos obrigatórios." });
   }
 
+  // Todos os campos vêm do visitante — nunca inserir sem escapar no HTML do email.
   const emailHtml = `
-    <h2>Nova mensagem de ${name}</h2>
-    <p><strong>Email:</strong> ${email}</p>
-    ${company ? `<p><strong>Empresa:</strong> ${company}</p>` : ""}
+    <h2>Nova mensagem de ${escapeHtml(name)}</h2>
+    <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+    ${company ? `<p><strong>Empresa:</strong> ${escapeHtml(company)}</p>` : ""}
     <p><strong>Mensagem:</strong></p>
-    <p>${notes.replace(/\n/g, "<br>")}</p>
+    <p>${escapeHtml(notes).replace(/\n/g, "<br>")}</p>
   `;
 
   const result = await sendEmail(CONTACT_EMAIL, `Nova mensagem de ${name}`, emailHtml);
   if (!result.ok) {
     return sendJson(res, 502, { error: "Não foi possível enviar a mensagem." });
-  }
-  sendJson(res, 200, { ok: true });
-}
-
-async function handleCreateBooking(req, res) {
-  const ip = req.socket.remoteAddress || "unknown";
-  if (rateLimited(ip, "book", 5, 30 * 60 * 1000)) {
-    return sendJson(res, 429, { error: "Demasiados pedidos de marcação. Tente de novo mais tarde." });
-  }
-  if (!CAL_API_KEY) return sendJson(res, 503, { error: "Agendamento indisponível de momento." });
-
-  let body;
-  try {
-    body = await readJsonBody(req, 10 * 1024);
-  } catch (e) {
-    return sendJson(res, 400, { error: "Pedido inválido." });
-  }
-
-  const start = typeof body.start === "string" ? body.start : "";
-  const name = typeof body.name === "string" ? body.name.trim().slice(0, 200) : "";
-  const email = typeof body.email === "string" ? body.email.trim().slice(0, 200) : "";
-  const company = typeof body.company === "string" ? body.company.trim().slice(0, 200) : "";
-  const notes = typeof body.notes === "string" ? body.notes.trim().slice(0, 2000) : "";
-  const timeZone = typeof body.timeZone === "string" ? body.timeZone.slice(0, 100) : "Europe/Lisbon";
-  // Língua do site no momento do pedido, para o CRM mandar a confirmação no
-  // idioma certo (vem no payload do webhook, em attendee.language e metadata.language).
-  const language = body.language === "en" ? "en" : "pt";
-
-  if (!start || !name || !email || !email.includes("@") || !notes) {
-    return sendJson(res, 400, { error: "Preencha todos os campos obrigatórios." });
-  }
-
-  const result = await calFetch("/bookings", "2024-08-13", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      start,
-      eventTypeId: CAL_EVENT_TYPE_ID,
-      attendee: { name, email, timeZone, language },
-      bookingFieldsResponses: { title: company, notes },
-      metadata: { language },
-    }),
-  });
-
-  if (!result.ok) {
-    const msg =
-      (result.data && result.data.error && result.data.error.message) ||
-      "Não foi possível concluir a marcação. O horário pode já não estar disponível.";
-    return sendJson(res, 409, { error: msg });
   }
   sendJson(res, 200, { ok: true });
 }
@@ -273,17 +199,9 @@ const server = http.createServer((req, res) => {
   // Headers de segurança em todas as respostas.
   for (const [k, v] of Object.entries(SECURITY_HEADERS)) res.setHeader(k, v);
 
-  const [rawPath, rawQuery] = req.url.split("?");
+  const [rawPath] = req.url.split("?");
   const urlPath = decodeURIComponent(rawPath);
-  const query = new URLSearchParams(rawQuery || "");
 
-  // API de agendamento (proxy para o Cal.com — a chave nunca sai do servidor).
-  if (urlPath === "/api/slots" && req.method === "GET") {
-    return handleGetSlots(req, res, query);
-  }
-  if (urlPath === "/api/bookings" && req.method === "POST") {
-    return handleCreateBooking(req, res);
-  }
   // API de contacto (formulário de contacto simples).
   if (urlPath === "/api/contact" && req.method === "POST") {
     return handleContactForm(req, res);
