@@ -29,6 +29,10 @@ const CAL_API_KEY = process.env.CAL_API_KEY || "";
 const CAL_EVENT_TYPE_ID = Number(process.env.CAL_EVENT_TYPE_ID || 6209959);
 const CAL_API_BASE = "https://api.cal.com/v2";
 
+// ===== Email (para formulário de contacto) =====
+const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
+const CONTACT_EMAIL = "geral@solutionsbymjm.pt";
+
 async function calFetch(pathAndQuery, apiVersion, init) {
   const res = await fetch(CAL_API_BASE + pathAndQuery, {
     ...init,
@@ -115,6 +119,65 @@ async function handleGetSlots(req, res, query) {
   const result = await calFetch(`/slots?${qs}`, "2024-09-04", { method: "GET" });
   if (!result.ok) return sendJson(res, 502, { error: "Não foi possível obter horários." });
   sendJson(res, 200, result.data);
+}
+
+async function sendEmail(to, subject, html) {
+  if (!RESEND_API_KEY) {
+    console.warn("RESEND_API_KEY não configurada — email não foi enviado");
+    return { ok: true };
+  }
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${RESEND_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from: "MJM Solutions <noreply@solutionsbymjm.pt>",
+      to,
+      subject,
+      html,
+    }),
+  });
+  const data = await res.json().catch(() => null);
+  return { ok: res.ok, data };
+}
+
+async function handleContactForm(req, res) {
+  const ip = req.socket.remoteAddress || "unknown";
+  if (rateLimited(ip, "contact", 5, 60 * 60 * 1000)) {
+    return sendJson(res, 429, { error: "Demasiados pedidos. Tente de novo mais tarde." });
+  }
+
+  let body;
+  try {
+    body = await readJsonBody(req, 10 * 1024);
+  } catch (e) {
+    return sendJson(res, 400, { error: "Pedido inválido." });
+  }
+
+  const name = typeof body.name === "string" ? body.name.trim().slice(0, 200) : "";
+  const email = typeof body.email === "string" ? body.email.trim().slice(0, 200) : "";
+  const company = typeof body.company === "string" ? body.company.trim().slice(0, 200) : "";
+  const notes = typeof body.notes === "string" ? body.notes.trim().slice(0, 2000) : "";
+
+  if (!name || !email || !email.includes("@") || !notes) {
+    return sendJson(res, 400, { error: "Preencha todos os campos obrigatórios." });
+  }
+
+  const emailHtml = `
+    <h2>Nova mensagem de ${name}</h2>
+    <p><strong>Email:</strong> ${email}</p>
+    ${company ? `<p><strong>Empresa:</strong> ${company}</p>` : ""}
+    <p><strong>Mensagem:</strong></p>
+    <p>${notes.replace(/\n/g, "<br>")}</p>
+  `;
+
+  const result = await sendEmail(CONTACT_EMAIL, `Nova mensagem de ${name}`, emailHtml);
+  if (!result.ok) {
+    return sendJson(res, 502, { error: "Não foi possível enviar a mensagem." });
+  }
+  sendJson(res, 200, { ok: true });
 }
 
 async function handleCreateBooking(req, res) {
@@ -220,6 +283,10 @@ const server = http.createServer((req, res) => {
   }
   if (urlPath === "/api/bookings" && req.method === "POST") {
     return handleCreateBooking(req, res);
+  }
+  // API de contacto (formulário de contacto simples).
+  if (urlPath === "/api/contact" && req.method === "POST") {
+    return handleContactForm(req, res);
   }
 
   // Normaliza o caminho e impede path traversal.
