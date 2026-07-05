@@ -3,3 +3,12 @@ node_modules/
 *.log
 .env
 .railway/
+
+# Ficheiros de trabalho soltos na raiz (fotos, PDFs, exports antigos) —
+# não fazem parte do site servido (esse vive em /public).
+/*.png
+/*.jpg
+/*.jpeg
+/*.pdf
+/*.lnk
+/MJM Solutions*.html
