@@ -191,6 +191,9 @@ button.chip:hover{border-color:var(--primary);color:var(--primary)}
 .split-5-6{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,100px);align-items:start}
 .split-8-4{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:clamp(24px,3vw,40px)}
 .split-side{position:sticky;top:88px;display:flex;flex-direction:column;gap:28px}
+.title-row{display:flex;align-items:baseline;justify-content:center;gap:12px;text-align:center}
+.title-row h2.big{margin:0}
+.shot-hidden{display:none}
 .rule-left{border-left:1px solid var(--line);padding-left:clamp(24px,3vw,48px)}
 blockquote.big-quote{font-weight:800;font-size:clamp(30px,4.4vw,68px);line-height:1.05;letter-spacing:-0.03em;margin:24px 0 0}
 blockquote.big-quote .rust{color:var(--primary)}
