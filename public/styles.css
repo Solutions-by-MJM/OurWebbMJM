@@ -194,6 +194,7 @@ button.chip:hover{border-color:var(--primary);color:var(--primary)}
 .title-row{display:flex;align-items:baseline;justify-content:center;gap:12px;text-align:center}
 .title-row h2.big{margin:0}
 .shot-hidden{display:none}
+.split-side-centered{align-items:center;text-align:center}
 .rule-left{border-left:1px solid var(--line);padding-left:clamp(24px,3vw,48px)}
 blockquote.big-quote{font-weight:800;font-size:clamp(30px,4.4vw,68px);line-height:1.05;letter-spacing:-0.03em;margin:24px 0 0}
 blockquote.big-quote .rust{color:var(--primary)}
