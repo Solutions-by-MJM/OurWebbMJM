@@ -179,6 +179,22 @@ const SECURITY_HEADERS = {
   "Content-Security-Policy": CSP,
 };
 
+// A apresentação corporativa é um ficheiro autónomo (bundle exportado) que se
+// desempacota via um script inline e ficheiros blob/data: — precisa de uma
+// CSP mais permissiva do que o resto do site, que não corre scripts inline.
+const PRESENTATION_PATHS = new Set(["/apresentacao", "/apresentacao.html"]);
+const PRESENTATION_CSP = [
+  "default-src 'self'",
+  "style-src 'self' 'unsafe-inline'",
+  "font-src 'self' data:",
+  "script-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "media-src 'self' blob:",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "frame-ancestors 'self'",
+].join("; ");
+
 const MIME = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -193,6 +209,7 @@ const MIME = {
   ".woff2": "font/woff2",
   ".txt": "text/plain; charset=utf-8",
   ".xml": "application/xml; charset=utf-8",
+  ".pdf": "application/pdf",
 };
 
 const server = http.createServer((req, res) => {
@@ -201,6 +218,10 @@ const server = http.createServer((req, res) => {
 
   const [rawPath] = req.url.split("?");
   const urlPath = decodeURIComponent(rawPath);
+
+  if (PRESENTATION_PATHS.has(urlPath)) {
+    res.setHeader("Content-Security-Policy", PRESENTATION_CSP);
+  }
 
   // API de contacto (formulário de contacto simples).
   if (urlPath === "/api/contact" && req.method === "POST") {
@@ -223,6 +244,10 @@ const server = http.createServer((req, res) => {
       headers["Cache-Control"] = "no-cache";
     } else {
       headers["Cache-Control"] = "public, max-age=86400";
+    }
+    // Abrir no browser em vez de forçar download.
+    if (ext === ".pdf") {
+      headers["Content-Disposition"] = "inline";
     }
     res.writeHead(200, headers);
     fs.createReadStream(file).pipe(res);
