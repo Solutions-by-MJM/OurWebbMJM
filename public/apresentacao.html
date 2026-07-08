@@ -172,23 +172,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (window.Babel && typeof window.Babel.transformScriptTags === 'function') {
       window.Babel.transformScriptTags();
     }
-
-    // Link discreto para descarregar o PDF da apresentação — não faz parte
-    // do template original; injetado após o unpack para sobreviver ao
-    // document.documentElement.replaceWith() acima.
-    var pdfLink = document.createElement('a');
-    pdfLink.href = '/assets/mjm-apresentacao.pdf';
-    pdfLink.textContent = 'Descarregar PDF';
-    pdfLink.setAttribute(
-      'style',
-      'position:fixed;right:18px;bottom:16px;z-index:9998;' +
-      "font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;" +
-      'color:#CFCBC4;opacity:0.6;text-decoration:none;background:rgba(32,33,26,0.55);' +
-      'padding:7px 14px;border-radius:4px;transition:opacity .15s ease;'
-    );
-    pdfLink.addEventListener('mouseenter', function () { pdfLink.style.opacity = '1'; });
-    pdfLink.addEventListener('mouseleave', function () { pdfLink.style.opacity = '0.6'; });
-    document.body.appendChild(pdfLink);
   } catch (err) {
     setStatus('Error unpacking: ' + err.message);
     console.error('Bundle unpack error:', err);
