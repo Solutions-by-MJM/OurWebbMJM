@@ -16,7 +16,7 @@ ul,dl{margin:0;padding:0}
 ::selection{background:var(--primary);color:var(--light)}
 img{display:block;max-width:100%}
 [id]{scroll-margin-top:20px}
-@keyframes mjm-marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+@keyframes mjm-marquee{from{transform:translateX(0)}to{transform:translateX(-75%)}}
 
 .mono-label{font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase}
 
