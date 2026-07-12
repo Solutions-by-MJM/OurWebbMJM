@@ -51,15 +51,14 @@
     },
   };
 
-  const statusEl = document.getElementById("booking-status");
-  const formEl = document.getElementById("booking-form");
   const attendeeForm = document.getElementById("booking-attendee-form");
   const msgEl = document.getElementById("booking-msg");
 
-  if (!statusEl) return;
-  statusEl.style.display = "none";
-
-  if (formEl) formEl.style.display = "flex";
+  // Guardar apenas nos elementos que realmente usamos. Antes havia aqui um
+  // guard em #booking-status — elemento que deixou de existir no HTML quando o
+  // formulário foi simplificado — e que abortava o script inteiro, deixando o
+  // submit nativo recarregar a página sem nunca chamar /api/contact.
+  if (!attendeeForm || !msgEl) return;
 
   // Mostra ou limpa a mensagem de erro de um campo, marcando o .field2 e
   // inserindo/atualizando um <p class="field-error"> a seguir ao input.

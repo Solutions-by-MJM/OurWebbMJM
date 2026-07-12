@@ -20,7 +20,7 @@
     "footer.support_apresentacao": "Corporate Presentation",
     "footer.contact_h4": "Contact",
     "footer.contact_whatsapp": "WhatsApp",
-    "footer.contact_linkedin": "LinkedIn",
+    "footer.contact_linkedin": "LinkedIn (soon)",
     "footer.fine_rights": "© 2026 MJM Solutions. All rights reserved.",
     "footer.fine_tagline": "Tailored software · Portugal"
   },
@@ -371,6 +371,7 @@
     "direct.call_label": "Call",
     "direct.email_label": "Email",
     "direct.wa_span": "Fast replies during business hours",
+    "direct.li_soon": "Soon",
     "direct.note": "<b>Prefer to write?</b> Email us at the address on the side — we reply within 1 business day."
   },
   "notfound": {
