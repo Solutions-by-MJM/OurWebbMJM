@@ -9,24 +9,46 @@
 <meta property="og:title" data-i18n="meta.title" data-i18n-attr="content" content="Fale Connosco: Diagnóstico Gratuito | MJM Solutions">
 <meta property="og:description" data-i18n="meta.description" data-i18n-attr="content" content="Tem um processo que custa horas à sua equipa todas as semanas? Conte-nos. Em 30 minutos dizemos-lhe se e como a tecnologia resolve. Sem compromisso.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="MJM Solutions">
 <meta property="og:locale" content="pt_PT">
 <meta property="og:url" content="https://solutionsbymjm.pt/contactos">
-<meta property="og:image" content="https://solutionsbymjm.pt/assets/logo-full.png">
+<meta property="og:image" content="https://solutionsbymjm.pt/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MJM Solutions — software à medida, automação e IA aplicada">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" data-i18n="meta.title" data-i18n-attr="content" content="Fale Connosco: Diagnóstico Gratuito | MJM Solutions">
 <meta name="twitter:description" data-i18n="meta.description" data-i18n-attr="content" content="Tem um processo que custa horas à sua equipa todas as semanas? Conte-nos. Em 30 minutos dizemos-lhe se e como a tecnologia resolve. Sem compromisso.">
-<meta name="twitter:image" content="https://solutionsbymjm.pt/assets/logo-full.png">
+<meta name="twitter:image" content="https://solutionsbymjm.pt/assets/og-image.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=16">
+<link rel="preload" href="/fonts/archivo-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/public-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css?v=17">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://solutionsbymjm.pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contactos"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-left">
-    <a href="/" class="logo" aria-label="MJM Solutions — início" data-i18n="nav.logo_aria" data-i18n-attr="aria-label"><img src="/assets/logo-mark.png" alt="MJM Solutions"></a>
+    <a href="/" class="logo" aria-label="MJM Solutions — início" data-i18n="nav.logo_aria" data-i18n-attr="aria-label"><img src="/assets/logo-mark.png" alt="MJM Solutions" width="212" height="96"></a>
     <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
     </button>
@@ -72,19 +94,19 @@
         <div class="form2 mt" id="booking-form">
           <div class="field2">
             <label for="bk-nome" data-i18n="booking.l_nome">Nome</label>
-            <input id="bk-nome" type="text" required autocomplete="name">
+            <input id="bk-nome" type="text" required minlength="2" maxlength="200" autocomplete="name">
           </div>
           <div class="field2">
             <label for="bk-email" data-i18n="booking.l_email">Email</label>
-            <input id="bk-email" type="email" required autocomplete="email">
+            <input id="bk-email" type="email" required maxlength="200" autocomplete="email">
           </div>
           <div class="field2">
             <label for="bk-empresa" data-i18n="booking.l_empresa">Empresa <span style="text-transform:none;font-weight:400">(opcional)</span></label>
-            <input id="bk-empresa" type="text" autocomplete="organization">
+            <input id="bk-empresa" type="text" maxlength="200" autocomplete="organization">
           </div>
           <div class="field2">
             <label for="bk-notas" data-i18n="booking.l_notas">Descreva o problema em 2 ou 3 frases</label>
-            <textarea id="bk-notas" required></textarea>
+            <textarea id="bk-notas" required minlength="10" maxlength="2000"></textarea>
           </div>
           <div class="hp-field" aria-hidden="true">
             <label for="bk-website">Não preencher este campo</label>
@@ -112,7 +134,7 @@
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="/assets/logo-full.png" alt="MJM Solutions">
+      <img src="/assets/logo-full.png" alt="MJM Solutions" width="323" height="200" loading="lazy" decoding="async">
       <p data-i18n="footer.brand_p">Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
       <a href="/contactos" class="link-arrow on-dark" data-i18n="footer.brand_cta">Marcar diagnóstico ↗</a>
     </div>
@@ -144,8 +166,12 @@
   </div>
 </footer>
 
+<script type="speculationrules">
+{"prefetch":[{"source":"list","urls":["/contactos","/servicos"]}]}
+</script>
 <script src="/nav.js" defer></script>
 <script src="/i18n.js" defer></script>
-<script src="/booking.js?v=3" defer></script>
+<script src="/consent.js" defer></script>
+<script src="/booking.js?v=4" defer></script>
 </body>
 </html>

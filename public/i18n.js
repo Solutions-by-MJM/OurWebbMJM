@@ -84,13 +84,19 @@
     localStorage.setItem(STORAGE_KEY, lang);
   }
 
+  // O português vive no HTML, por isso um visitante PT nunca precisa do en.json.
+  // Só o carregamos quando é mesmo necessário (visitante já em EN, ou no toggle).
+  // Para quem já está em EN, arrancamos a fetch já no parse do script (defer),
+  // antes do DOMContentLoaded, para reduzir o flash PT→EN.
+  var storedLang = localStorage.getItem(STORAGE_KEY) || "pt";
+  var earlyLoad = storedLang === "en" ? loadTranslations() : null;
+
   document.addEventListener("DOMContentLoaded", function () {
     var btn = document.getElementById("lang-toggle");
-    var stored = localStorage.getItem(STORAGE_KEY) || "pt";
 
-    loadTranslations().then(function () {
-      if (stored === "en") applyLanguage("en");
-    });
+    if (storedLang === "en") {
+      (earlyLoad || loadTranslations()).then(function () { applyLanguage("en"); });
+    }
 
     if (btn) {
       btn.addEventListener("click", function () {

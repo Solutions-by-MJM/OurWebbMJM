@@ -7,16 +7,15 @@
 <meta name="description" data-i18n="meta.description" data-i18n-attr="content" content="A página que procura não existe ou foi movida.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=16">
+<link rel="preload" href="/fonts/archivo-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/public-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css?v=17">
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-left">
-    <a href="/" class="logo" aria-label="MJM Solutions — início" data-i18n="nav.logo_aria" data-i18n-attr="aria-label"><img src="/assets/logo-mark.png" alt="MJM Solutions"></a>
+    <a href="/" class="logo" aria-label="MJM Solutions — início" data-i18n="nav.logo_aria" data-i18n-attr="aria-label"><img src="/assets/logo-mark.png" alt="MJM Solutions" width="212" height="96"></a>
     <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
     </button>
@@ -54,7 +53,7 @@
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="/assets/logo-full.png" alt="MJM Solutions">
+      <img src="/assets/logo-full.png" alt="MJM Solutions" width="323" height="200" loading="lazy" decoding="async">
       <p data-i18n="footer.brand_p">Software à medida, automação e IA aplicada para PMEs de serviços. Percebemos do negócio do cliente, não só de código.</p>
       <a href="/contactos" class="link-arrow on-dark" data-i18n="footer.brand_cta">Marcar diagnóstico ↗</a>
     </div>
@@ -86,7 +85,11 @@
   </div>
 </footer>
 
+<script type="speculationrules">
+{"prefetch":[{"source":"list","urls":["/contactos","/servicos"]}]}
+</script>
 <script src="/nav.js" defer></script>
 <script src="/i18n.js" defer></script>
+<script src="/consent.js" defer></script>
 </body>
 </html>

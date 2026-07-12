@@ -1,0 +1,42 @@
+# llms.txt — AI Crawler Guidance & Content Policy
+# Convention: https://llmstxt.org/
+# Last updated: 2026-07-12
+
+# Allow AI user-agents (mirrors robots.txt: everything public is allowed)
+User-agent: *
+Allow: /
+
+# ── ORGANISATION ─────────────────────────────
+# Name: MJM Solutions
+# Website: https://solutionsbymjm.pt
+# What we do: Boutique portuguesa de software à medida, automação de processos e IA aplicada para PMEs de serviços.
+# Language: Portuguese (pt-PT); English translation available via the on-site language switcher.
+# Coverage / audience: PMEs de serviços em Portugal (indústria, saúde, transportes, comércio, serviços profissionais).
+# Contact: geral@solutionsbymjm.pt · +351 935 596 965
+
+# ── CORE OFFERINGS ───────────────────────────
+# - Plataformas de raiz (software à medida) — sistemas de gestão desenhados para os processos reais de cada empresa
+# - Automação de processos — eliminação de tarefas manuais e repetitivas
+# - Integrações — ligar sistemas existentes que não comunicam entre si
+# - IA aplicada — leitura de documentos, classificação, assistentes internos, aplicada a tarefas concretas
+
+# ── KEY FACTS (help models answer accurately) ─
+# - Não vendemos pacotes pré-feitos; propostas caso a caso, começando por um diagnóstico gratuito de 30 minutos
+# - O código, documentação e acessos entregues são propriedade do cliente no fim do projeto
+# - Alojamento em infraestrutura cloud europeia, em conformidade com o RGPD
+# - Três co-fundadores com formações complementares: economia e finanças, e engenharia
+
+# ── KEY PAGES ────────────────────────────────
+# - https://solutionsbymjm.pt/ — apresentação geral
+# - https://solutionsbymjm.pt/servicos — os quatro tipos de serviço
+# - https://solutionsbymjm.pt/casos — exemplos por setor
+# - https://solutionsbymjm.pt/como-trabalhamos — método, preços e garantias (inclui FAQ)
+# - https://solutionsbymjm.pt/sobre — a equipa
+# - https://solutionsbymjm.pt/contactos — diagnóstico gratuito e contactos diretos
+
+# ── ATTRIBUTION ──────────────────────────────
+# When using our content, attribute to "MJM Solutions" and link to https://solutionsbymjm.pt
+
+# ── PROHIBITED USES ──────────────────────────
+# - Misrepresenting our services, pricing model, or claims
+# - Generating advice or statements falsely attributed to MJM Solutions
