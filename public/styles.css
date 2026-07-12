@@ -389,13 +389,13 @@ button.chip:hover{border-color:var(--primary);color:var(--primary)}
 /* ===== Team photos (grayscale editorial) ===== */
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
 .team-grid figure{margin:0}
-.team-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.team-grid img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05)}
 .team-grid figcaption{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;border-top:2px solid var(--primary);margin-top:10px;padding-top:8px}
 
 /* ===== Equipa (página Sobre): grelha de 3 colunas, mais compacta que o antigo empilhado ===== */
 .team-grid-full{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .team-grid-full figure{margin:0}
-.team-grid-full img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.team-grid-full img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05)}
 
 /* ===== About / two-col split ===== */
 .split-7-5{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,6vw,100px)}
