@@ -151,6 +151,10 @@
   function injectReopenLink() {
     var fine = document.querySelector(".footer-fine");
     if (!fine || fine.querySelector(".mjm-consent-reopen")) return;
+    // Os estilos vivem em injectStyles(), que de outro modo só corria ao abrir
+    // o banner. Sem isto, quem já decidiu (banner não abre no arranque) via o
+    // botão "Cookies" sem estilo até o clicar uma vez. Idempotente.
+    injectStyles();
     var btn = document.createElement("button");
     btn.type = "button";
     btn.className = "mjm-consent-reopen";
