@@ -11,7 +11,7 @@ Allow: /
 # Website: https://solutionsbymjm.pt
 # What we do: Boutique portuguesa de software à medida, automação de processos e IA aplicada para PMEs de serviços.
 # Language: Portuguese (pt-PT); English translation available via the on-site language switcher.
-# Coverage / audience: PMEs de serviços em Portugal (indústria, saúde, transportes, comércio, serviços profissionais).
+# Coverage / audience: PMEs de serviços em Portugal (indústria, saúde, transportes, comércio, serviços financeiros, serviços profissionais).
 # Contact: geral@solutionsbymjm.pt · +351 935 596 965
 
 # ── CORE OFFERINGS ───────────────────────────
