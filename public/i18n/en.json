@@ -116,7 +116,8 @@
     "cta.label": "(08) — Start here",
     "cta.h2": "If the process fits on a sheet of paper or a spreadsheet, we'll optimize it.",
     "cta.button": "Book a free diagnostic ↗",
-    "cta.note": "Tell us your problem. If we can help, we'll tell you how. If we're not the right fit, we'll tell you that too."
+    "cta.note": "Tell us your problem. If we can help, we'll tell you how. If we're not the right fit, we'll tell you that too.",
+    "metodo.cta": "Talk to us ↗"
   },
   "servicos": {
     "meta.title": "Tailored Software, Integrations, Automation and AI | MJM Solutions",
