@@ -45,7 +45,10 @@
   };
 
   function currentLang() {
-    return localStorage.getItem(LANG_KEY) === "en" ? "en" : "pt";
+    // O idioma vem do próprio documento: as páginas /en/... são estáticas
+    // com lang="en", por isso funciona mesmo sem localStorage (ex. modo
+    // privado) e no primeiro acesso direto a um URL inglês vindo do Google.
+    return document.documentElement.lang === "en" ? "en" : "pt";
   }
   function t() {
     return STRINGS[currentLang()];

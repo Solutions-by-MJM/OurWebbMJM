@@ -33,7 +33,13 @@ npm start          # arranca em http://localhost:3000
 PORT=4000 npm start
 ```
 
-Não há passo de build nem `npm install` obrigatório (o servidor não tem dependências).
+Não há `npm install` obrigatório (o servidor não tem dependências). O único passo de build é o site inglês: as páginas `/en/...` são estáticas, geradas a partir do HTML PT + `public/i18n/en.json`. Depois de editar qualquer página PT ou o `en.json`, correr:
+
+```bash
+npm run build:en   # regenera public/en.html e public/en/*.html (commitar o resultado)
+```
+
+O deploy não corre este passo — as páginas EN geradas fazem parte do repositório.
 
 ## Deploy no Railway
 

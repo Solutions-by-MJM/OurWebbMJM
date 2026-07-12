@@ -301,11 +301,12 @@ const server = http.createServer((req, res) => {
       headers["Cache-Control"] = "public, max-age=604800";
     }
 
-    // O conteúdo visível é sempre servido em PT (o toggle EN corre no
-    // cliente, depois do carregamento) — declarar isto ajuda a desambiguar
-    // o idioma para motores de busca, alinhado com <html lang="pt-PT">.
+    // Declarar o idioma ajuda a desambiguar para motores de busca, alinhado
+    // com o <html lang> de cada página: PT por omissão, EN nas páginas
+    // estáticas /en/... geradas por build-en.js.
     if (ext === ".html") {
-      headers["Content-Language"] = "pt-PT";
+      const isEnglish = urlPath === "/en" || urlPath.startsWith("/en/");
+      headers["Content-Language"] = isEnglish ? "en" : "pt-PT";
     }
 
     // Abrir no browser em vez de forçar download.
