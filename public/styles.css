@@ -241,6 +241,13 @@ img{display:block;max-width:100%}
 .pad-t0{padding-top:0}
 .pad-b0{padding-bottom:0}
 .pad-hero{padding:clamp(56px, 9vw, 140px) var(--pad) clamp(48px, 7vw, 100px)}
+/* Heroes de subpágina (todos menos a homepage #top): enchem o ecrã abaixo da
+   nav sticky (72px) e ancoram a intro-row ao fundo. Sem isto, a altura do
+   hero depende do conteúdo — H1 de 3 linhas transbordava e cortava a
+   descrição; descrição curta deixava o branco da secção seguinte espreitar. */
+header.pad-hero:not(#top){display:flex;flex-direction:column;min-height:calc(100vh - 72px);box-sizing:border-box}
+header.pad-hero:not(#top) .display{margin-bottom:24px}
+header.pad-hero:not(#top) .intro-row{margin-top:auto}
 
 /* ===== NAV ===== */
 .nav{display:flex;align-items:stretch;justify-content:space-between;background:var(--bg);border-bottom:1px solid var(--line-dark);padding:0 var(--pad);height:72px;position:sticky;top:0;z-index:50;max-width:100vw}
