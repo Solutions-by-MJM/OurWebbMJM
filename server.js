@@ -265,6 +265,16 @@ const server = http.createServer((req, res) => {
     return handleContactForm(req, res);
   }
 
+  // SEO: um URL limpo com barra final (ex. /servicos/) é uma variante do
+  // mesmo conteúdo de /servicos — sem este redirect ficava um 404 em vez de
+  // resolver, o que parte qualquer link ou partilha que inclua essa barra.
+  // 301 para a versão canónica (sem barra) em vez de servir os dois URLs.
+  if (urlPath !== "/" && urlPath.endsWith("/")) {
+    const query = req.url.includes("?") ? req.url.slice(req.url.indexOf("?")) : "";
+    res.writeHead(301, { Location: urlPath.slice(0, -1) + query });
+    return res.end();
+  }
+
   // Normaliza o caminho e impede path traversal.
   let filePath = path.join(ROOT, urlPath);
   if (!filePath.startsWith(ROOT)) {
@@ -291,9 +301,20 @@ const server = http.createServer((req, res) => {
       headers["Cache-Control"] = "public, max-age=604800";
     }
 
+    // O conteúdo visível é sempre servido em PT (o toggle EN corre no
+    // cliente, depois do carregamento) — declarar isto ajuda a desambiguar
+    // o idioma para motores de busca, alinhado com <html lang="pt-PT">.
+    if (ext === ".html") {
+      headers["Content-Language"] = "pt-PT";
+    }
+
     // Abrir no browser em vez de forçar download.
     if (ext === ".pdf") {
       headers["Content-Disposition"] = "inline";
+      // É um material de vendas para partilha direta, não uma página feita
+      // para ranquear — evita que excertos de slides apareçam nos resultados
+      // de pesquisa a competir com as páginas reais do site.
+      headers["X-Robots-Tag"] = "noindex";
     }
 
     // Compressão para tipos de texto (o resto — imagens, fontes, PDF — já vem
