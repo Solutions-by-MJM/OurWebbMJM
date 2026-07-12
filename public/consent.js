@@ -15,7 +15,7 @@
   // Substituir pelo Measurement ID real da propriedade GA4 (formato G-XXXXXXXXXX).
   // Enquanto for o valor de exemplo abaixo, o banner funciona mas o GA4 não é
   // carregado (evita pedidos a um ID inexistente).
-  var GA4_ID = "G-XXXXXXXXXX";
+  var GA4_ID = "G-6BF8W7SB2N";
 
   var CONSENT_KEY = "mjm-consent";
   var LANG_KEY = "mjm-lang";
