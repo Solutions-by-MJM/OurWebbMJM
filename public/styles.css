@@ -409,7 +409,7 @@ button.chip:hover{border-color:var(--primary);color:var(--primary)}
 .split-5-6{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,100px);align-items:start}
 .split-8-4{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:clamp(24px,3vw,40px)}
 .split-side{position:sticky;top:88px;display:flex;flex-direction:column;gap:28px}
-.title-row{display:flex;align-items:center;justify-content:center;gap:14px;text-align:center}
+.title-row{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center}
 .title-row h2.big{margin:0}
 .shot-hidden{display:none}
 .split-side-centered{align-items:center;justify-content:center;text-align:center}
