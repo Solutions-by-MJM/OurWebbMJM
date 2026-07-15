@@ -383,7 +383,7 @@ h2.big{font-weight:800;font-size:clamp(36px,6vw,96px);line-height:0.98;letter-sp
 .dl-rows{margin-top:8px;display:flex;flex-direction:column}
 .dl-row{border-top:1px solid var(--line);padding:14px 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .dl-row.close{border-bottom:1px solid var(--line)}
-.dl-row dt{font-weight:700;font-size:15px}
+.dl-row dt{font-weight:700;font-size:15px;color:#000}
 .dl-row dd{font-size:14px;color:var(--ink-2)}
 
 /* ===== Chips ===== */
