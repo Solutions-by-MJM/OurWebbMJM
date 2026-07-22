@@ -56,6 +56,14 @@ function rateLimited(ip, key, max, windowMs) {
   return recent.length > max;
 }
 
+// Limite grosseiro por IP a todos os pedidos (estáticos incluídos). Sem isto,
+// a compressão Brotli por pedido (ver serve() mais abaixo) pode ser usada
+// para esgotar CPU com volume alto de pedidos simultâneos. Generoso o
+// suficiente para uma navegação normal (várias páginas, imagens e fontes por
+// sessão) sem incomodar visitantes reais.
+const RATE_GLOBAL_MAX = 300;
+const RATE_GLOBAL_WINDOW_MS = 60 * 1000;
+
 // Limpa periodicamente os buckets sem atividade recente. Sem isto, o Map
 // cresce sem limite ao longo da vida do processo (um IP que passa uma vez
 // fica lá para sempre).
@@ -210,6 +218,8 @@ const SECURITY_HEADERS = {
   "X-Frame-Options": "SAMEORIGIN",
   "Referrer-Policy": "strict-origin-when-cross-origin",
   "Permissions-Policy": "geolocation=(), camera=(), microphone=(), interest-cohort=()",
+  "Cross-Origin-Opener-Policy": "same-origin",
+  "Cross-Origin-Resource-Policy": "same-origin",
   "Content-Security-Policy": CSP,
 };
 
@@ -253,8 +263,22 @@ const server = http.createServer((req, res) => {
   // Headers de segurança em todas as respostas.
   for (const [k, v] of Object.entries(SECURITY_HEADERS)) res.setHeader(k, v);
 
+  if (rateLimited(clientIp(req), "global", RATE_GLOBAL_MAX, RATE_GLOBAL_WINDOW_MS)) {
+    res.writeHead(429, { "Content-Type": "text/plain; charset=utf-8" });
+    return res.end("429 — Demasiados pedidos");
+  }
+
   const [rawPath] = req.url.split("?");
-  const urlPath = decodeURIComponent(rawPath);
+  // decodeURIComponent lança URIError num % mal formado (ex. "/%zz"); sem
+  // apanhar isto, um único pedido deste tipo derrubava o processo inteiro
+  // (exceção não apanhada dentro do callback síncrono do http.createServer).
+  let urlPath;
+  try {
+    urlPath = decodeURIComponent(rawPath);
+  } catch (e) {
+    res.writeHead(400, { "Content-Type": "text/plain; charset=utf-8" });
+    return res.end("400 — Pedido inválido");
+  }
 
   if (PRESENTATION_PATHS.has(urlPath)) {
     res.setHeader("Content-Security-Policy", PRESENTATION_CSP);
@@ -275,9 +299,13 @@ const server = http.createServer((req, res) => {
     return res.end();
   }
 
-  // Normaliza o caminho e impede path traversal.
+  // Normaliza o caminho e impede path traversal. Comparar por prefixo de
+  // string (startsWith(ROOT)) seria enganado por uma pasta irmã cujo nome
+  // também comece por "public" (ex. "public-old") — path.relative() confirma
+  // o limite real do caminho em vez de uma comparação de texto.
   let filePath = path.join(ROOT, urlPath);
-  if (!filePath.startsWith(ROOT)) {
+  const relativeToRoot = path.relative(ROOT, filePath);
+  if (relativeToRoot.startsWith("..") || path.isAbsolute(relativeToRoot)) {
     res.writeHead(403);
     return res.end("Forbidden");
   }
@@ -323,8 +351,13 @@ const server = http.createServer((req, res) => {
     const accept = req.headers["accept-encoding"] || "";
     let encoder = null;
     if (COMPRESSIBLE.has(ext)) {
-      if (/\bbr\b/.test(accept)) { headers["Content-Encoding"] = "br"; encoder = zlib.createBrotliCompress(); }
-      else if (/\bgzip\b/.test(accept)) { headers["Content-Encoding"] = "gzip"; encoder = zlib.createGzip(); }
+      if (/\bbr\b/.test(accept)) {
+        headers["Content-Encoding"] = "br";
+        // Qualidade máxima (11, omissão do Node) é cara para comprimir a
+        // cada pedido sem cache; nível 5 mantém a maior parte do ganho de
+        // tamanho a uma fração do custo de CPU.
+        encoder = zlib.createBrotliCompress({ params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 5 } });
+      } else if (/\bgzip\b/.test(accept)) { headers["Content-Encoding"] = "gzip"; encoder = zlib.createGzip(); }
       if (encoder) headers["Vary"] = "Accept-Encoding";
     }
 
