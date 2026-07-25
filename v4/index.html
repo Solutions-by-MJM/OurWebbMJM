@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tailored Software for SMEs | MJM Solutions</title>
+<meta name="description" content="Portuguese software boutique: tailored platforms, automation and applied AI. Case-by-case proposals, code you own, free 30-minute diagnostic.">
+<link rel="icon" href="assets/logo-mark.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SCROLLING BACKGROUND — two reserved <img> slots, sitting
+     inside the black page frame. main.js drifts and crossfades
+     from the first to the second as the page scrolls.
+     ============================================================ -->
+<div class="bg-stage" aria-hidden="true">
+  <div class="bg-layer bg-a" data-slot="background-1">
+    <!-- <img> BACKGROUND 1 -->
+    <span class="slot-tag">bg 01 / reserved</span>
+  </div>
+  <div class="bg-layer bg-b" data-slot="background-2">
+    <!-- <img> BACKGROUND 2 — revealed on scroll -->
+    <span class="slot-tag">bg 02 / reserved</span>
+  </div>
+</div>
+
+<!-- black page frame -->
+<div class="frame">
+  <div class="ground" id="top">
+
+    <!-- ========================= TOPBAR ========================= -->
+    <header class="topbar">
+      <a class="logo" href="#top" aria-label="MJM Solutions — home">
+        <span class="logo__chip"><img src="assets/logo-mark.png" alt=""></span>
+        <span class="logo__word">MJM Solutions</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#method">Method</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="nav__contact" href="#contact">Contact</a>
+    </header>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero">
+      <!-- upper-left photograph, larger scale -->
+      <figure class="shot shot--a" data-slot="hero-photo-1">
+        <!-- <img> HERO PHOTO 1 — upper-left, larger scale -->
+        <span class="slot-tag slot-tag--in">hero photo 01 / reserved</span>
+      </figure>
+
+      <!-- wordmark on bare ground, centre-right between the two photographs -->
+      <div class="hero__mark">
+        <h1>MJM<br>Solutions.</h1>
+        <p class="origin">Portugal — Software boutique</p>
+      </div>
+
+      <!-- lower-right photograph, smaller scale, offset down -->
+      <figure class="shot shot--b" data-slot="hero-photo-2">
+        <!-- <img> HERO PHOTO 2 — lower-right, smaller scale, offset -->
+        <span class="slot-tag slot-tag--in">hero photo 02 / reserved</span>
+      </figure>
+
+      <!-- quiet geometric artifacts overlap the photo edges (CSS pseudo-elements
+           on .shot--a / .shot--b, so they always straddle a real edge) -->
+
+      <div class="hero__intro">
+        <p class="micro">Tailored software · Automation · Applied AI</p>
+        <p>We build the platform, the automation or the AI step your company actually
+           needs — and hand you the code when it's done.</p>
+      </div>
+
+      <div class="hero__close">
+        <span class="scroll-cue">Scroll down</span>
+        <span class="micro">Free 30-minute diagnostic</span>
+      </div>
+    </section>
+
+    <!-- ========================= POSITIONING ========================= -->
+    <section class="sec">
+      <p class="micro micro--index">01 — Who's on the other side</p>
+      <div class="two">
+        <h2>A small team<br>is the point.</h2>
+        <div class="two__copy">
+          <p>Three co-founders with complementary backgrounds — economics, finance and
+             engineering, from Nova SBE and Nova FCT. We ran operations from the inside,
+             closing a GOP and reconciling a USALI, and started writing software because
+             we watched the hours disappear.</p>
+          <p>We work with few clients at a time. The people who scope the work are the
+             people who build it, and there is no layer between the decision and the
+             keyboard.</p>
+        </div>
+      </div>
+      <div class="ledger">
+        <div><span class="ledger__n">30 min</span><span class="micro">Free diagnostic</span></div>
+        <div><span class="ledger__n">100%</span><span class="micro">Code you own</span></div>
+        <div><span class="ledger__n">Three</span><span class="micro">Co-founders</span></div>
+        <div><span class="ledger__n">2025</span><span class="micro">In production since</span></div>
+      </div>
+    </section>
+
+    <!-- ========================= SERVICES ========================= -->
+    <section class="sec" id="services">
+      <p class="micro micro--index">02 — Services</p>
+      <h2 class="sec__h">Four ways to solve<br>an operational problem.</h2>
+      <ol class="index">
+        <li>
+          <span class="index__no">i</span>
+          <div>
+            <h3>Platforms built from scratch</h3>
+            <p>A system designed around how your operation runs, not around a product
+               someone else already shipped. The software adapts; your team doesn't.</p>
+          </div>
+          <span class="micro">Tailored software</span>
+        </li>
+        <li>
+          <span class="index__no">ii</span>
+          <div>
+            <h3>Less manual work</h3>
+            <p>Reports that eat a whole day, routine mail written one at a time,
+               line-by-line checks — handed to software. Faster, no typos, at any hour.</p>
+          </div>
+          <span class="micro">Automation</span>
+        </li>
+        <li>
+          <span class="index__no">iii</span>
+          <div>
+            <h3>Connecting what you already use</h3>
+            <p>The missing bridge between your ERP, your PMS and the spreadsheet holding
+               it together. Nothing replaced, nothing migrated.</p>
+          </div>
+          <span class="micro">Integrations</span>
+        </li>
+        <li>
+          <span class="index__no">iv</span>
+          <div>
+            <h3>AI on real tasks</h3>
+            <p>Invoices read from a photograph, figures pulled out of PDFs, requests
+               sorted the moment they arrive. Applied AI, not chatbot theatre.</p>
+          </div>
+          <span class="micro">Applied AI</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ========================= WORK — offset photo grid ========================= -->
+    <section class="sec" id="work">
+      <p class="micro micro--index">03 — In production</p>
+      <div class="offset">
+        <figure class="offset__a">
+          <img src="assets/build-shot-ia.png" alt="Invoice capture: a document on the left, structured fields validated on the right">
+          <figcaption class="micro">Invoice reading — photograph to validated record</figcaption>
+        </figure>
+        <div class="offset__copy">
+          <h2>Hotel<br>back-office.</h2>
+          <p class="micro">Independent hotel · Aveiro · Since 2025</p>
+          <p>Dozens of supplier invoices a month were typed in by hand, checked by hand
+             for duplicates, then cross-referenced against PMS revenue to assemble the
+             P&amp;L. Days of work for a number that always arrived late.</p>
+          <p>Now the team photographs the invoice. The system reads the NIF, amounts and
+             dates, catches a duplicate even when it arrives through another channel,
+             classifies the supplier, and feeds a USALI-format P&amp;L wired to the PMS.
+             The monthly close went from days to minutes.</p>
+        </div>
+        <figure class="offset__b">
+          <img src="assets/shot-plataforma.jpg" alt="Automation map: scattered inputs resolved into reports, alerts and organised data">
+          <figcaption class="micro">Automation — inputs to outputs, running 24/7</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Window onto the scrolling background: the greige ground steps aside so
+         the background image, and its crossfade to the second, is visible. -->
+    <section class="reveal">
+      <div class="reveal__plate">
+        <p class="micro">Proof before promises</p>
+        <p>Working software, not slides.</p>
+      </div>
+    </section>
+
+    <!-- ========================= METHOD ========================= -->
+    <section class="sec" id="method">
+      <p class="micro micro--index">04 — Method</p>
+      <h2 class="sec__h">From diagnostic<br>to delivery.</h2>
+      <div class="method">
+        <article>
+          <p class="micro">Free · 30 minutes</p>
+          <h3>Diagnostic</h3>
+          <p>We talk about the operation and find where it hurts. You leave with a written
+             summary and an honest recommendation: build, integrate, automate — or do
+             nothing at all.</p>
+        </article>
+        <article>
+          <p class="micro">Case by case</p>
+          <h3>Design &amp; proposal</h3>
+          <p>We map the process with your team, design the solution and break it into
+             phases. Fixed price and timeline per phase, with the right to stop at the end
+             of each one.</p>
+        </article>
+        <article>
+          <p class="micro">Warranty included</p>
+          <h3>Build &amp; delivery</h3>
+          <p>Short cycles with regular demos — your team uses the software before it is
+             finished. On delivery: training, documentation, and a contractual fix period.</p>
+        </article>
+      </div>
+      <ul class="terms">
+        <li>Code, documentation and access belong to you. No lock-in.</li>
+        <li>European infrastructure, controlled access, GDPR-compliant handling.</li>
+        <li>If a request doesn't make technical or economic sense, we say so.</li>
+      </ul>
+    </section>
+
+    <!-- ========================= ABOUT ========================= -->
+    <section class="sec" id="about">
+      <p class="micro micro--index">05 — The team</p>
+      <blockquote class="pull">“We understand our clients' business,<br>not just their code.”</blockquote>
+      <div class="crew">
+        <figure>
+          <img src="assets/team-1.jpg" alt="Martim Gonçalves">
+          <figcaption>
+            <h3>Martim Gonçalves</h3>
+            <p class="micro">Management &amp; Finance — Nova SBE</p>
+          </figcaption>
+        </figure>
+        <figure class="crew--drop">
+          <img src="assets/team-2.jpg" alt="Júlio Lopes">
+          <figcaption>
+            <h3>Júlio Lopes</h3>
+            <p class="micro">Engineering &amp; Product — Nova FCT</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="assets/team-3.jpg" alt="Marcos Romão">
+          <figcaption>
+            <h3>Marcos Romão</h3>
+            <p class="micro">Engineering &amp; Applied AI — Nova FCT</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========================= CTA ========================= -->
+    <section class="sec sec--cta" id="contact">
+      <p class="micro micro--index">06 — Start here</p>
+      <h2 class="cta__h">If the process fits on<br>a spreadsheet, it can come<br>off your team's hands.</h2>
+      <a class="cta__link" href="mailto:ola@mjmsolutions.pt">Book a free diagnostic</a>
+      <p class="cta__note">
+        Thirty minutes, no commitment. If we can help, we'll tell you how.
+        If we're not the right fit, we'll tell you that too.
+      </p>
+    </section>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="foot">
+      <div class="foot__brand">
+        <span class="logo__word logo__word--foot">MJM Solutions.</span>
+        <p>Tailored software, automation and applied AI for service SMEs.
+           We understand our clients' business, not just their code.</p>
+      </div>
+      <nav class="foot__col" aria-label="Sections">
+        <h4 class="micro">Navigation</h4>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#method">Method</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="foot__col">
+        <h4 class="micro">Support</h4>
+        <a href="#method">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="#method">Warranty &amp; GDPR</a>
+      </div>
+      <div class="foot__col">
+        <h4 class="micro">Contact</h4>
+        <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
+        <a href="#contact">WhatsApp</a>
+        <a href="#contact">LinkedIn</a>
+      </div>
+      <div class="foot__fine">
+        <span class="micro">© 2026 MJM Solutions. All rights reserved.</span>
+        <span class="micro">Tailored software · Portugal</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

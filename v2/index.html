@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tailored Software for SMEs | MJM Solutions</title>
+<meta name="description" content="Portuguese software boutique: tailored platforms, automation and applied AI. Case-by-case proposals, code you own, free 30-minute diagnostic.">
+<link rel="icon" href="assets/logo-mark.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SCROLLING BACKGROUND — two reserved <img> slots, crossfaded
+     and drifted by scroll position (main.js). Flat CSS stand-ins.
+     ============================================================ -->
+<div class="bg-stage" aria-hidden="true">
+  <div class="bg-layer bg-a" data-slot="background-1">
+    <!-- <img> BACKGROUND 1 — full-bleed dark gradient field -->
+    <span class="slot-tag">bg 01 / reserved</span>
+  </div>
+  <div class="bg-layer bg-b" data-slot="background-2">
+    <!-- <img> BACKGROUND 2 — revealed on scroll -->
+    <span class="slot-tag">bg 02 / reserved</span>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ========================= DARK BAND: NAV + HERO ========================= -->
+  <div class="band band--dark" id="top">
+    <span class="blob blob--1" aria-hidden="true"></span>
+    <span class="blob blob--2" aria-hidden="true"></span>
+    <span class="blob blob--3" aria-hidden="true"></span>
+
+    <header class="topbar">
+      <a class="logo" href="#top" aria-label="MJM Solutions — home">
+        <img src="assets/logo-mark.png" alt="">
+        <span>MJM Solutions</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#work">Case studies</a>
+        <a href="#method">How we work</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="topbar__cta">
+        <a class="pill pill--ghost" href="mailto:ola@mjmsolutions.pt">Contact</a>
+        <a class="pill pill--fill" href="#contact">Book a diagnostic</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <span class="dots" aria-hidden="true"></span>
+      <p class="micro">Software boutique — Portugal</p>
+      <!-- Hero display type sits over the dark gradient wash; the reserved
+           background art is the drifting field behind it -->
+      <h1>Tailored software,<br>automation and<br>applied AI</h1>
+      <p class="sub">
+        We don't sell packages off a shelf. We listen to the process that's costing you
+        hours, then build the exact thing that removes it.
+      </p>
+      <div class="pillrow">
+        <a class="pill pill--fill pill--lg" href="#contact">Book a free diagnostic</a>
+        <a class="pill pill--ghost pill--lg" href="#services">See what we build</a>
+      </div>
+      <span class="rule-v" aria-hidden="true"></span>
+    </section>
+  </div>
+
+  <!-- overlapping tile straddles the dark/light boundary -->
+  <div class="overlap">
+    <figure class="tile" data-slot="hero-tile">
+      <img src="assets/build-shot-ia.png" alt="Invoice capture screen: a document on the left, structured fields validated on the right">
+      <figcaption><span class="micro">Real screenshot — invoice reading by AI</span></figcaption>
+    </figure>
+  </div>
+
+  <!-- ========================= LIGHT BAND: POSITIONING ========================= -->
+  <section class="band band--light">
+    <div class="split">
+      <div>
+        <p class="micro micro--accent">(01) — Who's on the other side</p>
+        <h2>A small team is<br>the whole point</h2>
+      </div>
+      <div class="split__copy">
+        <p>
+          Three co-founders with complementary backgrounds — economics, finance and
+          engineering, from Nova SBE and Nova FCT. We ran operations from the inside,
+          closing a GOP and reconciling a USALI, and started writing software because we
+          watched the hours disappear.
+        </p>
+        <p>
+          The people who scope the work are the people who build it. No account layer, no
+          handover, nobody between the decision and the keyboard.
+        </p>
+      </div>
+    </div>
+
+    <div class="figures">
+      <div class="figure">
+        <span class="figure__n">30<small>min</small></span>
+        <p class="micro">Free diagnostic</p>
+      </div>
+      <span class="rule-v rule-v--sm" aria-hidden="true"></span>
+      <div class="figure">
+        <span class="figure__n">100<small>%</small></span>
+        <p class="micro">Code you own</p>
+      </div>
+      <span class="rule-v rule-v--sm" aria-hidden="true"></span>
+      <div class="figure">
+        <span class="figure__n">2025</span>
+        <p class="micro">In production since</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= MINT BAND: SERVICES IN CIRCLES ========================= -->
+  <section class="band band--pale" id="services">
+    <div class="band__head">
+      <p class="micro micro--accent">(02) — Services</p>
+      <h2>Four ways to solve<br>an operational problem</h2>
+      <p class="sub sub--dark">
+        The starting point is always your real process. If building software isn't the
+        answer, we'll be the first to say so.
+      </p>
+    </div>
+
+    <div class="orbs">
+      <article class="orb">
+        <span class="dots dots--sm" aria-hidden="true"></span>
+        <p class="micro micro--accent">/01 — Tailored software</p>
+        <h3>Platforms built from scratch</h3>
+        <p>A system designed around how your operation runs, not around a product someone
+           else already shipped. The software adapts; your team doesn't.</p>
+      </article>
+      <article class="orb">
+        <span class="dots dots--sm" aria-hidden="true"></span>
+        <p class="micro micro--accent">/02 — Automation</p>
+        <h3>Less manual work</h3>
+        <p>Reports that eat a whole day, routine mail written one at a time, line-by-line
+           checks — handed to software. Faster, no typos, at any hour.</p>
+      </article>
+      <article class="orb">
+        <span class="dots dots--sm" aria-hidden="true"></span>
+        <p class="micro micro--accent">/03 — Integrations</p>
+        <h3>Connecting what you use</h3>
+        <p>The missing bridge between your ERP, your PMS and the spreadsheet holding it
+           together. Nothing replaced, nothing migrated.</p>
+      </article>
+      <article class="orb">
+        <span class="dots dots--sm" aria-hidden="true"></span>
+        <p class="micro micro--accent">/04 — Applied AI</p>
+        <h3>AI on real tasks</h3>
+        <p>Invoices read from a photograph, figures pulled out of PDFs, requests sorted on
+           arrival. Applied AI, not chatbot theatre.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========================= LIGHT BAND: CASE ========================= -->
+  <section class="band band--light" id="work">
+    <div class="case">
+      <div class="case__copy">
+        <p class="micro micro--accent">(03) — In production</p>
+        <h2>Hotel back-office</h2>
+        <p class="micro">Independent hotel · Aveiro · Hospitality</p>
+        <p>
+          Dozens of supplier invoices a month were typed in by hand, checked by hand for
+          duplicates, then cross-referenced against PMS revenue to assemble the P&amp;L.
+          Days of work for a number that always arrived late.
+        </p>
+        <p>
+          Now the team photographs the invoice. The system reads the NIF, amounts and
+          dates, catches a duplicate even when it arrives through another channel,
+          classifies the supplier, and feeds a USALI-format P&amp;L wired to the PMS. The
+          monthly close went from days to minutes.
+        </p>
+        <ul class="ticks">
+          <li>Capture by photograph — no manual entry</li>
+          <li>Duplicate detection before payment</li>
+          <li>USALI P&amp;L, generated in minutes</li>
+        </ul>
+      </div>
+      <figure class="tile tile--tall">
+        <img src="assets/shot-plataforma.jpg" alt="Automation map: scattered inputs resolved into reports, alerts and organised data">
+        <figcaption><span class="micro">Real screenshot — inputs to outputs, running 24/7</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ========================= DARK BAND: METHOD ========================= -->
+  <section class="band band--dark band--method" id="method">
+    <span class="blob blob--4" aria-hidden="true"></span>
+    <div class="band__head band__head--center">
+      <p class="micro">(04) — How we work</p>
+      <h2 class="on-dark">From diagnostic to delivery</h2>
+      <p class="sub">
+        Fixed price per phase, the right to stop at the end of each one, and code that is
+        yours throughout. No invisible hour-counters.
+      </p>
+    </div>
+
+    <div class="steps">
+      <article class="step">
+        <span class="step__n">i</span>
+        <h3>Diagnostic</h3>
+        <p class="micro">Free · 30 min</p>
+        <p>We talk about the operation and find where it hurts. You get a written summary
+           and an honest recommendation: build, integrate, automate — or do nothing.</p>
+        <a class="pill pill--ghost" href="#contact">Book</a>
+      </article>
+      <span class="rule-v rule-v--step" aria-hidden="true"></span>
+      <article class="step">
+        <span class="step__n">ii</span>
+        <h3>Design &amp; proposal</h3>
+        <p class="micro">Case by case</p>
+        <p>We map the process with your team, design the solution and break it into
+           phases. Fixed scope, fixed timeline, mock-ups of what gets built.</p>
+        <a class="pill pill--ghost" href="#contact">Ask for a proposal</a>
+      </article>
+      <span class="rule-v rule-v--step" aria-hidden="true"></span>
+      <article class="step">
+        <span class="step__n">iii</span>
+        <h3>Build &amp; delivery</h3>
+        <p class="micro">Warranty included</p>
+        <p>Short cycles with regular demos — your team uses the software before it's
+           finished. On delivery: training, documentation, and a contractual fix period.</p>
+        <a class="pill pill--ghost" href="#contact">Talk to us</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========================= PALE BAND: TEAM ========================= -->
+  <section class="band band--pale" id="about">
+    <div class="band__head band__head--center">
+      <p class="micro micro--accent">(05) — The team</p>
+      <h2>Complementary areas,<br>the same table</h2>
+    </div>
+    <div class="people">
+      <article class="person">
+        <figure class="avatar"><img src="assets/team-1.jpg" alt="Martim Gonçalves"></figure>
+        <h3>Martim Gonçalves</h3>
+        <p class="micro micro--accent">Management &amp; Finance</p>
+        <p>Economics and Finance, Nova SBE. Financial management, P&amp;L and development.</p>
+      </article>
+      <article class="person">
+        <figure class="avatar"><img src="assets/team-2.jpg" alt="Júlio Lopes"></figure>
+        <h3>Júlio Lopes</h3>
+        <p class="micro micro--accent">Engineering &amp; Product</p>
+        <p>Electrical Engineering, Nova FCT. Systems, integrations and product.</p>
+      </article>
+      <article class="person">
+        <figure class="avatar"><img src="assets/team-3.jpg" alt="Marcos Romão"></figure>
+        <h3>Marcos Romão</h3>
+        <p class="micro micro--accent">Engineering</p>
+        <p>Electrical Engineering, Nova FCT. Automation, applied AI and architecture.</p>
+      </article>
+    </div>
+    <blockquote class="pull">“We understand our clients' business, not just their code.”</blockquote>
+  </section>
+
+  <!-- ========================= CTA ========================= -->
+  <section class="band band--dark band--cta" id="contact">
+    <span class="blob blob--5" aria-hidden="true"></span>
+    <span class="dots" aria-hidden="true"></span>
+    <p class="micro">(06) — Start here</p>
+    <h2 class="on-dark">If the process fits on a spreadsheet,<br>it can come off your team's hands</h2>
+    <div class="pillrow pillrow--center">
+      <a class="pill pill--fill pill--lg" href="mailto:ola@mjmsolutions.pt">Book a free diagnostic</a>
+      <a class="pill pill--ghost pill--lg" href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
+    </div>
+    <p class="sub sub--tight">
+      Thirty minutes, no commitment. If we can help, we'll tell you how. If we're not the
+      right fit, we'll tell you that too.
+    </p>
+  </section>
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="foot">
+    <div class="foot__brand">
+      <a class="logo" href="#top" aria-label="MJM Solutions — home">
+        <img src="assets/logo-mark.png" alt="">
+        <span>MJM Solutions</span>
+      </a>
+      <p>Tailored software, automation and applied AI for service SMEs.
+         We understand our clients' business, not just their code.</p>
+    </div>
+    <nav class="foot__col" aria-label="Sections">
+      <h4 class="micro">Navigation</h4>
+      <a href="#services">Services</a>
+      <a href="#work">Case studies</a>
+      <a href="#method">How we work</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="foot__col">
+      <h4 class="micro">Support</h4>
+      <a href="#method">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="#method">Warranty &amp; GDPR</a>
+    </div>
+    <div class="foot__col">
+      <h4 class="micro">Contact</h4>
+      <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
+      <a href="#contact">WhatsApp</a>
+      <a href="#contact">LinkedIn</a>
+    </div>
+    <div class="foot__fine">
+      <span class="micro">© 2026 MJM Solutions. All rights reserved.</span>
+      <span class="micro">Tailored software · Portugal</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

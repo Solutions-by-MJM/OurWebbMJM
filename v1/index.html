@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tailored Software for SMEs | MJM Solutions</title>
+<meta name="description" content="Portuguese software boutique: tailored platforms, automation and applied AI. Case-by-case proposals, code you own, free 30-minute diagnostic.">
+<link rel="icon" href="assets/logo-mark.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SCROLLING BACKGROUND — two reserved <img> slots.
+     Layer A holds the first background image, Layer B the second.
+     Both are flat CSS stand-ins at final size; the crossfade and
+     parallax are driven by scroll progress in main.js.
+     ============================================================ -->
+<div class="bg-stage" aria-hidden="true">
+  <div class="bg-layer bg-a" data-slot="background-1">
+    <!-- <img> BACKGROUND 1 — full-bleed, sits behind the mounted plate -->
+    <span class="slot-tag">bg 01 / reserved</span>
+  </div>
+  <div class="bg-layer bg-b" data-slot="background-2">
+    <!-- <img> BACKGROUND 2 — revealed on scroll -->
+    <span class="slot-tag">bg 02 / reserved</span>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- corner markers, standalone outside the plate -->
+  <span class="marker marker--tr">MJM SOLUTIONS</span>
+  <span class="marker marker--bl">SOFTWARE · PORTUGAL</span>
+
+  <!-- ========================= HERO PLATE ========================= -->
+  <section class="plate plate--hero">
+    <header class="topbar">
+      <a class="logo" href="#top" aria-label="MJM Solutions — home">
+        <span class="logo__chip"><img src="assets/logo-mark.png" alt=""></span>
+        <span class="logo__word">MJM Solutions</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">Services</a><span class="slash">/</span>
+        <a href="#work">Case&nbsp;studies</a><span class="slash">/</span>
+        <a href="#method">How&nbsp;we&nbsp;work</a><span class="slash">/</span>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="hero__copy">
+        <p class="eyebrow">(01) — Software boutique, Portugal</p>
+        <h1>Software that <em>fits</em><br>your operation</h1>
+        <p class="lede">
+          Three engineers who read a P&amp;L as fluently as a stack trace. We build the
+          platform, the automation or the AI step your company actually needs — and hand
+          you the code when it's done.
+        </p>
+        <a class="btn" href="#contact">Book a free diagnostic</a>
+      </div>
+
+      <!-- Hero illustration slot: anchored right, bleeding off top and right edges -->
+      <div class="hero__art" data-slot="hero">
+        <!-- <img> HERO — isometric contour-line structure, thin charcoal stroke on
+             white, with a handful of solid orange fill panels as the only saturation -->
+        <span class="slot-tag">hero / isometric line-art — reserved</span>
+      </div>
+    </div>
+
+    <div class="trust">
+      <span class="trust__label">Working in</span>
+      <span class="chip">Hospitality</span>
+      <span class="chip">Restaurants</span>
+      <span class="chip">Property management</span>
+      <span class="chip">Professional services</span>
+    </div>
+  </section>
+
+  <!-- ========================= LEDGER ========================= -->
+  <section class="plate plate--ledger">
+    <span class="plate-mark">02 / TERMS</span>
+    <div class="ledger">
+      <div class="ledger__item">
+        <span class="ledger__fig">30<small>min</small></span>
+        <h3>Free diagnostic</h3>
+        <p>A frank conversation about your operation. You leave with the two or three
+           processes costing you the most, and an honest recommendation.</p>
+      </div>
+      <div class="ledger__item">
+        <span class="ledger__fig">100<small>%</small></span>
+        <h3>Your code</h3>
+        <p>Every line we write, plus the documentation, belongs to you at the end.
+           No lock-in, no closed box.</p>
+      </div>
+      <div class="ledger__item">
+        <span class="ledger__fig">03</span>
+        <h3>Co-founders</h3>
+        <p>The people who scope the work are the people who build it. Nobody sits
+           between the decision and the keyboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= SERVICES ========================= -->
+  <section class="plate plate--services" id="services">
+    <span class="plate-mark">03 / SERVICES</span>
+    <div class="sec-head">
+      <h2>Four ways to solve<br>an operational problem</h2>
+      <p class="lede">
+        Not a catalogue. The starting point is always your real process — and if building
+        software isn't the answer, we'll be the first to say so.
+      </p>
+    </div>
+
+    <ol class="specs">
+      <li class="spec">
+        <span class="spec__no">/01</span>
+        <h3>Platforms built from scratch</h3>
+        <p>A system designed around how your operation runs, not around a product someone
+           else already shipped. The software adapts; the team doesn't.</p>
+        <span class="spec__tag">Tailored software</span>
+      </li>
+      <li class="spec">
+        <span class="spec__no">/02</span>
+        <h3>Less manual work</h3>
+        <p>Reports that eat a whole day, routine mail written one at a time, line-by-line
+           reconciliation — handed to software. Faster, no typos, at any hour.</p>
+        <span class="spec__tag">Automation</span>
+      </li>
+      <li class="spec">
+        <span class="spec__no">/03</span>
+        <h3>Connecting what you already use</h3>
+        <p>The missing bridge between your ERP, your PMS and the spreadsheet that holds it
+           all together. Nothing replaced, nothing migrated.</p>
+        <span class="spec__tag">Integrations</span>
+      </li>
+      <li class="spec">
+        <span class="spec__no">/04</span>
+        <h3>AI on real tasks</h3>
+        <p>Invoices read from a photograph, figures pulled out of PDFs, requests sorted the
+           moment they arrive. Applied AI, not chatbot theatre.</p>
+        <span class="spec__tag">Applied AI</span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ========================= CASE ========================= -->
+  <section class="plate plate--case" id="work">
+    <span class="plate-mark">04 / IN PRODUCTION</span>
+    <div class="sec-head">
+      <h2>One case, told properly</h2>
+      <p class="lede">Worth more than five vague ones. In daily use since 2025.</p>
+    </div>
+
+    <div class="case">
+      <figure class="case__shot">
+        <img src="assets/build-shot-ia.png" alt="Invoice capture screen: a document on the left, structured fields validated on the right">
+        <figcaption>Real screenshot — invoice reading</figcaption>
+      </figure>
+      <div class="case__body">
+        <dl class="fiche">
+          <div><dt>Sector</dt><dd>Hospitality</dd></div>
+          <div><dt>Client</dt><dd>Independent hotel · Aveiro</dd></div>
+          <div><dt>Problem</dt><dd>Manual invoices, slow monthly close</dd></div>
+          <div><dt>Status</dt><dd>In production since 2025</dd></div>
+        </dl>
+        <h3>Hotel back-office</h3>
+        <p>Dozens of supplier invoices a month were typed in by hand, checked by hand for
+           duplicates, then cross-referenced against PMS revenue to assemble the P&amp;L.
+           Days of work for a number that arrived late.</p>
+        <p>Now the team photographs the invoice. The system reads the NIF, amounts and
+           dates, recognises a duplicate even when it arrives through a different channel,
+           classifies the supplier, and feeds a USALI-format P&amp;L integrated with the PMS.
+           The monthly close went from days to minutes.</p>
+        <ul class="ticks">
+          <li>Capture by photograph — no manual entry</li>
+          <li>Duplicate detection before payment</li>
+          <li>USALI P&amp;L, generated in minutes</li>
+        </ul>
+      </div>
+    </div>
+
+    <figure class="case__wide">
+      <img src="assets/shot-plataforma.jpg" alt="Automation map: scattered inputs on the left resolved into reports, alerts and organised data on the right">
+      <figcaption>Real screenshot — automation, inputs to outputs</figcaption>
+    </figure>
+  </section>
+
+  <!-- Window onto the scrolling background: the plate steps aside so the
+       background image (and its crossfade to the second) is visible. -->
+  <div class="reveal">
+    <span>MJM Solutions</span>
+    <p>Few clients at a time, on purpose.</p>
+  </div>
+
+  <!-- ========================= METHOD ========================= -->
+  <section class="plate plate--method" id="method">
+    <span class="plate-mark">05 / METHOD</span>
+    <div class="sec-head">
+      <h2>From diagnostic<br>to delivery</h2>
+      <p class="lede">
+        Fixed price per phase, the right to stop at the end of each one, and code that is
+        yours throughout. No invisible hour-counters.
+      </p>
+    </div>
+
+    <div class="steps">
+      <article class="step">
+        <span class="step__no">i</span>
+        <span class="step__meta">Free · 30 min</span>
+        <h3>Diagnostic</h3>
+        <p>We talk about the operation and find where it hurts. You get a written summary
+           and an honest recommendation: build, integrate, automate — or do nothing.</p>
+      </article>
+      <article class="step">
+        <span class="step__no">ii</span>
+        <span class="step__meta">Case by case</span>
+        <h3>Design &amp; proposal</h3>
+        <p>We map the process with your team, design the solution and break it into phases.
+           Fixed scope, fixed timeline, mock-ups of what gets built.</p>
+      </article>
+      <article class="step">
+        <span class="step__no">iii</span>
+        <span class="step__meta">Warranty included</span>
+        <h3>Build &amp; delivery</h3>
+        <p>Short cycles with regular demos — your team uses the software before it's
+           finished. On delivery: training, documentation, and a contractual fix period.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========================= ABOUT ========================= -->
+  <section class="plate plate--about" id="about">
+    <span class="plate-mark">06 / THE TEAM</span>
+    <blockquote class="pull">
+      “We understand our clients' business, not just their code.”
+    </blockquote>
+    <div class="about">
+      <div class="about__copy">
+        <h2>Who's on the other side</h2>
+        <p>Three co-founders with complementary backgrounds — economics, finance and
+           engineering, from Nova SBE and Nova FCT. We ran operations from the inside,
+           closing a GOP and reconciling a USALI, and started writing software because we
+           watched the hours disappear.</p>
+        <p>We work with few clients at a time so each project gets direct attention from
+           diagnostic to launch. And if a request doesn't make technical or economic sense,
+           you'll hear it in the first meeting.</p>
+      </div>
+      <ul class="people">
+        <li>
+          <h3>Martim Gonçalves</h3>
+          <span>Management &amp; Finance</span>
+          <p>Economics and Finance, Nova SBE. Financial management, P&amp;L, development.</p>
+        </li>
+        <li>
+          <h3>Júlio Lopes</h3>
+          <span>Engineering &amp; Product</span>
+          <p>Electrical Engineering, Nova FCT. Systems, integrations, product.</p>
+        </li>
+        <li>
+          <h3>Marcos Romão</h3>
+          <span>Engineering</span>
+          <p>Electrical Engineering, Nova FCT. Automation, applied AI, architecture.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================= CTA ========================= -->
+  <section class="plate plate--cta" id="contact">
+    <span class="plate-mark plate-mark--light">07 / START HERE</span>
+    <h2>If the process fits on a<br>spreadsheet, it can come off<br>your team's hands.</h2>
+    <a class="btn btn--lg" href="mailto:ola@mjmsolutions.pt">Book a free diagnostic</a>
+    <p class="note">
+      Thirty minutes, no commitment. If we can help, we'll tell you how. If we're not the
+      right fit, we'll tell you that too.
+    </p>
+  </section>
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="foot">
+    <div class="foot__brand">
+      <span class="logo__chip logo__chip--sm"><img src="assets/logo-mark.png" alt=""></span>
+      <p>Tailored software, automation and applied AI for service SMEs.
+         We understand our clients' business, not just their code.</p>
+    </div>
+    <nav class="foot__col" aria-label="Sections">
+      <h4>Navigation</h4>
+      <a href="#services">Services</a>
+      <a href="#work">Case studies</a>
+      <a href="#method">How we work</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="foot__col">
+      <h4>Support</h4>
+      <a href="#method">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="#method">Warranty &amp; GDPR</a>
+    </div>
+    <div class="foot__col">
+      <h4>Contact</h4>
+      <a href="mailto:ola@mjmsolutions.pt">ola@mjmsolutions.pt</a>
+      <a href="#contact">WhatsApp</a>
+      <a href="#contact">LinkedIn</a>
+    </div>
+    <p class="foot__fine">© 2026 MJM Solutions. All rights reserved.</p>
+    <p class="foot__fine foot__fine--r">Tailored software · Portugal</p>
+  </footer>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
