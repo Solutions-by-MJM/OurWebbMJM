@@ -38,9 +38,29 @@ const PAGES = [
   { src: "como-trabalhamos.html", key: "como-trabalhamos", ptPath: "/como-trabalhamos", enPath: "/en/how-we-work", out: "en/how-we-work.html" },
   { src: "sobre.html", key: "sobre", ptPath: "/sobre", enPath: "/en/about", out: "en/about.html" },
   { src: "contactos.html", key: "contactos", ptPath: "/contactos", enPath: "/en/contact", out: "en/contact.html" },
+  // Sub-páginas de /servicos — uma por serviço, extraídas do que era uma
+  // única página com âncoras. Ver SERVICE_SUBSLUGS abaixo para o mapeamento
+  // de slug PT → EN usado nos links internos e no JSON-LD.
+  { src: "servicos/software-a-medida.html", key: "servicos-software", ptPath: "/servicos/software-a-medida", enPath: "/en/services/tailored-software", out: "en/services/tailored-software.html" },
+  { src: "servicos/automacao-de-processos.html", key: "servicos-automacao", ptPath: "/servicos/automacao-de-processos", enPath: "/en/services/process-automation", out: "en/services/process-automation.html" },
+  { src: "servicos/integracoes-de-sistemas.html", key: "servicos-integracoes", ptPath: "/servicos/integracoes-de-sistemas", enPath: "/en/services/systems-integration", out: "en/services/systems-integration.html" },
+  { src: "servicos/ia-aplicada.html", key: "servicos-ia", ptPath: "/servicos/ia-aplicada", enPath: "/en/services/applied-ai", out: "en/services/applied-ai.html" },
 ];
 
 const INTERNAL_PATHS = Object.keys(EN_SLUGS);
+
+// Slugs PT → EN das 4 sub-páginas de /servicos. Precisam de um mapa próprio
+// porque INTERNAL_PATHS/EN_SLUGS só sabem traduzir o slug de topo
+// (/servicos → /en/services); um link como /servicos/software-a-medida tem
+// um segundo segmento que também é português e tem de ser traduzido — ver
+// os dois pontos de uso abaixo (rewriteJsonLdUrls e o rewrite de links
+// internos em buildPage).
+const SERVICE_SUBSLUGS = {
+  "software-a-medida": "tailored-software",
+  "automacao-de-processos": "process-automation",
+  "integracoes-de-sistemas": "systems-integration",
+  "ia-aplicada": "applied-ai",
+};
 
 // Strings PT fora do alcance do data-i18n (JSON-LD, aria, og:image:alt).
 const LITERAL_MAP = [
@@ -214,6 +234,13 @@ function rebuildFaqSchema(html) {
 function rewriteJsonLdUrls(html) {
   return html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (block, body) => {
     let out = body;
+    // Sub-páginas de /servicos primeiro, com o URL completo (prefixo +
+    // sub-slug) — se corresse depois do loop do EN_SLUGS abaixo, o prefixo
+    // já estaria traduzido para /en/services e o padrão deixava de bater
+    // certo, ficando o sub-slug PT esquecido (ex. /en/services/software-a-medida).
+    for (const [pt, en] of Object.entries(SERVICE_SUBSLUGS)) {
+      out = out.split(SITE + "/servicos/" + pt).join(SITE + "/en/services/" + en);
+    }
     for (const [pt, en] of Object.entries(EN_SLUGS)) {
       out = out.split(SITE + "/" + pt).join(SITE + "/en/" + en);
     }
@@ -268,6 +295,15 @@ function buildPage(page) {
   for (const [from, to] of LITERAL_MAP) html = html.split(from).join(to);
   html = rewriteJsonLdUrls(html);
   if (page.key === "como-trabalhamos") html = rebuildFaqSchema(html);
+
+  // Sub-páginas de /servicos primeiro (mesma razão de ordem que em
+  // rewriteJsonLdUrls): href="/servicos/software-a-medida" tem "/" a seguir
+  // ao slug de topo, não "#" nem fecho de aspas — o padrão genérico logo
+  // abaixo não o reconhece, por isso o sub-slug precisa do seu próprio passo.
+  html = html.replace(
+    new RegExp('href="/servicos/(' + Object.keys(SERVICE_SUBSLUGS).join("|") + ')([#"])', "g"),
+    (m, sub, tail) => 'href="/en/services/' + SERVICE_SUBSLUGS[sub] + tail
+  );
 
   // links internos → /en/<slug-inglês>
   html = html.replace(

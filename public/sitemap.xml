@@ -85,4 +85,60 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/contactos"/>
     <lastmod>2026-08-25</lastmod>
   </url>
+  <url>
+    <loc>https://solutionsbymjm.pt/servicos/software-a-medida</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/servicos/software-a-medida"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/services/tailored-software"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/servicos/software-a-medida"/>
+    <lastmod>2026-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://solutionsbymjm.pt/en/services/tailored-software</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/servicos/software-a-medida"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/services/tailored-software"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/servicos/software-a-medida"/>
+    <lastmod>2026-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://solutionsbymjm.pt/servicos/automacao-de-processos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/servicos/automacao-de-processos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/services/process-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/servicos/automacao-de-processos"/>
+    <lastmod>2026-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://solutionsbymjm.pt/en/services/process-automation</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/servicos/automacao-de-processos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/services/process-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/servicos/automacao-de-processos"/>
+    <lastmod>2026-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://solutionsbymjm.pt/servicos/integracoes-de-sistemas</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/servicos/integracoes-de-sistemas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/services/systems-integration"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/servicos/integracoes-de-sistemas"/>
+    <lastmod>2026-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://solutionsbymjm.pt/en/services/systems-integration</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/servicos/integracoes-de-sistemas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/services/systems-integration"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/servicos/integracoes-de-sistemas"/>
+    <lastmod>2026-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://solutionsbymjm.pt/servicos/ia-aplicada</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/servicos/ia-aplicada"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/services/applied-ai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/servicos/ia-aplicada"/>
+    <lastmod>2026-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://solutionsbymjm.pt/en/services/applied-ai</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/servicos/ia-aplicada"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/services/applied-ai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/servicos/ia-aplicada"/>
+    <lastmod>2026-08-25</lastmod>
+  </url>
 </urlset>
