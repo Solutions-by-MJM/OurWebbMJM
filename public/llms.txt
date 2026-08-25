@@ -2,7 +2,8 @@
 # Convention: https://llmstxt.org/
 # Last updated: 2026-07-12
 
-# Allow AI user-agents (mirrors robots.txt: everything public is allowed)
+# Training crawlers are blocked; search/citation crawlers remain open —
+# see robots.txt for the current policy
 User-agent: *
 Allow: /
 

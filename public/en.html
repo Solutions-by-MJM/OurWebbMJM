@@ -10,13 +10,15 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MJM Solutions">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pt_PT">
+
 <link rel="canonical" href="https://solutionsbymjm.pt/en">
 <link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/">
 <link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en">
 <link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/">
-<link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/">
-<link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en">
-<link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/">
+
+
+
 <meta property="og:url" content="https://solutionsbymjm.pt/en">
 <meta property="og:image" content="https://solutionsbymjm.pt/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -30,10 +32,12 @@
 <link rel="preload" href="/fonts/archivo-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/public-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=24">
+<!-- sameAs fica vazio até haver perfis oficiais (LinkedIn da empresa, diretórios) — preencher aqui à medida que forem criados. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
+  "@id": "https://solutionsbymjm.pt/#organization",
   "name": "MJM Solutions",
   "url": "https://solutionsbymjm.pt/en",
   "logo": "https://solutionsbymjm.pt/assets/logo-full.png",
@@ -41,12 +45,21 @@
   "description": "Tailored software, automation and applied AI for service SMEs in Portugal.",
   "email": "geral@solutionsbymjm.pt",
   "telephone": "+351935596965",
-  "areaServed": "PT",
+  "areaServed": { "@type": "Country", "name": "Portugal" },
   "address": { "@type": "PostalAddress", "addressCountry": "PT" },
+  "sameAs": [],
+  "knowsLanguage": ["pt-PT", "en"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "geral@solutionsbymjm.pt",
+    "telephone": "+351935596965",
+    "availableLanguage": ["Portuguese", "English"]
+  },
   "founder": [
-    { "@type": "Person", "name": "Martim Gonçalves" },
-    { "@type": "Person", "name": "Júlio Lopes" },
-    { "@type": "Person", "name": "Marcos Romão" }
+    { "@type": "Person", "@id": "https://solutionsbymjm.pt/#martim-goncalves", "name": "Martim Gonçalves", "jobTitle": "Management & Finance" },
+    { "@type": "Person", "@id": "https://solutionsbymjm.pt/#julio-lopes", "name": "Júlio Lopes", "jobTitle": "Engineering & Product" },
+    { "@type": "Person", "@id": "https://solutionsbymjm.pt/#marcos-romao", "name": "Marcos Romão", "jobTitle": "Engineering" }
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -81,19 +94,19 @@
     </button>
   </div>
   <div class="nav-links">
-    <a href="/en/servicos" class="nav-link" data-i18n="nav.services">Services</a>
-    <a href="/en/casos" class="nav-link" data-i18n="nav.cases">Cases</a>
-    <a href="/en/como-trabalhamos" class="nav-link" data-i18n="nav.how">How we work</a>
-    <a href="/en/sobre" class="nav-link" data-i18n="nav.about">About</a>
-    <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Ver em português">PT</button>
-    <a href="/en/contactos" class="nav-cta" data-i18n="nav.cta">Book a diagnostic&nbsp;↗</a>
+    <a href="/en/services" class="nav-link" data-i18n="nav.services">Services</a>
+    <a href="/en/cases" class="nav-link" data-i18n="nav.cases">Cases</a>
+    <a href="/en/how-we-work" class="nav-link" data-i18n="nav.how">How we work</a>
+    <a href="/en/about" class="nav-link" data-i18n="nav.about">About</a>
+    <a id="lang-toggle" class="lang-toggle" href="/" aria-label="Ver em português">PT</a>
+    <a href="/en/contact" class="nav-cta" data-i18n="nav.cta">Book a diagnostic&nbsp;↗</a>
   </div>
 </nav>
 <div id="mobile-menu" class="mobile-menu">
-  <a href="/en/servicos" class="mobile-menu-link" data-i18n="nav.services">Services</a>
-  <a href="/en/casos" class="mobile-menu-link" data-i18n="nav.cases">Cases</a>
-  <a href="/en/como-trabalhamos" class="mobile-menu-link" data-i18n="nav.how">How we work</a>
-  <a href="/en/sobre" class="mobile-menu-link" data-i18n="nav.about">About</a>
+  <a href="/en/services" class="mobile-menu-link" data-i18n="nav.services">Services</a>
+  <a href="/en/cases" class="mobile-menu-link" data-i18n="nav.cases">Cases</a>
+  <a href="/en/how-we-work" class="mobile-menu-link" data-i18n="nav.how">How we work</a>
+  <a href="/en/about" class="mobile-menu-link" data-i18n="nav.about">About</a>
 </div>
 
 <!-- ============ HERO ============ -->
@@ -110,7 +123,7 @@
     <div class="num" data-i18n="hero.num">(01) — Introduction</div>
     <div class="intro-copy">
       <p data-i18n="hero.intro_p">We don't sell off-the-shelf packages. We listen to your problems and design real solutions — tailored platforms, process automation, or AI-powered tools. We build what your company actually needs.</p>
-      <a href="/en/contactos" class="link-arrow on-dark" data-i18n="hero.intro_cta">Book a free chat <span class="arrow">↗</span></a>
+      <a href="/en/contact" class="link-arrow on-dark" data-i18n="hero.intro_cta">Book a free chat <span class="arrow">↗</span></a>
     </div>
   </div>
 </header>
@@ -157,25 +170,25 @@
   <p class="lede push-right" style="margin-bottom:clamp(48px,6vw,90px)" data-i18n="servicos.lede">The starting point is your real process. If it doesn't make sense to build software, we'll be the first to tell you not to.</p>
 
   <div style="margin:0 calc(var(--pad) * -1)">
-    <a href="/en/servicos#software" class="idx-row linked" style="padding-left:var(--pad);padding-right:var(--pad)">
+    <a href="/en/services#software" class="idx-row linked" style="padding-left:var(--pad);padding-right:var(--pad)">
       <span class="idx-num">/01</span>
       <span class="idx-title" data-i18n="servicos.row1_title">Platforms built from scratch</span>
       <span class="idx-desc" data-i18n="servicos.row1_desc">Systems designed around your processes. We build the exact tool you need to run your business.</span>
       <span class="idx-arrow">↗</span>
     </a>
-    <a href="/en/servicos#automacao" class="idx-row linked" style="padding-left:var(--pad);padding-right:var(--pad)">
+    <a href="/en/services#automacao" class="idx-row linked" style="padding-left:var(--pad);padding-right:var(--pad)">
       <span class="idx-num">/02</span>
       <span class="idx-title" data-i18n="servicos.row2_title">Less manual work</span>
       <span class="idx-desc" data-i18n="servicos.row2_desc">Repetitive, tedious tasks get taken over by software: faster, error-free, and around the clock.</span>
       <span class="idx-arrow">↗</span>
     </a>
-    <a href="/en/servicos#integracoes" class="idx-row linked" style="padding-left:var(--pad);padding-right:var(--pad)">
+    <a href="/en/services#integracoes" class="idx-row linked" style="padding-left:var(--pad);padding-right:var(--pad)">
       <span class="idx-num">/03</span>
       <span class="idx-title" data-i18n="servicos.row3_title">Connecting what you already use</span>
       <span class="idx-desc" data-i18n="servicos.row3_desc">We build the missing bridges between the systems your company already uses. No painful migrations — just getting everything to speak the same language.</span>
       <span class="idx-arrow">↗</span>
     </a>
-    <a href="/en/servicos#ia" class="idx-row linked close" style="padding-left:var(--pad);padding-right:var(--pad)">
+    <a href="/en/services#ia" class="idx-row linked close" style="padding-left:var(--pad);padding-right:var(--pad)">
       <span class="idx-num">/04</span>
       <span class="idx-title" data-i18n="servicos.row4_title">AI for real tasks</span>
       <span class="idx-desc" data-i18n="servicos.row4_desc">Reading invoices from a photo, extracting data from PDFs, classifying information automatically. Applied AI for real day-to-day work.</span>
@@ -183,7 +196,7 @@
     </a>
   </div>
   <div style="margin-top:28px;text-align:right;padding-bottom:clamp(48px,6vw,90px)">
-    <a href="/en/casos" class="mono-link" data-i18n="servicos.casos_link">See examples by sector →</a>
+    <a href="/en/cases" class="mono-link" data-i18n="servicos.casos_link">See examples by sector →</a>
   </div>
 </section>
 <!-- ============ LIGHT FIELD: PROVA ============ -->
@@ -228,19 +241,19 @@ TODO: ARRANJAR FOTOS PARA METER CÁ
       <span class="mono-label" style="color:var(--accent)" data-i18n="casos.eyebrow">(05) — What we already know how to build</span>
       <h2 class="big" style="font-size:clamp(36px,5.6vw,84px);margin-top:16px" data-i18n="casos.h2">One example per sector</h2>
     </div>
-    <a href="/en/casos" class="link-arrow on-dark" style="justify-self:end;white-space:nowrap" data-i18n="casos.link">See all case studies <span class="arrow">↗</span></a>
+    <a href="/en/cases" class="link-arrow on-dark" style="justify-self:end;white-space:nowrap" data-i18n="casos.link">See all case studies <span class="arrow">↗</span></a>
   </div>
 
   <div class="casos-grid">
-    <a href="/en/casos#industria" class="c1" style="text-decoration:none;color:var(--light);display:block">
+    <a href="/en/cases#industria" class="c1" style="text-decoration:none;color:var(--light);display:block">
       <div class="shot r-16-10"><span class="cap" data-i18n="casos.c1_cap">example — AI document reading</span></div>
       <div class="case-cap"><span class="t" data-i18n="casos.c1_t">Invoices and documents that handle themselves</span><span class="d" data-i18n="casos.c1_d">Industry</span></div>
     </a>
-    <a href="/en/casos#saude" class="c2" style="text-decoration:none;color:var(--light);display:block">
+    <a href="/en/cases#saude" class="c2" style="text-decoration:none;color:var(--light);display:block">
       <div class="shot r-4-5"><span class="cap" data-i18n="casos.c2_cap">example — message triage</span></div>
       <div class="case-cap"><span class="t" data-i18n="casos.c2_t">Message triage on autopilot</span><span class="d" data-i18n="casos.c2_d">Healthcare</span></div>
     </a>
-    <a href="/en/casos#transportes" class="c3" style="text-decoration:none;color:var(--light);display:block">
+    <a href="/en/cases#transportes" class="c3" style="text-decoration:none;color:var(--light);display:block">
       <div class="shot r-16-9"><span class="cap" data-i18n="casos.c3_cap">example — customer support</span></div>
       <div class="case-cap"><span class="t" data-i18n="casos.c3_t">Answers for customers, any time</span><span class="d" data-i18n="casos.c3_d">Transport</span></div>
     </a>
@@ -274,8 +287,8 @@ TODO: ARRANJAR FOTOS PARA METER CÁ
     </article>
   </div>
   <div style="margin-top:clamp(40px,5vw,64px);display:flex;flex-direction:column;align-items:center;gap:22px">
-    <a href="/en/contactos" class="btn-solid" data-i18n="metodo.cta">Talk to us ↗</a>
-    <a href="/en/como-trabalhamos" class="mono-link" data-i18n="metodo.more_link">See the full method →</a>
+    <a href="/en/contact" class="btn-solid" data-i18n="metodo.cta">Talk to us ↗</a>
+    <a href="/en/how-we-work" class="mono-link" data-i18n="metodo.more_link">See the full method →</a>
   </div>
 </section>
 
@@ -317,7 +330,7 @@ TODO: ARRANJAR FOTOS PARA METER CÁ
         <div class="dl-row"><dt data-i18n="sobre.dt1">Truth before selling</dt><dd data-i18n="sobre.dd1">If it doesn't make sense, we'll say so.</dd></div>
         <div class="dl-row close"><dt data-i18n="sobre.dt2">Proof before promises</dt><dd data-i18n="sobre.dd2">Working software, not slides.</dd></div>
       </dl>
-      <a href="/en/sobre" class="link-arrow on-light" data-i18n="sobre.link">Meet the team ↗</a>
+      <a href="/en/about" class="link-arrow on-light" data-i18n="sobre.link">Meet the team ↗</a>
     </div>
   </div>
 </section>
@@ -328,7 +341,7 @@ TODO: ARRANJAR FOTOS PARA METER CÁ
     <span class="mono-label" data-i18n="cta.label">(08) — Start here</span>
     <h2 class="big" style="font-size:clamp(38px,7.6vw,116px);max-width:18ch" data-i18n="cta.h2">If the process fits on a sheet of paper or a spreadsheet, we'll optimize it.</h2>
     <div class="intro-row" style="margin-top:0;align-items:end">
-      <a href="/en/contactos" class="btn-solid-invert" style="justify-self:start" data-i18n="cta.button">Book a free diagnostic ↗</a>
+      <a href="/en/contact" class="btn-solid-invert" style="justify-self:start" data-i18n="cta.button">Book a free diagnostic ↗</a>
       <p class="cta-note" data-i18n="cta.note">Tell us your problem. If we can help, we'll tell you how. If we're not the right fit, we'll tell you that too.</p>
     </div>
   </div>
@@ -339,21 +352,21 @@ TODO: ARRANJAR FOTOS PARA METER CÁ
     <div class="footer-brand">
       <img src="/assets/logo-full.png" alt="MJM Solutions" width="323" height="200" loading="lazy" decoding="async">
       <p data-i18n="footer.brand_p">Tailored software, automation, and applied AI for service SMEs. We understand our clients' business, not just the code.</p>
-      <a href="/en/contactos" class="link-arrow on-dark" data-i18n="footer.brand_cta">Book a diagnostic ↗</a>
+      <a href="/en/contact" class="link-arrow on-dark" data-i18n="footer.brand_cta">Book a diagnostic ↗</a>
     </div>
     <div class="footer-col">
       <h4 data-i18n="footer.nav_h4">Navigation</h4>
-      <a href="/en/servicos" data-i18n="footer.nav_servicos">Services</a>
-      <a href="/en/casos" data-i18n="footer.nav_casos">Cases</a>
-      <a href="/en/como-trabalhamos" data-i18n="footer.nav_como">How we work</a>
-      <a href="/en/sobre" data-i18n="footer.nav_sobre">About</a>
+      <a href="/en/services" data-i18n="footer.nav_servicos">Services</a>
+      <a href="/en/cases" data-i18n="footer.nav_casos">Cases</a>
+      <a href="/en/how-we-work" data-i18n="footer.nav_como">How we work</a>
+      <a href="/en/about" data-i18n="footer.nav_sobre">About</a>
     </div>
     <div class="footer-col">
       <h4 data-i18n="footer.support_h4">Support</h4>
-      <a href="/en/como-trabalhamos#faq" data-i18n="footer.support_faq">FAQ</a>
-      <a href="/en/contactos" data-i18n="footer.support_contactos">Contact</a>
+      <a href="/en/how-we-work#faq" data-i18n="footer.support_faq">FAQ</a>
+      <a href="/en/contact" data-i18n="footer.support_contactos">Contact</a>
       <a href="/assets/mjm-apresentacao.pdf" data-i18n="footer.support_apresentacao">Corporate Presentation</a>
-      <a href="/en/como-trabalhamos#garantias" data-i18n="footer.support_garantias">Guarantees &amp; GDPR</a>
+      <a href="/en/how-we-work#garantias" data-i18n="footer.support_garantias">Guarantees &amp; GDPR</a>
     </div>
     <div class="footer-col">
       <h4 data-i18n="footer.contact_h4">Contact</h4>
@@ -370,7 +383,7 @@ TODO: ARRANJAR FOTOS PARA METER CÁ
 </footer>
 
 <script type="speculationrules">
-{"prefetch":[{"source":"list","urls":["/en/contactos","/en/servicos"]}]}
+{"prefetch":[{"source":"list","urls":["/en/contact","/en/services"]}]}
 </script>
 <script src="/nav.js" defer></script>
 <script src="/i18n.js" defer></script>

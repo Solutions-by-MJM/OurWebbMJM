@@ -7,13 +7,14 @@
 <meta name="description" data-i18n="meta.description" data-i18n-attr="content" content="Tem um processo que custa horas à sua equipa todas as semanas? Conte-nos. Em 30 minutos dizemos-lhe se e como a tecnologia resolve. Sem compromisso.">
 <link rel="canonical" href="https://solutionsbymjm.pt/contactos">
 <link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/contactos">
-<link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/contactos">
+<link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/contact">
 <link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/contactos">
 <meta property="og:title" data-i18n="meta.title" data-i18n-attr="content" content="Fale Connosco: Diagnóstico Gratuito | MJM Solutions">
 <meta property="og:description" data-i18n="meta.description" data-i18n-attr="content" content="Tem um processo que custa horas à sua equipa todas as semanas? Conte-nos. Em 30 minutos dizemos-lhe se e como a tecnologia resolve. Sem compromisso.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MJM Solutions">
 <meta property="og:locale" content="pt_PT">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://solutionsbymjm.pt/contactos">
 <meta property="og:image" content="https://solutionsbymjm.pt/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -46,6 +47,29 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "url": "https://solutionsbymjm.pt/contactos",
+  "mainEntity": {
+    "@type": "Organization",
+    "@id": "https://solutionsbymjm.pt/#organization",
+    "name": "MJM Solutions",
+    "url": "https://solutionsbymjm.pt/",
+    "email": "geral@solutionsbymjm.pt",
+    "telephone": "+351935596965",
+    "areaServed": { "@type": "Country", "name": "Portugal" },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "geral@solutionsbymjm.pt",
+      "telephone": "+351935596965",
+      "availableLanguage": ["Portuguese", "English"]
+    }
+  }
+}
+</script>
 </head>
 <body>
 
@@ -61,7 +85,7 @@
     <a href="/casos" class="nav-link" data-i18n="nav.cases">Casos</a>
     <a href="/como-trabalhamos" class="nav-link" data-i18n="nav.how">Como trabalhamos</a>
     <a href="/sobre" class="nav-link" data-i18n="nav.about">Sobre</a>
-    <button id="lang-toggle" class="lang-toggle" type="button" aria-label="View in English">EN</button>
+    <a id="lang-toggle" class="lang-toggle" href="/en/contact" aria-label="View in English">EN</a>
     <a href="/contactos" class="nav-cta" data-i18n="nav.cta">Marcar diagnóstico&nbsp;↗</a>
   </div>
 </nav>

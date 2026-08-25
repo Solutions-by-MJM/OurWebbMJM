@@ -259,6 +259,16 @@ const MIME = {
 // Tipos baseados em texto que vale a pena comprimir on-the-fly.
 const COMPRESSIBLE = new Set([".html", ".css", ".js", ".json", ".svg", ".xml", ".txt"]);
 
+// Slugs EN antigos (em português) → novos (em inglês). Tem de espelhar
+// EN_SLUGS em build-en.js.
+const LEGACY_EN_REDIRECTS = {
+  "/en/servicos": "/en/services",
+  "/en/casos": "/en/cases",
+  "/en/como-trabalhamos": "/en/how-we-work",
+  "/en/sobre": "/en/about",
+  "/en/contactos": "/en/contact",
+};
+
 const server = http.createServer((req, res) => {
   // Headers de segurança em todas as respostas.
   for (const [k, v] of Object.entries(SECURITY_HEADERS)) res.setHeader(k, v);
@@ -295,7 +305,21 @@ const server = http.createServer((req, res) => {
   // 301 para a versão canónica (sem barra) em vez de servir os dois URLs.
   if (urlPath !== "/" && urlPath.endsWith("/")) {
     const query = req.url.includes("?") ? req.url.slice(req.url.indexOf("?")) : "";
-    res.writeHead(301, { Location: urlPath.slice(0, -1) + query });
+    const stripped = urlPath.slice(0, -1);
+    // Resolve já um slug EN antigo aqui, para /en/sobre/ dar um único 301
+    // (→ /en/about) em vez de encadear dois.
+    res.writeHead(301, { Location: (LEGACY_EN_REDIRECTS[stripped] || stripped) + query });
+    return res.end();
+  }
+
+  // As páginas EN passaram de slugs portugueses para slugs ingleses
+  // (/en/servicos → /en/services), porque o URL em inglês descreve a página a
+  // quem pesquisa em inglês. 301 permanente para não perder o que já estivesse
+  // indexado ou ligado nos URLs antigos. Ver EN_SLUGS em build-en.js.
+  const legacyEn = LEGACY_EN_REDIRECTS[urlPath];
+  if (legacyEn) {
+    const query = req.url.includes("?") ? req.url.slice(req.url.indexOf("?")) : "";
+    res.writeHead(301, { Location: legacyEn + query });
     return res.end();
   }
 

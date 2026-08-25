@@ -10,6 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MJM Solutions">
 <meta property="og:locale" content="pt_PT">
+<meta property="og:locale:alternate" content="en_US">
 <link rel="canonical" href="https://solutionsbymjm.pt/">
 <link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/">
 <link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en">
@@ -27,10 +28,12 @@
 <link rel="preload" href="/fonts/archivo-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/public-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css?v=24">
+<!-- sameAs fica vazio até haver perfis oficiais (LinkedIn da empresa, diretórios) — preencher aqui à medida que forem criados. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
+  "@id": "https://solutionsbymjm.pt/#organization",
   "name": "MJM Solutions",
   "url": "https://solutionsbymjm.pt/",
   "logo": "https://solutionsbymjm.pt/assets/logo-full.png",
@@ -38,12 +41,21 @@
   "description": "Software à medida, automação e IA aplicada para PMEs de serviços em Portugal.",
   "email": "geral@solutionsbymjm.pt",
   "telephone": "+351935596965",
-  "areaServed": "PT",
+  "areaServed": { "@type": "Country", "name": "Portugal" },
   "address": { "@type": "PostalAddress", "addressCountry": "PT" },
+  "sameAs": [],
+  "knowsLanguage": ["pt-PT", "en"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "geral@solutionsbymjm.pt",
+    "telephone": "+351935596965",
+    "availableLanguage": ["Portuguese", "English"]
+  },
   "founder": [
-    { "@type": "Person", "name": "Martim Gonçalves" },
-    { "@type": "Person", "name": "Júlio Lopes" },
-    { "@type": "Person", "name": "Marcos Romão" }
+    { "@type": "Person", "@id": "https://solutionsbymjm.pt/#martim-goncalves", "name": "Martim Gonçalves", "jobTitle": "Gestão & Finanças" },
+    { "@type": "Person", "@id": "https://solutionsbymjm.pt/#julio-lopes", "name": "Júlio Lopes", "jobTitle": "Engenharia & Produto" },
+    { "@type": "Person", "@id": "https://solutionsbymjm.pt/#marcos-romao", "name": "Marcos Romão", "jobTitle": "Engenharia" }
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -82,7 +94,7 @@
     <a href="/casos" class="nav-link" data-i18n="nav.cases">Casos</a>
     <a href="/como-trabalhamos" class="nav-link" data-i18n="nav.how">Como trabalhamos</a>
     <a href="/sobre" class="nav-link" data-i18n="nav.about">Sobre</a>
-    <button id="lang-toggle" class="lang-toggle" type="button" aria-label="View in English">EN</button>
+    <a id="lang-toggle" class="lang-toggle" href="/en" aria-label="View in English">EN</a>
     <a href="/contactos" class="nav-cta" data-i18n="nav.cta">Marcar diagnóstico&nbsp;↗</a>
   </div>
 </nav>

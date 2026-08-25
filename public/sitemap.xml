@@ -1,75 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://solutionsbymjm.pt/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://solutionsbymjm.pt/servicos</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://solutionsbymjm.pt/casos</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://solutionsbymjm.pt/como-trabalhamos</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://solutionsbymjm.pt/sobre</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://solutionsbymjm.pt/contactos</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/"/>
+    <lastmod>2026-08-25</lastmod>
   </url>
   <url>
     <loc>https://solutionsbymjm.pt/en</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/"/>
+    <lastmod>2026-08-25</lastmod>
   </url>
   <url>
-    <loc>https://solutionsbymjm.pt/en/servicos</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://solutionsbymjm.pt/servicos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/servicos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/servicos"/>
+    <lastmod>2026-08-25</lastmod>
   </url>
   <url>
-    <loc>https://solutionsbymjm.pt/en/casos</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://solutionsbymjm.pt/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/servicos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/servicos"/>
+    <lastmod>2026-08-25</lastmod>
   </url>
   <url>
-    <loc>https://solutionsbymjm.pt/en/como-trabalhamos</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://solutionsbymjm.pt/casos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/casos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/casos"/>
+    <lastmod>2026-08-25</lastmod>
   </url>
   <url>
-    <loc>https://solutionsbymjm.pt/en/sobre</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://solutionsbymjm.pt/en/cases</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/casos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/casos"/>
+    <lastmod>2026-08-25</lastmod>
   </url>
   <url>
-    <loc>https://solutionsbymjm.pt/en/contactos</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://solutionsbymjm.pt/como-trabalhamos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/como-trabalhamos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/how-we-work"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/como-trabalhamos"/>
+    <lastmod>2026-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://solutionsbymjm.pt/en/how-we-work</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/como-trabalhamos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/how-we-work"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/como-trabalhamos"/>
+    <lastmod>2026-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://solutionsbymjm.pt/sobre</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/sobre"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/sobre"/>
+    <lastmod>2026-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://solutionsbymjm.pt/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/sobre"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/sobre"/>
+    <lastmod>2026-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://solutionsbymjm.pt/contactos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/contactos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/contactos"/>
+    <lastmod>2026-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://solutionsbymjm.pt/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://solutionsbymjm.pt/contactos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://solutionsbymjm.pt/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://solutionsbymjm.pt/contactos"/>
+    <lastmod>2026-08-25</lastmod>
   </url>
 </urlset>

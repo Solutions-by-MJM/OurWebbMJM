@@ -18,17 +18,29 @@ const ROOT = path.join(__dirname, "public");
 const SITE = "https://solutionsbymjm.pt";
 const translations = JSON.parse(fs.readFileSync(path.join(ROOT, "i18n", "en.json"), "utf8"));
 
-// página PT → { chave no en.json, URL PT, ficheiro EN de saída }
+// Slugs em inglês para as páginas EN. Um URL inglês (/en/services) descreve a
+// página a quem pesquisa em inglês e reforça a relevância do termo; um slug
+// português (/en/servicos) desperdiça esse sinal. Os URLs antigos continuam a
+// funcionar via 301 no server.js — ver REDIRECTS lá.
+const EN_SLUGS = {
+  servicos: "services",
+  casos: "cases",
+  "como-trabalhamos": "how-we-work",
+  sobre: "about",
+  contactos: "contact",
+};
+
+// página PT → { chave no en.json, URL PT, URL EN, ficheiro EN de saída }
 const PAGES = [
-  { src: "index.html", key: "index", ptPath: "/", out: "en.html" },
-  { src: "servicos.html", key: "servicos", ptPath: "/servicos", out: "en/servicos.html" },
-  { src: "casos.html", key: "casos", ptPath: "/casos", out: "en/casos.html" },
-  { src: "como-trabalhamos.html", key: "como-trabalhamos", ptPath: "/como-trabalhamos", out: "en/como-trabalhamos.html" },
-  { src: "sobre.html", key: "sobre", ptPath: "/sobre", out: "en/sobre.html" },
-  { src: "contactos.html", key: "contactos", ptPath: "/contactos", out: "en/contactos.html" },
+  { src: "index.html", key: "index", ptPath: "/", enPath: "/en", out: "en.html" },
+  { src: "servicos.html", key: "servicos", ptPath: "/servicos", enPath: "/en/services", out: "en/services.html" },
+  { src: "casos.html", key: "casos", ptPath: "/casos", enPath: "/en/cases", out: "en/cases.html" },
+  { src: "como-trabalhamos.html", key: "como-trabalhamos", ptPath: "/como-trabalhamos", enPath: "/en/how-we-work", out: "en/how-we-work.html" },
+  { src: "sobre.html", key: "sobre", ptPath: "/sobre", enPath: "/en/about", out: "en/about.html" },
+  { src: "contactos.html", key: "contactos", ptPath: "/contactos", enPath: "/en/contact", out: "en/contact.html" },
 ];
 
-const INTERNAL_PATHS = ["servicos", "casos", "como-trabalhamos", "sobre", "contactos"];
+const INTERNAL_PATHS = Object.keys(EN_SLUGS);
 
 // Strings PT fora do alcance do data-i18n (JSON-LD, aria, og:image:alt).
 const LITERAL_MAP = [
@@ -69,6 +81,25 @@ const LITERAL_MAP = [
     'content="MJM Solutions — software à medida, automação e IA aplicada"',
     'content="MJM Solutions — tailored software, automation and applied AI"',
   ],
+  // Schema de /sobre (equipa) e /casos. As aspas fazem parte do padrão de
+  // propósito: ancoram a substituição ao JSON-LD e evitam apanhar texto
+  // visível — que a esta altura já foi traduzido pelo translateMarkup.
+  ['"jobTitle": "Gestão & Finanças"', '"jobTitle": "Management & Finance"'],
+  ['"jobTitle": "Engenharia & Produto"', '"jobTitle": "Engineering & Product"'],
+  ['"jobTitle": "Engenharia"', '"jobTitle": "Engineering"'],
+  ['"Gestão financeira"', '"Financial management"'],
+  ['"Desenvolvimento de software"', '"Software development"'],
+  ['"Integrações"', '"Integrations"'],
+  ['"Gestão de produto"', '"Product management"'],
+  ['"Automação"', '"Automation"'],
+  ['"IA aplicada"', '"Applied AI"'],
+  ['"Arquitetura técnica"', '"Technical architecture"'],
+  ['"name": "Faturas e documentos que se tratam sozinhos"', '"name": "Invoices and documents that handle themselves"'],
+  ['"name": "Triagem de mensagens em piloto automático"', '"name": "Message triage on autopilot"'],
+  ['"name": "Respostas ao cliente a qualquer hora"', '"name": "Answers for customers, any time"'],
+  ['"name": "Do desperdício à previsão"', '"name": "From waste to forecasting"'],
+  ['"name": "A informação certa, sem a procurar"', '"name": "The right information, without the search"'],
+  ['"name": "Reconciliação que se faz sozinha"', '"name": "Reconciliation that runs itself"'],
   ['aria-label="Abrir menu"', 'aria-label="Open menu"'],
   [
     'alt="Plataforma de raiz — diagrama de fluxo com inputs e outputs"',
@@ -79,8 +110,8 @@ const LITERAL_MAP = [
     'alt="Automatic AI invoice reading — data extraction"',
   ],
   ['<label for="bk-website">Não preencher este campo</label>', '<label for="bk-website">Do not fill in this field</label>'],
-  // Sem JS, o botão de língua numa página EN deve ler-se como "voltar a PT".
-  ['aria-label="View in English">EN</button>', 'aria-label="Ver em português">PT</button>'],
+  // Sem JS, o link de língua numa página EN deve ler-se como "voltar a PT".
+  ['aria-label="View in English">EN</a>', 'aria-label="Ver em português">PT</a>'],
 ];
 
 const VOID_TAGS = new Set(["meta", "img", "input", "link", "br", "hr", "source"]);
@@ -175,6 +206,25 @@ function rebuildFaqSchema(html) {
   );
 }
 
+// Dentro dos blocos JSON-LD há URLs absolutos do próprio site (breadcrumbs,
+// url de cada serviço, @id). Numa página EN esses URLs têm de apontar para a
+// versão inglesa, senão o schema contradiz o canonical da própria página.
+// Limitado aos blocos ld+json de propósito: aplicado ao documento inteiro
+// partiria o href pt-PT do hreflang, que tem de continuar a apontar para PT.
+function rewriteJsonLdUrls(html) {
+  return html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (block, body) => {
+    let out = body;
+    for (const [pt, en] of Object.entries(EN_SLUGS)) {
+      out = out.split(SITE + "/" + pt).join(SITE + "/en/" + en);
+    }
+    out = out.split('"' + SITE + '/"').join('"' + SITE + '/en"');
+    // Nota: os @id de entidade (ex. ".../#organization") ficam propositadamente
+    // por reescrever — a empresa é a mesma entidade nas duas línguas e o @id
+    // estável é o que permite ao Google reconciliá-la entre páginas.
+    return '<script type="application/ld+json">' + out + "</script>";
+  });
+}
+
 function hreflangBlock(ptUrl, enUrl) {
   return (
     '<link rel="alternate" hreflang="pt-PT" href="' + ptUrl + '">\n' +
@@ -186,10 +236,18 @@ function hreflangBlock(ptUrl, enUrl) {
 function buildPage(page) {
   let html = fs.readFileSync(path.join(ROOT, page.src), "utf8");
   const ptUrl = SITE + page.ptPath;
-  const enUrl = SITE + (page.ptPath === "/" ? "/en" : "/en" + page.ptPath);
+  const enUrl = SITE + page.enPath;
 
   html = translateMarkup(html, page.key);
   html = html.replace('<html lang="pt-PT">', '<html lang="en">');
+
+  // A página PT já traz o seu próprio bloco hreflang. Sem o remover primeiro,
+  // a página EN ficava com dois blocos (6 tags em vez de 3): sinais duplicados
+  // que o Google pode simplesmente ignorar, deixando o par PT/EN sem ligação.
+  html = html.replace(/[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n?/g, "");
+  // Mesmo problema no og:locale:alternate da página PT (que aponta para en_US):
+  // na página EN o alternate correto é pt_PT, injetado mais abaixo.
+  html = html.replace(/[ \t]*<meta property="og:locale:alternate" content="[^"]*">\n?/g, "");
 
   // canonical + og:url → URL EN; hreflang logo a seguir ao canonical
   html = html.replace(
@@ -200,15 +258,34 @@ function buildPage(page) {
     '<meta property="og:url" content="' + ptUrl + '">',
     '<meta property="og:url" content="' + enUrl + '">'
   );
-  html = html.replace('<meta property="og:locale" content="pt_PT">', '<meta property="og:locale" content="en_US">');
+  // og:locale:alternate diz às redes sociais que existe uma versão no outro
+  // idioma — o par recíproco do hreflang, no vocabulário do Open Graph.
+  html = html.replace(
+    '<meta property="og:locale" content="pt_PT">',
+    '<meta property="og:locale" content="en_US">\n<meta property="og:locale:alternate" content="pt_PT">'
+  );
 
   for (const [from, to] of LITERAL_MAP) html = html.split(from).join(to);
+  html = rewriteJsonLdUrls(html);
   if (page.key === "como-trabalhamos") html = rebuildFaqSchema(html);
 
-  // links internos → /en/...
-  html = html.replace(new RegExp('href="/(' + INTERNAL_PATHS.join("|") + ')([#"])', "g"), 'href="/en/$1$2');
+  // links internos → /en/<slug-inglês>
+  html = html.replace(
+    new RegExp('href="/(' + INTERNAL_PATHS.join("|") + ')([#"])', "g"),
+    (m, slug, tail) => 'href="/en/' + EN_SLUGS[slug] + tail
+  );
   html = html.replace(/href="\/"/g, 'href="/en"');
-  html = html.replace('"urls":["/contactos","/servicos"]', '"urls":["/en/contactos","/en/servicos"]');
+  html = html.replace('"urls":["/contactos","/servicos"]', '"urls":["/en/contact","/en/services"]');
+
+  // O link de língua na página PT aponta para a versão EN (href real, para
+  // crawlers sem JS o descobrirem — ver i18n.js). Na página EN gerada, o
+  // mesmo link tem de apontar de volta para a PT — ao contrário de todos os
+  // outros links internos acima, por isso corre depois e por si só, para não
+  // ser reescrito outra vez por essas regras genéricas.
+  html = html.replace(
+    /(<a id="lang-toggle"[^>]*\bhref=")[^"]*(")/,
+    '$1' + page.ptPath + '$2'
+  );
 
   const outPath = path.join(ROOT, page.out);
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
@@ -217,16 +294,65 @@ function buildPage(page) {
 }
 
 // hreflang nas páginas PT: verifica (não injeta — as páginas PT são fonte,
-// editadas à mão) e avisa se faltar, para o par não ficar coxo.
+// editadas à mão) e avisa se faltar ou apontar para o URL EN errado, para o
+// par não ficar coxo. Um hreflang que não é recíproco é ignorado pelo Google.
 function checkPtHreflang() {
   for (const page of PAGES) {
     const html = fs.readFileSync(path.join(ROOT, page.src), "utf8");
-    if (!html.includes('hreflang="en"')) {
-      console.warn("⚠ falta hreflang em " + page.src);
+    const expected = '<link rel="alternate" hreflang="en" href="' + SITE + page.enPath + '">';
+    if (!html.includes(expected)) {
+      console.warn("⚠ " + page.src + ": falta ou está desatualizado o hreflang en → " + page.enPath);
     }
   }
 }
 
+// Slugs EN antigos (português). Ficheiros gerados por versões anteriores deste
+// script continuariam a ser servidos e a competir com os novos como conteúdo
+// duplicado — apagamos em vez de deixar apodrecer no disco.
+function removeLegacyEnPages() {
+  for (const slug of Object.keys(EN_SLUGS)) {
+    const stale = path.join(ROOT, "en", slug + ".html");
+    if (fs.existsSync(stale)) {
+      fs.unlinkSync(stale);
+      console.log("✗ removido (slug antigo): en/" + slug + ".html");
+    }
+  }
+}
+
+// Sitemap gerado a partir de PAGES, para não voltar a ficar desatualizado à
+// mão. Inclui os alternates hreflang por URL (recomendação da Google para
+// sites multilingues) e usa a data de modificação real do ficheiro-fonte.
+// changefreq/priority ficam de fora: a Google ignora-os há anos.
+function buildSitemap() {
+  const entries = [];
+  for (const page of PAGES) {
+    const mtime = fs.statSync(path.join(ROOT, page.src)).mtime.toISOString().slice(0, 10);
+    const ptUrl = SITE + page.ptPath;
+    const enUrl = SITE + page.enPath;
+    for (const loc of [ptUrl, enUrl]) {
+      entries.push(
+        "  <url>\n" +
+          "    <loc>" + loc + "</loc>\n" +
+          '    <xhtml:link rel="alternate" hreflang="pt-PT" href="' + ptUrl + '"/>\n' +
+          '    <xhtml:link rel="alternate" hreflang="en" href="' + enUrl + '"/>\n' +
+          '    <xhtml:link rel="alternate" hreflang="x-default" href="' + ptUrl + '"/>\n' +
+          "    <lastmod>" + mtime + "</lastmod>\n" +
+          "  </url>"
+      );
+    }
+  }
+  const xml =
+    '<?xml version="1.0" encoding="UTF-8"?>\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n' +
+    '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
+    entries.join("\n") +
+    "\n</urlset>\n";
+  fs.writeFileSync(path.join(ROOT, "sitemap.xml"), xml);
+  console.log("✓ sitemap.xml (" + entries.length + " URLs)");
+}
+
+removeLegacyEnPages();
 PAGES.forEach(buildPage);
+buildSitemap();
 checkPtHreflang();
 console.log("Páginas EN geradas em public/en*(.html)");
