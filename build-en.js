@@ -70,6 +70,13 @@ const LITERAL_MAP = [
   ['"name": "Como trabalhamos"', '"name": "How we work"'],
   ['"name": "Sobre"', '"name": "About"'],
   ['"name": "Contactos"', '"name": "Contact"'],
+  // 3º nível do breadcrumb das 4 sub-páginas de /servicos — o mesmo texto
+  // usado em hero.breadcrumb (en.json), para o schema não contradizer o
+  // que a página mostra visualmente.
+  ['"name": "Software à Medida"', '"name": "Tailored Software"'],
+  ['"name": "Automação de Processos"', '"name": "Process Automation"'],
+  ['"name": "Integrações de Sistemas"', '"name": "System Integrations"'],
+  ['"name": "IA Aplicada"', '"name": "Applied AI"'],
   ['"item": "https://solutionsbymjm.pt/"', '"item": "https://solutionsbymjm.pt/en"'],
   ['"url": "https://solutionsbymjm.pt/"', '"url": "https://solutionsbymjm.pt/en"'],
   ['"inLanguage": "pt-PT"', '"inLanguage": "en"'],
